@@ -4,16 +4,16 @@ pip install pycountry
 pip install deep_translator
 pip install numpy
 pip install pip install emoji-country-flag
-"""
+""" ##installation der libraries
 
-from countryinfo import CountryInfo
+from countryinfo import CountryInfo 
 from deep_translator import GoogleTranslator
 import pycountry
 import numpy
 import random
 import json
 import flag
-import tkinter
+import tkinter ##import der libraries
 
 global errors
 errors = []
@@ -32,7 +32,7 @@ global questions_2
 global questions_3
 questions_1 = []
 questions_2 = []
-questions_3 = []
+questions_3 = [] ##initialisieren der variablen
 
 def loadManualQuestions ():
     global manualQuestions_1
@@ -40,7 +40,7 @@ def loadManualQuestions ():
     global manualQuestions_2
     manualQuestions_2 = []
     global manualQuestions_3
-    manualQuestions_3 = []
+    manualQuestions_3 = [] ##initialisieren der variablen
     try:
         with open("questions_1.json", "r") as questions_1_file:
             manualQuestions_1 = json.load(questions_1_file)
@@ -53,7 +53,7 @@ def loadManualQuestions ():
         pass
     try:
         with open("questions_3.json", "r") as questions_3_file:
-            manualQuestions_3 = json.load(questions_3_file)
+            manualQuestions_3 = json.load(questions_3_file) ##öffnen der dateien
     except:
         pass
     return()
@@ -64,7 +64,7 @@ def loadMissingQuestions ():
     global missingQuestions_2
     missingQuestions_2 = []
     global missingQuestions_3
-    missingQuestions_3 = []
+    missingQuestions_3 = [] ##initialisieren der variablen
     try:
         with open("missing_questions_1.json", "r") as missing_questions_1_file:
             missingQuestions_1 = json.load(missing_questions_1_file)
@@ -77,13 +77,13 @@ def loadMissingQuestions ():
         pass
     try:
         with open("missing_questions_3.json", "r") as missing_questions_3_file:
-            missingQuestions_3 = json.load(missing_questions_3_file)
+            missingQuestions_3 = json.load(missing_questions_3_file) ##öffnen der dateien
     except:
         pass
     return()
 
 def getCountries ():
-    countries = (list(pycountry.countries))
+    countries = (list(pycountry.countries)) ##schreiben der länder in eine liste
     i=0
     for country in countries:
         i = i + 1
