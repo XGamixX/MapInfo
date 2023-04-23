@@ -4,6 +4,7 @@ pip install pycountry
 pip install deep_translator
 pip install numpy
 pip install pip install emoji-country-flag
+pip install pygame
 """ ##installation der libraries
 
 from countryinfo import CountryInfo 
@@ -14,6 +15,7 @@ import random
 import json
 import flag
 import tkinter ##import der libraries
+import pygame 
 
 global errors
 errors = []
