@@ -107,7 +107,7 @@ def getCountries ():
             try:
                 countryName_DE = GoogleTranslator(source = "en", target = "de").translate(countryName_EN) ##falls country info das land nicht kennt
             except:
-                countryName_DE = "/Error/"
+                countryName_DE = "/Error/" 
         countries_DE.append(countryName_DE.capitalize()) ##an die liste anhängen
         try:
             countryName_NATIVE = CountryInfo(countryName_EN).native_name()
