@@ -100,7 +100,7 @@ def getCountries ():
         countries_EN.append(countryName_EN)
         questions_1.append([countryName_EN])
         questions_2.append([countryName_EN])
-        questions_3.append([countryName_EN])
+        questions_3.append([countryName_EN]) ##an die liste anhängen
         try:
             countryName_DE = CountryInfo(countryName_EN).translations().get("de") ##Nutzen der Country info, die die übersetzungen kennt
         except:
@@ -113,13 +113,13 @@ def getCountries ():
             countryName_NATIVE = CountryInfo(countryName_EN).native_name()
         except:
             countryName_NATIVE = "/Error/"
-        countries_NATIVE.append(countryName_NATIVE.capitalize())
+        countries_NATIVE.append(countryName_NATIVE.capitalize()) ##an die liste anhängen
         try:
-            countryName_SHORT = CountryInfo(countryName_EN).iso()
-            countryName_SHORT = countryName_SHORT.get("alpha2")
+            countryName_SHORT = CountryInfo(countryName_EN).iso() ##kurzcodes finden
+            countryName_SHORT = countryName_SHORT.get("alpha2") ##2er kurzcode finden
         except:
             countryName_SHORT = "/Error/"
-        countries_SHORT.append(countryName_SHORT)
+        countries_SHORT.append(countryName_SHORT) ##an die liste anhängen
 
         label_1.configure(text=("Erfindet Länder... " + str(i) + "/" + str(countryCount)))
         print("Erfindet Länder... " + str(i) + "/" + str(countryCount))
