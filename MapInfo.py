@@ -478,25 +478,25 @@ print("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(countryCoun
 print("Fügt fehlende Informationen hinzu... " + str(countryCount*3) + "/" + str(countryCount*3) + " (Done)")
 printErrors()
 win.mainloop()
-while 1==1:
-    countryNR = ChooseCountry(input("Schreibe den Namen des Landes: "))
-    try:
-        print(flag.flagize("DE: " + countries_DE[countryNR] + ", EN: " + countries_EN[countryNR] + ", Native: " + countries_NATIVE[countryNR] + ", Short: " + countries_SHORT[countryNR] + ", Flag: :" + countries_SHORT[countryNR] + ":"))
-    except:
-        pass
-    try:
-        print("[*]   " + questions_1[countryNR][random.randrange(1,len(questions_1[countryNR]))])
-    except:
-        print("[*]   Keine Ein-Stern-Frage zu diesem Land gefunden")
-    try:
-        print("[**]  " + questions_2[countryNR][random.randrange(1,len(questions_2[countryNR]))])
-    except:
-        print("[**]  Keine Zwei-Stern-Frage zu diesem Land gefunden")
-    try:
-        print("[***] " + questions_3[countryNR][random.randrange(1,len(questions_3[countryNR]))])
-    except:
-        print("[***] Keine Drei-Stern-Frage zu diesem Land gefunden")
-    print()
+#while 1==1:
+#    countryNR = ChooseCountry(input("Schreibe den Namen des Landes: "))
+#    try:
+#        print(flag.flagize("DE: " + countries_DE[countryNR] + ", EN: " + countries_EN[countryNR] + ", Native: " + countries_NATIVE[countryNR] + ", Short: " + countries_SHORT[countryNR] + ", Flag: :" + countries_SHORT[countryNR] + ":"))
+#    except:
+#        pass
+#    try:
+#        print("[*]   " + questions_1[countryNR][random.randrange(1,len(questions_1[countryNR]))])
+#    except:
+#        print("[*]   Keine Ein-Stern-Frage zu diesem Land gefunden")
+#    try:
+#        print("[**]  " + questions_2[countryNR][random.randrange(1,len(questions_2[countryNR]))])
+#    except:
+#        print("[**]  Keine Zwei-Stern-Frage zu diesem Land gefunden")
+#    try:
+#        print("[***] " + questions_3[countryNR][random.randrange(1,len(questions_3[countryNR]))])
+#    except:
+#        print("[***] Keine Drei-Stern-Frage zu diesem Land gefunden")
+#    print()
 
 # pygame setup
 pygame.init()
