@@ -15,7 +15,7 @@ import random
 import json
 import flag
 import tkinter ##import der libraries
-import pygame 
+import pygame
 
 global errors
 errors = []
