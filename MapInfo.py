@@ -222,7 +222,7 @@ def findInfo ():
         label_2.configure(text=("Lädt Infos aus dem Darknet runter... " + str(i) + "/" + str(countryCount)))
         print("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
         print("Läd Infos aus dem Darknet runter... " + str(i) + "/" + str(countryCount))
-        win.update()
+        win.update() ##updated das fenster
     return()
 
 def addInfo ():
@@ -244,7 +244,7 @@ def addInfo ():
                 print("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
                 print("Lädt Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
                 print("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(i) + "/" + str(countryCount*3))
-                win.update()
+                win.update() ##updated das fenster
         except:
             pass
     for country in manualQuestions_2:
@@ -264,7 +264,7 @@ def addInfo ():
                 print("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
                 print("Lädt Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
                 print("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(i) + "/" + str(countryCount*3))
-                win.update()
+                win.update() ##updated das fenster
         except:
             pass
     for country in manualQuestions_3:
@@ -284,7 +284,7 @@ def addInfo ():
                 print("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
                 print("Lädt Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
                 print("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(i) + "/" + str(countryCount*3))
-                win.update()
+                win.update() ##updated das fenster
         except:
             pass
     i = 0
@@ -307,7 +307,7 @@ def addInfo ():
                 print("Lädt Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
                 print("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(countryCount*3) + "/" + str(countryCount*3) + " (Done)")
                 print("Fügt fehlende Informationen hinzu... " + str(i) + "/" + str(countryCount*3))
-                win.update()
+                win.update() ##updated das fenster
         except:
             pass
     for country in missingQuestions_2:
@@ -329,7 +329,7 @@ def addInfo ():
                 print("Lädt Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
                 print("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(countryCount*3) + "/" + str(countryCount*3) + " (Done)")
                 print("Fügt fehlende Informationen hinzu... " + str(i) + "/" + str(countryCount*3))
-                win.update()
+                win.update() ##updated das fenster
         except:
             pass
     for country in missingQuestions_3:
@@ -351,7 +351,7 @@ def addInfo ():
                 print("Lädt Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
                 print("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(countryCount*3) + "/" + str(countryCount*3) + " (Done)")
                 print("Fügt fehlende Informationen hinzu... " + str(i) + "/" + str(countryCount*3))
-                win.update()
+                win.update() ##updated das fenster
         except:
             pass
     return()
@@ -454,7 +454,7 @@ label_question2 = tkinter.Label(win, text="")
 label_question2.grid(row=7)
 label_question3 = tkinter.Label(win, text="")
 label_question3.grid(row=8)
-win.update()
+win.update() ##updated das fenster
 
 try:
     importStuff()
@@ -513,7 +513,6 @@ while running:
             running = False
 
     noteOneText = pygame.font.Font.render("Text",True,'black',None)
-    screen.blit(noteOneText, dest=(0, 0))
 
     screen.fill("grey") # fill the screen with a color to wipe away anything from last frame
 
