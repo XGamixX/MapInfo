@@ -537,13 +537,13 @@ while running:
 
     #### start of renderer
     
-    letter1=Font.render("H", False, ORANGE, YELLOW)
-    letter2=Font.render("E", False, ORANGE, GREEN)
-    letter3=Font.render("M", False, ORANGE, YELLOW)
-    letter4=Font.render("A", False, ORANGE, GREEN)
-    letter5=Font.render("N", False, ORANGE, YELLOW)
-    letter6=Font.render("T", False, ORANGE, GREEN)  
-    letter7=Font.render("H", False, ORANGE, YELLOW)
+    letter1=pygame.font.Font.render("H", False, ORANGE, YELLOW)
+    letter2=pygame.font.Font.render("E", False, ORANGE, GREEN)
+    letter3=pygame.font.Font.render("M", False, ORANGE, YELLOW)
+    letter4=pygame.font.Font.render("A", False, ORANGE, GREEN)
+    letter5=pygame.font.Font.render("N", False, ORANGE, YELLOW)
+    letter6=pygame.font.Font.render("T", False, ORANGE, GREEN)  
+    letter7=pygame.font.Font.render("H", False, ORANGE, YELLOW)
 
     #### end of renderer
 
