@@ -541,6 +541,11 @@ pygame.display.set_caption("MapInfo")
 # letter6=Font.render("T", False, ORANGE, GREEN)  
 # letter7=Font.render("H", False, ORANGE, YELLOW)
 
+text1=Font.render("Länder Quiz!!!!!!!",False,BLACK,WHITE)
+text2=Font.render("1.Frage!!!!!!!!!!",False,BLACK,WHITE)
+text3=Font.render(,False,BLACK,WHITE)
+
+
 i=0
 c=1
 
@@ -553,10 +558,10 @@ while running:
 
     #### start of renderer
 
-    if(i>=820):
-        i=0
-        c+=1
-        pygame.time.wait(500)
+    # if(i>=820):
+    #     i=0
+    #     c+=1
+    #     pygame.time.wait(500)
          
     screen.fill("Lime") # fill the screen with a color to wipe away anything from last frame
 
