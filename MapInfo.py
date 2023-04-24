@@ -498,9 +498,6 @@ win.mainloop()
 #        print("[***] Keine Drei-Stern-Frage zu diesem Land gefunden")
 #    print()
 
-# Example file showing a circle moving on screen
-import pygame
-
 # pygame setup
 BLACK = (0, 0, 0)
 LIGHTGREY = (63, 63, 63)
