@@ -547,8 +547,6 @@ while running:
         if event.type == pygame.QUIT: # pygame.QUIT event means the user clicked X to close your window
             running = False
 
-    screen.fill("Lime") # fill the screen with a color to wipe away anything from last frame
-
     #### start of renderer
 
     if(i>=820):
@@ -556,6 +554,8 @@ while running:
         c+=1
         pygame.time.wait(500)
          
+    screen.fill("Lime") # fill the screen with a color to wipe away anything from last frame
+
     if(c%6==0):
         screen.blit(letter1, (662-i, -162+i))
         screen.blit(letter2, (639-i, -139+i))
