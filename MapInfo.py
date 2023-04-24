@@ -625,7 +625,7 @@ while running:
 
     #### end of renderer
 
-    pygame.display.flip() # flip() the display to put your work on screen
+    
 
     pygame.time.wait(500)
 
