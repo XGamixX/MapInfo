@@ -498,6 +498,9 @@ win.mainloop()
 #        print("[***] Keine Drei-Stern-Frage zu diesem Land gefunden")
 #    print()
 
+def merge_colors (color1, color2):
+    return([i+j for i,j in zip(color1, color2)])
+
 BLACK = (0, 0, 0)
 LIGHTGREY = (63, 63, 63)
 DARKGREY = (127, 127, 127)
@@ -510,16 +513,16 @@ LIGHT_RED = (127, 0, 0)
 LIGHT_GREEN = (0, 127, 0)
 LIGHT_BLUE = (0, 127, 0)
 
-YELLOW = RED + GREEN
-MAGENTA = RED + BLUE
-CYAN = GREEN + BLUE
+YELLOW = merge_colors(RED,GREEN)
+MAGENTA = merge_colors(RED, BLUE)
+CYAN = merge_colors(GREEN, BLUE)
 
-ORANGE = RED + LIGHT_GREEN
-LIME = GREEN + LIGHT_RED
-SPRINGGREEN = GREEN + LIGHT_BLUE
-OCEAN = BLUE + LIGHT_GREEN
-VIOLET = BLUE + LIGHT_RED
-ROSE = RED + LIGHT_BLUE
+ORANGE = merge_colors(RED, LIGHT_GREEN)
+LIME = merge_colors(GREEN, LIGHT_RED)
+SPRINGGREEN = merge_colors(GREEN, LIGHT_BLUE)
+OCEAN = merge_colors(BLUE, LIGHT_GREEN)
+VIOLET = merge_colors(BLUE, LIGHT_RED)
+ROSE = merge_colors(RED, LIGHT_BLUE)
 
 # pygame setup
 pygame.init()
