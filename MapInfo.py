@@ -512,7 +512,7 @@ while running:
         if event.type == pygame.QUIT: # pygame.QUIT event means the user clicked X to close your window
             running = False
 
-    noteOneText = pygame.font.Font.render("Text",True,'black',None)
+    Text = pygame.font.Font.render("Text",True,'black',None)
 
     screen.fill("grey") # fill the screen with a color to wipe away anything from last frame
 
