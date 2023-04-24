@@ -503,6 +503,8 @@ import pygame
 
 # pygame setup
 BLACK = (0, 0, 0)
+LIGHTGREY = (63, 63, 63)
+DARKGREY = (127, 127, 127)
 WHITE = (255, 255, 255)
 
 RED = (255, 0, 0)
