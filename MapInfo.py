@@ -527,6 +527,8 @@ ROSE = RED + LIGHT_BLUE
 
 Font=pygame.font.SysFont('timesnewroman',  30)
 
+pygame.display.set_caption("HIIIIIIt")
+
 letter1=Font.render("H", False, ORANGE, YELLOW)
 letter2=Font.render("E", False, ORANGE, GREEN)
 letter3=Font.render("M", False, ORANGE, YELLOW)
