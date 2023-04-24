@@ -498,7 +498,6 @@ win.mainloop()
 #        print("[***] Keine Drei-Stern-Frage zu diesem Land gefunden")
 #    print()
 
-# pygame setup
 BLACK = (0, 0, 0)
 LIGHTGREY = (63, 63, 63)
 DARKGREY = (127, 127, 127)
@@ -522,6 +521,11 @@ OCEAN = BLUE + LIGHT_GREEN
 VIOLET = BLUE + LIGHT_RED
 ROSE = RED + LIGHT_BLUE
 
+# pygame setup
+pygame.init()
+
+screen = pygame.display.set_mode((500, 500))
+
 Font=pygame.font.SysFont('timesnewroman',  30)
 
 pygame.display.set_caption("MapInfo")
@@ -537,8 +541,6 @@ letter7=Font.render("H", False, ORANGE, YELLOW)
 i=0
 c=1
 
-pygame.init()
-screen = pygame.display.set_mode((500, 500))
 running = True
 
 while running:
