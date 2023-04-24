@@ -502,23 +502,26 @@ win.mainloop()
 import pygame
 
 # pygame setup
-BLACK = ( 0, 0, 0)
+BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 
-RED = ( 255, 0, 0)
+RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 255, 0)
+LIGHT_RED = (127, 0, 0)
+LIGHT_GREEN = (0, 127, 0)
+LIGHT_BLUE = (0, 127, 0)
 
 YELLOW = RED + GREEN
 MAGENTA = RED + BLUE
 CYAN = GREEN + BLUE
 
-ORANGE = RED + 0.5*GREEN
-LIME = GREEN + 0.5*RED
-SPRINGGREEN = GREEN + 0.5*BLUE
-OCEAN = BLUE + 0.5*GREEN
-VIOLET = BLUE + 0.5*RED
-ROSE = RED + 0.5*BLUE
+ORANGE = RED + LIGHT_GREEN
+LIME = GREEN + LIGHT_RED
+SPRINGGREEN = GREEN + LIGHT_BLUE
+OCEAN = BLUE + LIGHT_GREEN
+VIOLET = BLUE + LIGHT_RED
+ROSE = RED + LIGHT_BLUE
 
 pygame.init()
 screen = pygame.display.set_mode((1280, 720))
@@ -530,9 +533,9 @@ while running:
         if event.type == pygame.QUIT: # pygame.QUIT event means the user clicked X to close your window
             running = False
 
-    screen.fill(LIME) # fill the screen with a color to wipe away anything from last frame
+    screen.fill("Lime") # fill the screen with a color to wipe away anything from last frame
 
-
+    #### start of renderer
     
     letter1=Font.render("H", False, ORANGE, YELLOW)
     letter2=Font.render("E", False, ORANGE, GREEN)
@@ -541,8 +544,8 @@ while running:
     letter5=Font.render("N", False, ORANGE, YELLOW)
     letter6=Font.render("T", False, ORANGE, GREEN)  
     letter7=Font.render("H", False, ORANGE, YELLOW)
-    
 
+    #### end of renderer
 
     pygame.display.flip() # flip() the display to put your work on screen
 
