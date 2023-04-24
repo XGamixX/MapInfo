@@ -478,7 +478,7 @@ print("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(countryCoun
 print("Fügt fehlende Informationen hinzu... " + str(countryCount*3) + "/" + str(countryCount*3) + " (Done)")
 printErrors()
 win.mainloop()
-#while 1==1:
+#while true:
 #    countryNR = ChooseCountry(input("Schreibe den Namen des Landes: "))
 #    try:
 #        print(flag.flagize("DE: " + countries_DE[countryNR] + ", EN: " + countries_EN[countryNR] + ", Native: " + countries_NATIVE[countryNR] + ", Short: " + countries_SHORT[countryNR] + ", Flag: :" + countries_SHORT[countryNR] + ":"))
@@ -511,6 +511,9 @@ while running:
     for event in pygame.event.get(): # poll for events
         if event.type == pygame.QUIT: # pygame.QUIT event means the user clicked X to close your window
             running = False
+
+    noteOneText = pygame.font.Font.render("Text",True,'black',None)
+    screen.blit(noteOneText, dest=(0, 0))
 
     screen.fill("grey") # fill the screen with a color to wipe away anything from last frame
 
