@@ -502,6 +502,24 @@ win.mainloop()
 import pygame
 
 # pygame setup
+BLACK = ( 0, 0, 0)
+WHITE = (255, 255, 255)
+
+RED = ( 255, 0, 0)
+GREEN = (0, 255, 0)
+BLUE = (0, 255, 0)
+
+YELLOW = RED + GREEN
+MAGENTA = RED + BLUE
+CYAN = GREEN + BLUE
+
+ORANGE = RED + 0.5*GREEN
+LIME = GREEN + 0.5*RED
+SPRINGGREEN = GREEN + 0.5*BLUE
+OCEAN = BLUE + 0.5*GREEN
+VIOLET = BLUE + 0.5*RED
+ROSE = RED + 0.5*BLUE
+
 pygame.init()
 screen = pygame.display.set_mode((1280, 720))
 clock = pygame.time.Clock()
@@ -512,9 +530,19 @@ while running:
         if event.type == pygame.QUIT: # pygame.QUIT event means the user clicked X to close your window
             running = False
 
-    Text = pygame.font.Font.render("Text",True,'black',None)
+    screen.fill(LIME) # fill the screen with a color to wipe away anything from last frame
 
-    screen.fill("grey") # fill the screen with a color to wipe away anything from last frame
+
+    
+    letter1=Font.render("H", False, ORANGE, YELLOW)
+    letter2=Font.render("E", False, ORANGE, GREEN)
+    letter3=Font.render("M", False, ORANGE, YELLOW)
+    letter4=Font.render("A", False, ORANGE, GREEN)
+    letter5=Font.render("N", False, ORANGE, YELLOW)
+    letter6=Font.render("T", False, ORANGE, GREEN)  
+    letter7=Font.render("H", False, ORANGE, YELLOW)
+    
+
 
     pygame.display.flip() # flip() the display to put your work on screen
 
