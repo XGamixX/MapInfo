@@ -533,13 +533,13 @@ Font=pygame.font.SysFont('timesnewroman',  30)
 
 pygame.display.set_caption("MapInfo")
 
-letter1=Font.render("H", False, ORANGE, YELLOW)
-letter2=Font.render("E", False, ORANGE, GREEN)
-letter3=Font.render("M", False, ORANGE, YELLOW)
-letter4=Font.render("A", False, ORANGE, GREEN)
-letter5=Font.render("N", False, ORANGE, YELLOW)
-letter6=Font.render("T", False, ORANGE, GREEN)  
-letter7=Font.render("H", False, ORANGE, YELLOW)
+# letter1=Font.render("H", False, ORANGE, YELLOW)
+# letter2=Font.render("E", False, ORANGE, GREEN)
+# letter3=Font.render("M", False, ORANGE, YELLOW)
+# letter4=Font.render("A", False, ORANGE, GREEN)
+# letter5=Font.render("N", False, ORANGE, YELLOW)
+# letter6=Font.render("T", False, ORANGE, GREEN)  
+# letter7=Font.render("H", False, ORANGE, YELLOW)
 
 i=0
 c=1
@@ -560,71 +560,71 @@ while running:
          
     screen.fill("Lime") # fill the screen with a color to wipe away anything from last frame
 
-    if(c%6==0):
-        screen.blit(letter1, (662-i, -162+i))
-        screen.blit(letter2, (639-i, -139+i))
-        screen.blit(letter3, (608-i, -108+i))
-        screen.blit(letter4, (579-i, -79+i))
-        screen.blit(letter5, (552-i, -52+i))
-        screen.blit(letter6, (529-i, -29+i))
-        screen.blit(letter7, (500 -i, 0 + i))
+    # if(c%6==0):
+    #     screen.blit(letter1, (662-i, -162+i))
+    #     screen.blit(letter2, (639-i, -139+i))
+    #     screen.blit(letter3, (608-i, -108+i))
+    #     screen.blit(letter4, (579-i, -79+i))
+    #     screen.blit(letter5, (552-i, -52+i))
+    #     screen.blit(letter6, (529-i, -29+i))
+    #     screen.blit(letter7, (500 -i, 0 + i))
 
-        i+=80
+    #     i+=80
 
-    if(c%6==5):
-        screen.blit(letter1, (-162+i, -162+i)) 
-        screen.blit(letter2, (-135+i, -135+i))
-        screen.blit(letter3, (-110+i, -110+i))
-        screen.blit(letter4, (-79+i, -79+i))
-        screen.blit(letter5, (-52+i, -52+i))
-        screen.blit(letter6, (-27+i, -27+i))
-        screen.blit(letter7, (0+i, 0+i))
+    # if(c%6==5):
+    #     screen.blit(letter1, (-162+i, -162+i)) 
+    #     screen.blit(letter2, (-135+i, -135+i))
+    #     screen.blit(letter3, (-110+i, -110+i))
+    #     screen.blit(letter4, (-79+i, -79+i))
+    #     screen.blit(letter5, (-52+i, -52+i))
+    #     screen.blit(letter6, (-27+i, -27+i))
+    #     screen.blit(letter7, (0+i, 0+i))
 
-        i+=80
+    #     i+=80
 
-    if(c%6==4):
-        screen.blit(letter1, (480, -180+i))
-        screen.blit(letter2, (480, -150+i))
-        screen.blit(letter3, (480, -120+i))
-        screen.blit(letter4, (480, -90+i))
-        screen.blit(letter5, (480, -60+i))
-        screen.blit(letter6, (480, -30+i))
-        screen.blit(letter7, (480, 0+i))
+    # if(c%6==4):
+    #     screen.blit(letter1, (480, -180+i))
+    #     screen.blit(letter2, (480, -150+i))
+    #     screen.blit(letter3, (480, -120+i))
+    #     screen.blit(letter4, (480, -90+i))
+    #     screen.blit(letter5, (480, -60+i))
+    #     screen.blit(letter6, (480, -30+i))
+    #     screen.blit(letter7, (480, 0+i))
 
-        i +=80
+    #     i +=80
 
-    if(c%6==3):
-        screen.blit(letter1, (0, -180+i))
-        screen.blit(letter2, (0, -150+i))
-        screen.blit(letter3, (0, -120+i))
-        screen.blit(letter4, (0, -90+i))
-        screen.blit(letter5, (0, -60+i))
-        screen.blit(letter6, (0, -30+i))
-        screen.blit(letter7, (0, 0+i))
+    # if(c%6==3):
+    #     screen.blit(letter1, (0, -180+i))
+    #     screen.blit(letter2, (0, -150+i))
+    #     screen.blit(letter3, (0, -120+i))
+    #     screen.blit(letter4, (0, -90+i))
+    #     screen.blit(letter5, (0, -60+i))
+    #     screen.blit(letter6, (0, -30+i))
+    #     screen.blit(letter7, (0, 0+i))
 
-        i+=80
+    #     i+=80
 
-    if(c%6==2):
-        screen.blit(letter1, (-124+i, 470))
-        screen.blit(letter2, (-102+i, 470))
-        screen.blit(letter3, (-82+i, 470))
-        screen.blit(letter4, (-58+i, 470))
-        screen.blit(letter5, (-40+i, 470))
-        screen.blit(letter6, (-19+i, 470))
-        screen.blit(letter7, (0+i, 470))
+    # if(c%6==2):
+    #     screen.blit(letter1, (-124+i, 470))
+    #     screen.blit(letter2, (-102+i, 470))
+    #     screen.blit(letter3, (-82+i, 470))
+    #     screen.blit(letter4, (-58+i, 470))
+    #     screen.blit(letter5, (-40+i, 470))
+    #     screen.blit(letter6, (-19+i, 470))
+    #     screen.blit(letter7, (0+i, 470))
 
-        i+=80
+    #     i+=80
 
-    if(c%6==1):
-        screen.blit(letter1, (-124+i, 0))
-        screen.blit(letter2, (-102+i, 0))
-        screen.blit(letter3, (-82+i, 0))
-        screen.blit(letter4, (-58+i, 0))
-        screen.blit(letter5, (-40+i, 0))
-        screen.blit(letter6, (-19+i, 0))
-        screen.blit(letter7, (0+i, 0))
+    # if(c%6==1):
+    #     screen.blit(letter1, (-124+i, 0))
+    #     screen.blit(letter2, (-102+i, 0))
+    #     screen.blit(letter3, (-82+i, 0))
+    #     screen.blit(letter4, (-58+i, 0))
+    #     screen.blit(letter5, (-40+i, 0))
+    #     screen.blit(letter6, (-19+i, 0))
+    #     screen.blit(letter7, (0+i, 0))
 
-        i +=80
+    #     i +=80
 
     pygame.display.update()
 
