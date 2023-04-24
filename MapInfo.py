@@ -536,14 +536,23 @@ while running:
     screen.fill("Lime") # fill the screen with a color to wipe away anything from last frame
 
     #### start of renderer
-    
-    letter1=pygame.font.Font.render("H", False, ORANGE, YELLOW)
-    letter2=pygame.font.Font.render("E", False, ORANGE, GREEN)
-    letter3=pygame.font.Font.render("M", False, ORANGE, YELLOW)
-    letter4=pygame.font.Font.render("A", False, ORANGE, GREEN)
-    letter5=pygame.font.Font.render("N", False, ORANGE, YELLOW)
-    letter6=pygame.font.Font.render("T", False, ORANGE, GREEN)  
-    letter7=pygame.font.Font.render("H", False, ORANGE, YELLOW)
+    Font=pygame.font.SysFont('timesnewroman',  30)
+
+    letter1=Font.render("H", False, ORANGE, YELLOW)
+    letter2=Font.render("E", False, ORANGE, GREEN)
+    letter3=Font.render("M", False, ORANGE, YELLOW)
+    letter4=Font.render("A", False, ORANGE, GREEN)
+    letter5=Font.render("N", False, ORANGE, YELLOW)
+    letter6=Font.render("T", False, ORANGE, GREEN)  
+    letter7=Font.render("H", False, ORANGE, YELLOW)
+
+    screen.blit(letter1, (662-i, -162+i))
+    screen.blit(letter2, (639-i, -139+i))
+    screen.blit(letter3, (608-i, -108+i))
+    screen.blit(letter4, (579-i, -79+i))
+    screen.blit(letter5, (552-i, -52+i))
+    screen.blit(letter6, (529-i, -29+i))
+    screen.blit(letter7, (500 -i, 0 + i))
 
     #### end of renderer
 
