@@ -503,6 +503,8 @@ import pygame
 
 # pygame setup
 BLACK = (0, 0, 0)
+LIGHTGREY = (63, 63, 63)
+DARKGREY = (127, 127, 127)
 WHITE = (255, 255, 255)
 
 RED = (255, 0, 0)
@@ -537,8 +539,7 @@ i=0
 c=1
 
 pygame.init()
-screen = pygame.display.set_mode((1280, 720))
-clock = pygame.time.Clock()
+screen = pygame.display.set_mode((500, 500))
 running = True
 
 while running:
@@ -599,17 +600,6 @@ while running:
 
         i+=80
 
-    if(c%6==1):
-        screen.blit(letter1, (-124+i, 0))
-        screen.blit(letter2, (-102+i, 0))
-        screen.blit(letter3, (-82+i, 0))
-        screen.blit(letter4, (-58+i, 0))
-        screen.blit(letter5, (-40+i, 0))
-        screen.blit(letter6, (-19+i, 0))
-        screen.blit(letter7, (0+i, 0))
-
-        i +=80
-
     if(c%6==2):
         screen.blit(letter1, (-124+i, 470))
         screen.blit(letter2, (-102+i, 470))
@@ -621,11 +611,20 @@ while running:
 
         i+=80
 
+    if(c%6==1):
+        screen.blit(letter1, (-124+i, 0))
+        screen.blit(letter2, (-102+i, 0))
+        screen.blit(letter3, (-82+i, 0))
+        screen.blit(letter4, (-58+i, 0))
+        screen.blit(letter5, (-40+i, 0))
+        screen.blit(letter6, (-19+i, 0))
+        screen.blit(letter7, (0+i, 0))
+
+        i +=80
+
     pygame.display.update()
 
     #### end of renderer
-
-    
 
     pygame.time.wait(500)
 
