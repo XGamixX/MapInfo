@@ -533,21 +533,6 @@ Font=pygame.font.SysFont('timesnewroman',  30)
 
 pygame.display.set_caption("MapInfo")
 
-# letter1=Font.render("H", False, ORANGE, YELLOW)
-# letter2=Font.render("E", False, ORANGE, GREEN)
-# letter3=Font.render("M", False, ORANGE, YELLOW)
-# letter4=Font.render("A", False, ORANGE, GREEN)
-# letter5=Font.render("N", False, ORANGE, YELLOW)
-# letter6=Font.render("T", False, ORANGE, GREEN)  
-# letter7=Font.render("H", False, ORANGE, YELLOW)
-
-text1=Font.render("Länder Quiz!!!!!!!",False,BLACK,WHITE)
-text2=Font.render("1.Frage!!!!!!!!!!",False,BLACK,WHITE)
-text3=Font.render(,False,BLACK,WHITE)
-
-
-i=0
-c=1
 
 running = True
 
@@ -558,78 +543,46 @@ while running:
 
     #### start of renderer
 
-    # if(i>=820):
-    #     i=0
-    #     c+=1
-    #     pygame.time.wait(500)
-         
+    CountryNR = random.randrange(1, len(countries_EN)) - 1
+    QuestionNR = random.randrange(1,len(questions_1[countryNR]))
+
     screen.fill("Lime") # fill the screen with a color to wipe away anything from last frame
 
-    # if(c%6==0):
-    #     screen.blit(letter1, (662-i, -162+i))
-    #     screen.blit(letter2, (639-i, -139+i))
-    #     screen.blit(letter3, (608-i, -108+i))
-    #     screen.blit(letter4, (579-i, -79+i))
-    #     screen.blit(letter5, (552-i, -52+i))
-    #     screen.blit(letter6, (529-i, -29+i))
-    #     screen.blit(letter7, (500 -i, 0 + i))
+    def Antwort_1_right ():
+        global Antwort_1
+        Antwort_1 = (questions_1[countryNR][QuestionNR])
+    
+    def Antwort_2_right ():
+        global Antwort_2
+        Antwort_2 = (questions_1[countryNR][QuestionNR])
 
-    #     i+=80
+    def Antwort_3_right ():
+        global Antwort_3
+        Antwort_3 = (questions_1[countryNR][QuestionNR])
 
-    # if(c%6==5):
-    #     screen.blit(letter1, (-162+i, -162+i)) 
-    #     screen.blit(letter2, (-135+i, -135+i))
-    #     screen.blit(letter3, (-110+i, -110+i))
-    #     screen.blit(letter4, (-79+i, -79+i))
-    #     screen.blit(letter5, (-52+i, -52+i))
-    #     screen.blit(letter6, (-27+i, -27+i))
-    #     screen.blit(letter7, (0+i, 0+i))
+    def Antwort_4_right ():
+        global Antwort_4
+        Antwort_4 = (questions_1[countryNR][QuestionNR])
 
-    #     i+=80
+    switch={
+        1 : Antwort_1_right(),
+        2 : Antwort_2_right(),
+        3 : Antwort_3_right(),
+        4 : Antwort_4_right()
+    }
+    
+    switch.get(random.randrange(1,4))
 
-    # if(c%6==4):
-    #     screen.blit(letter1, (480, -180+i))
-    #     screen.blit(letter2, (480, -150+i))
-    #     screen.blit(letter3, (480, -120+i))
-    #     screen.blit(letter4, (480, -90+i))
-    #     screen.blit(letter5, (480, -60+i))
-    #     screen.blit(letter6, (480, -30+i))
-    #     screen.blit(letter7, (480, 0+i))
+    text1=Font.render("Länder Quiz!!!!!!!",False,BLACK,WHITE)
+    text2=Font.render(FrageNR + ". Frage!!!!!!!!!!",False,BLACK,WHITE)
+    text3=Font.render(Antwort_1,False,BLACK,WHITE)
+    text4=Font.render(Antwort_2,False,BLACK,WHITE)
+    text5=Font.render(Antwort_3,False,BLACK,WHITE)
+    text6=Font.render(Antwort_4,False,BLACK,WHITE)
 
-    #     i +=80
+   # screen.blit(letter7, (0+i, 0))
 
-    # if(c%6==3):
-    #     screen.blit(letter1, (0, -180+i))
-    #     screen.blit(letter2, (0, -150+i))
-    #     screen.blit(letter3, (0, -120+i))
-    #     screen.blit(letter4, (0, -90+i))
-    #     screen.blit(letter5, (0, -60+i))
-    #     screen.blit(letter6, (0, -30+i))
-    #     screen.blit(letter7, (0, 0+i))
 
-    #     i+=80
-
-    # if(c%6==2):
-    #     screen.blit(letter1, (-124+i, 470))
-    #     screen.blit(letter2, (-102+i, 470))
-    #     screen.blit(letter3, (-82+i, 470))
-    #     screen.blit(letter4, (-58+i, 470))
-    #     screen.blit(letter5, (-40+i, 470))
-    #     screen.blit(letter6, (-19+i, 470))
-    #     screen.blit(letter7, (0+i, 470))
-
-    #     i+=80
-
-    # if(c%6==1):
-    #     screen.blit(letter1, (-124+i, 0))
-    #     screen.blit(letter2, (-102+i, 0))
-    #     screen.blit(letter3, (-82+i, 0))
-    #     screen.blit(letter4, (-58+i, 0))
-    #     screen.blit(letter5, (-40+i, 0))
-    #     screen.blit(letter6, (-19+i, 0))
-    #     screen.blit(letter7, (0+i, 0))
-
-    #     i +=80
 
     pygame.display.update()
 
