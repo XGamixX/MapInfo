@@ -626,7 +626,7 @@ def NewQuestion (countryNR, QuestionNR):
     Answer3Text=Font.render(Answer_3, False, BLACK, WHITE)
     Answer4Text=Font.render(Answer_4, False, BLACK, WHITE)
 
-countryNR = random.randrange(249)
+countryNR = random.randrange(1, int(len(countries_DE))) - 1
 NewQuestion(countryNR, random.randrange(1,len(questions_1[countryNR])))
 
 running = True
@@ -637,12 +637,10 @@ while running:
             running = False
 
     #### start of renderer
-    CountryNR = random.randrange(1, len(countries_DE)) - 1
-    QuestionNR = random.randrange(1, len(questions_1[countryNR]))
-
     screen.fill("Lime") # fill the screen with a color to wipe away anything from last frame
 
-    screen.blit(TitleText, (10, 10))
+    screen.blit(TitleText, (0, 0))
+    screen.blit(QuestionText, (0, 20))
 
     pygame.display.update()
 
