@@ -533,36 +533,29 @@ Font=pygame.font.SysFont('timesnewroman',  30)
 
 pygame.display.set_caption("MapInfo")
 
+FrageNR = 1
 
 running = True
 
-while running:
-    for event in pygame.event.get(): # poll for events
-        if event.type == pygame.QUIT: # pygame.QUIT event means the user clicked X to close your window
-            running = False
+def Antwort_1_right ():
+    global Antwort_1
+    Antwort_1 = (questions_1[countryNR][QuestionNR])
 
-    #### start of renderer
+def Antwort_2_right ():
+    global Antwort_2
+    Antwort_2 = (questions_1[countryNR][QuestionNR])
 
-    CountryNR = random.randrange(1, len(countries_EN)) - 1
-    QuestionNR = random.randrange(1,len(questions_1[countryNR]))
+def Antwort_3_right ():
+    global Antwort_3
+    Antwort_3 = (questions_1[countryNR][QuestionNR])
 
-    screen.fill("Lime") # fill the screen with a color to wipe away anything from last frame
+def Antwort_4_right ():
+    global Antwort_4
+    Antwort_4 = (questions_1[countryNR][QuestionNR])
 
-    def Antwort_1_right ():
-        global Antwort_1
-        Antwort_1 = (questions_1[countryNR][QuestionNR])
-    
-    def Antwort_2_right ():
-        global Antwort_2
-        Antwort_2 = (questions_1[countryNR][QuestionNR])
+def NewQuestion ():
 
-    def Antwort_3_right ():
-        global Antwort_3
-        Antwort_3 = (questions_1[countryNR][QuestionNR])
-
-    def Antwort_4_right ():
-        global Antwort_4
-        Antwort_4 = (questions_1[countryNR][QuestionNR])
+    FrageNr += 1
 
     switch={
         1 : Antwort_1_right(),
@@ -580,9 +573,19 @@ while running:
     text5=Font.render(Antwort_3,False,BLACK,WHITE)
     text6=Font.render(Antwort_4,False,BLACK,WHITE)
 
+while running:
+    for event in pygame.event.get(): # poll for events
+        if event.type == pygame.QUIT: # pygame.QUIT event means the user clicked X to close your window
+            running = False
+
+    #### start of renderer
+
+    CountryNR = random.randrange(1, len(countries_EN)) - 1
+    QuestionNR = random.randrange(1,len(questions_1[countryNR]))
+
+    screen.fill("Lime") # fill the screen with a color to wipe away anything from last frame
+
    # screen.blit(letter7, (0+i, 0))
-
-
 
     pygame.display.update()
 
