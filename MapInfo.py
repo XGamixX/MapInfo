@@ -110,6 +110,13 @@ def loadMissingQuestions ():
     return()
 
 def getCountries ():
+    global questions_1
+    global questions_2
+    global questions_3
+    global countries_DE
+    global countries_EN
+    global countries_NATIVE
+    global countries_SHORT
     countries = (list(pycountry.countries)) ##schreiben der länder in eine liste
     i=0
     for country in countries:
@@ -165,6 +172,13 @@ def createNumpy ():
     return()
 
 def findInfo ():
+    global errors
+    countries_EN
+    global countries_EN_np
+    global countries_DE
+    global questions_1
+    global questions_2
+    global questions_3
     i=0
     for countryName_EN in countries_EN:
         i = i + 1
@@ -176,7 +190,7 @@ def findInfo ():
         try:
             captial = countryID.capital()
             try:
-                captial= GoogleTranslator(source = "en", target = "de").translate(captial)
+                captial = GoogleTranslator(source = "en", target = "de").translate(captial)
             except:
                 pass
             question_capital = ("Wie heißt die Hauptstadt von " + countryName_DE + "? [Antwort: " + captial + "]")
@@ -226,6 +240,15 @@ def findInfo ():
     return()
 
 def addInfo ():
+    global manualQuestions_1
+    global manualQuestions_2
+    global manualQuestions_3
+    global missingQuestions_1
+    global missingQuestions_2
+    global missingQuestions_3
+    global questions_1
+    global questions_2
+    global questions_3
     i = 0
     for country in manualQuestions_1:
         i = i + 1
@@ -357,12 +380,22 @@ def addInfo ():
     return()
 
 def printErrors ():
+    global errors
     for error in errors:
         print(error)
     print()
     return()
 
 def ChooseCountry (countryName):
+    global countries_DE
+    global countries_EN
+    global countries_NATIVE
+    global countries_SHORT
+    global countries_DE_np
+    global countries_EN_np
+    global countries_NATIVE_np
+    global countries_SHORT_np
+
     countryName = str(countryName).capitalize()
 
     try:
@@ -391,6 +424,13 @@ win=tkinter.Tk(className = "MapInfo")
 win.geometry("750x200")
 
 def submitCountry ():
+    global countries_DE
+    global countries_EN
+    global countries_NATIVE
+    global countries_SHORT
+    global questions_1
+    global questions_2
+    global questions_3
     global countryNR
     global countryInput
     input_text = countryInput.get()
@@ -417,6 +457,13 @@ def submitCountry ():
     label_question3.configure(text=question_3)
 
 def saveStuff ():
+    global countries_DE
+    global countries_EN
+    global countries_NATIVE
+    global countries_SHORT
+    global questions_1
+    global questions_2
+    global questions_3
     with open("countries_DE_save.json", "w") as countries_DE_save_file:
         json.dump(countries_DE, countries_DE_save_file)
     with open("countries_EN_save.json", "w") as countries_EN_save_file:
@@ -533,45 +580,54 @@ Font=pygame.font.SysFont('timesnewroman',  30)
 
 pygame.display.set_caption("MapInfo")
 
-FrageNR = 1
+global QuestionCount
+QuestionCount = 0
 
-running = True
+def Answer_1_right (countryNR, QuestionNR):
+    global Answer_1
+    Answer_1 = (questions_1[countryNR][QuestionNR])
 
-def Antwort_1_right ():
-    global Antwort_1
-    Antwort_1 = (questions_1[countryNR][QuestionNR])
+def Answer_2_right (countryNR, QuestionNR):
+    global Answer_2
+    Answer_2 = (questions_1[countryNR][QuestionNR])
 
-def Antwort_2_right ():
-    global Antwort_2
-    Antwort_2 = (questions_1[countryNR][QuestionNR])
+def Answer_3_right (countryNR, QuestionNR):
+    global Answer_3
+    Answer_3 = (questions_1[countryNR][QuestionNR])
 
-def Antwort_3_right ():
-    global Antwort_3
-    Antwort_3 = (questions_1[countryNR][QuestionNR])
+def Answer_4_right (countryNR, QuestionNR):
+    global Answer_4
+    Answer_4 = (questions_1[countryNR][QuestionNR])
 
-def Antwort_4_right ():
-    global Antwort_4
-    Antwort_4 = (questions_1[countryNR][QuestionNR])
-
-def NewQuestion ():
-
-    FrageNr += 1
+def NewQuestion (countryNR, QuestionNR):
+    global QuestionCount
+    QuestionCount += 1
 
     switch={
-        1 : Antwort_1_right(),
-        2 : Antwort_2_right(),
-        3 : Antwort_3_right(),
-        4 : Antwort_4_right()
+        1 : Answer_1_right(countryNR, QuestionNR),
+        2 : Answer_2_right(countryNR, QuestionNR),
+        3 : Answer_3_right(countryNR, QuestionNR),
+        4 : Answer_4_right(countryNR, QuestionNR)
     }
     
     switch.get(random.randrange(1,4))
 
-    text1=Font.render("Länder Quiz!!!!!!!",False,BLACK,WHITE)
-    text2=Font.render(FrageNR + ". Frage!!!!!!!!!!",False,BLACK,WHITE)
-    text3=Font.render(Antwort_1,False,BLACK,WHITE)
-    text4=Font.render(Antwort_2,False,BLACK,WHITE)
-    text5=Font.render(Antwort_3,False,BLACK,WHITE)
-    text6=Font.render(Antwort_4,False,BLACK,WHITE)
+    global TitleText
+    global QuestionText
+    global Answer1Text
+    global Answer2Text
+    global Answer3Text
+    global Answer4Text
+    TitleText=Font.render("Länder Quiz!!!!!!!",False,BLACK,WHITE)
+    QuestionText=Font.render(QuestionCount + ". Frage!!!!!!!!!!",False,BLACK,WHITE)
+    Answer1Text=Font.render(Answer_1,False,BLACK,WHITE)
+    Answer2Text=Font.render(Answer_2,False,BLACK,WHITE)
+    Answer3Text=Font.render(Answer_3,False,BLACK,WHITE)
+    Answer4Text=Font.render(Answer_4,False,BLACK,WHITE)
+
+NewQuestion()
+
+running = True
 
 while running:
     for event in pygame.event.get(): # poll for events
@@ -585,7 +641,7 @@ while running:
 
     screen.fill("Lime") # fill the screen with a color to wipe away anything from last frame
 
-   # screen.blit(letter7, (0+i, 0))
+    screen.blit(TitleText, (10, 10))
 
     pygame.display.update()
 
