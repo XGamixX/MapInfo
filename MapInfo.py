@@ -14,8 +14,8 @@ import numpy
 import random
 import json
 import flag
-import tkinter ##import der libraries
-import pygame
+import tkinter
+import pygame ##import der libraries
 
 global errors
 errors = []
@@ -155,9 +155,9 @@ def getCountries ():
             countryName_SHORT = "/Error/"
         countries_SHORT.append(countryName_SHORT) ##an die liste anhängen
 
-        label_1.configure(text=("Erfindet Länder... " + str(i) + "/" + str(countryCount)))
+        # label_1.configure(text=("Erfindet Länder... " + str(i) + "/" + str(countryCount)))
         print("Erfindet Länder... " + str(i) + "/" + str(countryCount))
-        win.update() ##updated das fenster
+        # win.update() ##updated das fenster
     return()
 
 def createNumpy ():
@@ -232,11 +232,11 @@ def findInfo ():
             errors.remove("Konnte keine Informationen zum Kontinent von [" + countryName_DE + "] / [" + countryName_EN + "] finden")
             errors.append("Konnte keine Informationen zu [" + countryName_DE + "] / [" + countryName_EN + "] finden")
 
-        label_1.configure(text=("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
-        label_2.configure(text=("Lädt Infos aus dem Darknet runter... " + str(i) + "/" + str(countryCount)))
+        # label_1.configure(text=("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
+        # label_2.configure(text=("Lädt Infos aus dem Darknet runter... " + str(i) + "/" + str(countryCount)))
         print("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
         print("Läd Infos aus dem Darknet runter... " + str(i) + "/" + str(countryCount))
-        win.update() ##updated das fenster
+        # win.update() ##updated das fenster
     return()
 
 def addInfo ():
@@ -261,13 +261,13 @@ def addInfo ():
                 if not question == countryName_EN:
                     questions_1[int(countryNR)].append(question)
 
-                label_1.configure(text=("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
-                label_2.configure(text=("Lädt Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
-                label_3.configure(text=("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(i) + "/" + str(countryCount*3)))
+                # label_1.configure(text=("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
+                # label_2.configure(text=("Lädt Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
+                # label_3.configure(text=("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(i) + "/" + str(countryCount*3)))
                 print("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
                 print("Lädt Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
                 print("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(i) + "/" + str(countryCount*3))
-                win.update() ##updated das fenster
+                # win.update() ##updated das fenster
         except:
             pass
     for country in manualQuestions_2:
@@ -281,13 +281,13 @@ def addInfo ():
                 if not question == countryName_EN:
                     questions_2[countryNR].append(question)
 
-                label_1.configure(text=("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
-                label_2.configure(text=("Lädt Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
-                label_3.configure(text=("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(i) + "/" + str(countryCount*3)))
+                # label_1.configure(text=("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
+                # label_2.configure(text=("Lädt Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
+                # label_3.configure(text=("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(i) + "/" + str(countryCount*3)))
                 print("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
                 print("Lädt Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
                 print("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(i) + "/" + str(countryCount*3))
-                win.update() ##updated das fenster
+                # win.update() ##updated das fenster
         except:
             pass
     for country in manualQuestions_3:
@@ -301,13 +301,13 @@ def addInfo ():
                 if not question == countryName_EN:
                     questions_1[countryNR].append(question)
 
-                label_1.configure(text=("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
-                label_2.configure(text=("Lädt Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
-                label_3.configure(text=("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(i) + "/" + str(countryCount*3)))
+                # label_1.configure(text=("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
+                # label_2.configure(text=("Lädt Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
+                # label_3.configure(text=("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(i) + "/" + str(countryCount*3)))
                 print("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
                 print("Lädt Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
                 print("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(i) + "/" + str(countryCount*3))
-                win.update() ##updated das fenster
+                # win.update() ##updated das fenster
         except:
             pass
     i = 0
@@ -322,15 +322,15 @@ def addInfo ():
                 if not question == countryName_EN:
                     questions_1[countryNR].append(question)
 
-                label_1.configure(text=("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
-                label_2.configure(text=("Lädt Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
-                label_3.configure(text=("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(countryCount*3) + "/" + str(countryCount*3) + " (Done)"))
-                label_4.configure(text=("Fügt fehlende Informationen hinzu... " + str(i) + "/" + str(countryCount*3)))
+                # label_1.configure(text=("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
+                # label_2.configure(text=("Lädt Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
+                # label_3.configure(text=("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(countryCount*3) + "/" + str(countryCount*3) + " (Done)"))
+                # label_4.configure(text=("Fügt fehlende Informationen hinzu... " + str(i) + "/" + str(countryCount*3)))
                 print("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
                 print("Lädt Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
                 print("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(countryCount*3) + "/" + str(countryCount*3) + " (Done)")
                 print("Fügt fehlende Informationen hinzu... " + str(i) + "/" + str(countryCount*3))
-                win.update() ##updated das fenster
+                # win.update() ##updated das fenster
         except:
             pass
     for country in missingQuestions_2:
@@ -344,15 +344,15 @@ def addInfo ():
                 if not question == countryName_EN:
                     questions_2[countryNR].append(question)
 
-                label_1.configure(text=("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
-                label_2.configure(text=("Lädt Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
-                label_3.configure(text=("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(countryCount*3) + "/" + str(countryCount*3) + " (Done)"))
-                label_4.configure(text=("Fügt fehlende Informationen hinzu... " + str(i) + "/" + str(countryCount*3)))
+                # label_1.configure(text=("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
+                # label_2.configure(text=("Lädt Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
+                # label_3.configure(text=("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(countryCount*3) + "/" + str(countryCount*3) + " (Done)"))
+                # label_4.configure(text=("Fügt fehlende Informationen hinzu... " + str(i) + "/" + str(countryCount*3)))
                 print("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
                 print("Lädt Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
                 print("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(countryCount*3) + "/" + str(countryCount*3) + " (Done)")
                 print("Fügt fehlende Informationen hinzu... " + str(i) + "/" + str(countryCount*3))
-                win.update() ##updated das fenster
+                # win.update() ##updated das fenster
         except:
             pass
     for country in missingQuestions_3:
@@ -366,15 +366,15 @@ def addInfo ():
                 if not question == countryName_EN:
                     questions_3[countryNR].append(question)
                 
-                label_1.configure(text=("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
-                label_2.configure(text=("Lädt Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
-                label_3.configure(text=("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(countryCount*3) + "/" + str(countryCount*3) + " (Done)"))
-                label_4.configure(text=("Fügt fehlende Informationen hinzu... " + str(i) + "/" + str(countryCount*3)))
+                # label_1.configure(text=("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
+                # label_2.configure(text=("Lädt Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
+                # label_3.configure(text=("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(countryCount*3) + "/" + str(countryCount*3) + " (Done)"))
+                # label_4.configure(text=("Fügt fehlende Informationen hinzu... " + str(i) + "/" + str(countryCount*3)))
                 print("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
                 print("Lädt Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
                 print("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(countryCount*3) + "/" + str(countryCount*3) + " (Done)")
                 print("Fügt fehlende Informationen hinzu... " + str(i) + "/" + str(countryCount*3))
-                win.update() ##updated das fenster
+                # win.update() ##updated das fenster
         except:
             pass
     return()
@@ -420,8 +420,8 @@ def ChooseCountry (countryName):
     countryNR = countryNR[0][0]
     return(countryNR)
 
-win=tkinter.Tk(className = "MapInfo")
-win.geometry("750x200")
+# win=tkinter.Tk(className = "MapInfo")
+# win.geometry("750x200")
 
 def submitCountry ():
     global countries_DE
@@ -451,10 +451,10 @@ def submitCountry ():
         question_3 = "[***] " + questions_3[countryNR][random.randrange(1,len(questions_3[countryNR]))]
     except:
         question_3 = "[***] Keine Drei-Stern-Frage zu diesem Land gefunden"
-    label_names.configure(text=countryNames)
-    label_question1.configure(text=question_1)
-    label_question2.configure(text=question_2)
-    label_question3.configure(text=question_3)
+    # label_names.configure(text=countryNames)
+    # label_question1.configure(text=question_1)
+    # label_question2.configure(text=question_2)
+    # label_question3.configure(text=question_3)
 
 def saveStuff ():
     global countries_DE
@@ -479,29 +479,29 @@ def saveStuff ():
     with open("questions_3_save.json", "w") as questions_3_save_file:
         json.dump(questions_3, questions_3_save_file)
 
-label_1 = tkinter.Label(win, text="")
-label_1.grid(row=0)
-label_2 = tkinter.Label(win, text="")
-label_2.grid(row=1)
-label_3 = tkinter.Label(win, text="")
-label_3.grid(row=2)
-label_4 = tkinter.Label(win, text="")
-label_4.grid(row=3)
-textLabel = tkinter.Label(win, text="Schreibe den Namen des Landes: ")
-textLabel.grid(row=4, column=0)
-countryInput = tkinter.Entry(win)
-countryInput.grid(row=4, column=1)
-button = tkinter.Button(win, text="Suche nach Fragen", command=submitCountry)
-button.grid(row=4, column=2)
-label_names = tkinter.Label(win, text="")
-label_names.grid(row=5)
-label_question1 = tkinter.Label(win, text="")
-label_question1.grid(row=6)
-label_question2 = tkinter.Label(win, text="")
-label_question2.grid(row=7)
-label_question3 = tkinter.Label(win, text="")
-label_question3.grid(row=8)
-win.update() ##updated das fenster
+# label_1 = tkinter.Label(win, text="")
+# label_1.grid(row=0)
+# label_2 = tkinter.Label(win, text="")
+# label_2.grid(row=1)
+# label_3 = tkinter.Label(win, text="")
+# label_3.grid(row=2)
+# label_4 = tkinter.Label(win, text="")
+# label_4.grid(row=3)
+# textLabel = tkinter.Label(win, text="Schreibe den Namen des Landes: ")
+# textLabel.grid(row=4, column=0)
+# countryInput = tkinter.Entry(win)
+# countryInput.grid(row=4, column=1)
+# button = tkinter.Button(win, text="Suche nach Fragen", command=submitCountry)
+# button.grid(row=4, column=2)
+# label_names = tkinter.Label(win, text="")
+# label_names.grid(row=5)
+# label_question1 = tkinter.Label(win, text="")
+# label_question1.grid(row=6)
+# label_question2 = tkinter.Label(win, text="")
+# label_question2.grid(row=7)
+# label_question3 = tkinter.Label(win, text="")
+# label_question3.grid(row=8)
+# win.update() ##updated das fenster
 
 try:
     importStuff()
@@ -515,16 +515,16 @@ except:
     addInfo()
     saveStuff()
 
-label_1.configure(text=("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
-label_2.configure(text=("Läd Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
-label_3.configure(text=("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(countryCount*3) + "/" + str(countryCount*3) + " (Done)"))
-label_4.configure(text=("Fügt fehlende Informationen hinzu... " + str(countryCount*3) + "/" + str(countryCount*3) + " (Done)"))
+# label_1.configure(text=("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
+# label_2.configure(text=("Läd Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
+# label_3.configure(text=("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(countryCount*3) + "/" + str(countryCount*3) + " (Done)"))
+# label_4.configure(text=("Fügt fehlende Informationen hinzu... " + str(countryCount*3) + "/" + str(countryCount*3) + " (Done)"))
 print("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
 print("Läd Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)")
 print("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(countryCount*3) + "/" + str(countryCount*3) + " (Done)")
 print("Fügt fehlende Informationen hinzu... " + str(countryCount*3) + "/" + str(countryCount*3) + " (Done)")
 printErrors()
-win.mainloop()
+# win.mainloop()
 #while true:
 #    countryNR = ChooseCountry(input("Schreibe den Namen des Landes: "))
 #    try:
