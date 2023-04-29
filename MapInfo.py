@@ -576,7 +576,7 @@ pygame.init()
 
 screen = pygame.display.set_mode((500, 500))
 
-Font=pygame.font.SysFont('timesnewroman',  30)
+Font = pygame.font.SysFont('timesnewroman',  30)
 
 pygame.display.set_caption("MapInfo")
 
@@ -618,14 +618,16 @@ def NewQuestion (countryNR, QuestionNR):
     global Answer2Text
     global Answer3Text
     global Answer4Text
-    TitleText=Font.render("Länder Quiz!!!!!!!",False,BLACK,WHITE)
-    QuestionText=Font.render(QuestionCount + ". Frage!!!!!!!!!!",False,BLACK,WHITE)
-    Answer1Text=Font.render(Answer_1,False,BLACK,WHITE)
-    Answer2Text=Font.render(Answer_2,False,BLACK,WHITE)
-    Answer3Text=Font.render(Answer_3,False,BLACK,WHITE)
-    Answer4Text=Font.render(Answer_4,False,BLACK,WHITE)
+    TitleText=Font.render("Länder Quiz!!!!!!!", False, BLACK, WHITE)
+    QuestionText_text = str(QuestionCount) + ". Frage!!!!!!!!!!"
+    QuestionText=Font.render(QuestionText_text, False, BLACK, WHITE)
+    Answer1Text=Font.render(Answer_1, False, BLACK, WHITE)
+    Answer2Text=Font.render(Answer_2, False, BLACK, WHITE)
+    Answer3Text=Font.render(Answer_3, False, BLACK, WHITE)
+    Answer4Text=Font.render(Answer_4, False, BLACK, WHITE)
 
-NewQuestion()
+countryNR = random.randrange(249)
+NewQuestion(countryNR, random.randrange(1,len(questions_1[countryNR])))
 
 running = True
 
@@ -635,9 +637,8 @@ while running:
             running = False
 
     #### start of renderer
-
-    CountryNR = random.randrange(1, len(countries_EN)) - 1
-    QuestionNR = random.randrange(1,len(questions_1[countryNR]))
+    CountryNR = random.randrange(1, len(countries_DE)) - 1
+    QuestionNR = random.randrange(1, len(questions_1[countryNR]))
 
     screen.fill("Lime") # fill the screen with a color to wipe away anything from last frame
 
