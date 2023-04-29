@@ -640,7 +640,7 @@ while running:
     screen.fill("Lime") # fill the screen with a color to wipe away anything from last frame
 
     screen.blit(TitleText, (0, 0))
-    screen.blit(QuestionText, (0, 20))
+    screen.blit(QuestionText, (0, 50))
 
     pygame.display.update()
 
