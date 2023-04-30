@@ -10,7 +10,7 @@ pip install pygame
 pip install pygame_widgets
 """ ##installation der libraries
 
-from countryinfo import CountryInfo 
+from countryinfo import CountryInfo
 from deep_translator import GoogleTranslator
 import pycountry
 import numpy
@@ -18,9 +18,9 @@ import random
 import json
 import flag
 import tkinter
-import pygame ##import der libraries
+import pygame
 import pygame_widgets
-from pygame_widgets.button import Button
+from pygame_widgets.button import Button ##import der libraries
 
 global errors
 errors = []
