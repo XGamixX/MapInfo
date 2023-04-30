@@ -615,7 +615,7 @@ def Answer4_right (countryNR, questionNR):
     Answer4Text_text = ("Antwort 4: " + questions_1[countryNR][questionNR])
 
 def NewQuestion ():
-    countryNR = randrange(1, int(len(countries_DE))) - 1
+    countryNR = randrange(0, int(len(countries_DE))) - 1
     print(countryNR)
     questionNR = randrange(1, (int(len(questions_1[countryNR])) - 1))
     print(questionNR)
