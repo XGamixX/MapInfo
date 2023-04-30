@@ -7,6 +7,7 @@ pip install deep_translator
 pip install numpy
 pip install pip install emoji-country-flag
 pip install pygame
+pip install pygame_widgets
 """ ##installation der libraries
 
 from countryinfo import CountryInfo 
@@ -18,6 +19,8 @@ import json
 import flag
 import tkinter
 import pygame ##import der libraries
+import pygame_widgets
+from pygame_widgets.button import Button
 
 global errors
 errors = []
@@ -598,6 +601,14 @@ Font = pygame.font.SysFont('timesnewroman',  20)
 
 pygame.display.set_caption("MapInfo")
 
+button = Button(
+    screen, 100, 100, 300, 150, text='Hello',
+    fontSize=50, margin=20,
+    inactiveColour=(255, 0, 0),
+    pressedColour=(0, 0, 255), radius=20,
+    onClick=lambda: print('Click')
+)
+
 global QuestionCount
 QuestionCount = 0
 
@@ -665,17 +676,22 @@ running = True
 i = 0
 
 while running:
-    for event in pygame.event.get(): # poll for events
+
+    i += 1
+
+    events = pygame.event.get()
+    for event in events: # poll for events
         if event.type == pygame.QUIT: # pygame.QUIT event means the user clicked X to close your window
             running = False
 
-    i += 1
+    screen.fill("Lime") # fill the screen with a color to wipe away anything from last frame
+
+    pygame_widgets.update(events)
 
     if i%100 == 0:
         NewQuestion()
 
     #### start of renderer
-    screen.fill("Lime") # fill the screen with a color to wipe away anything from last frame
 
     screen.blit(TitleText, (0, 0))
     screen.blit(questionNRText, (0, 50))
