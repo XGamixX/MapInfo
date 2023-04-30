@@ -550,6 +550,8 @@ printErrors()
 #        print("[***] Keine Drei-Stern-Frage zu diesem Land gefunden")
 #    print()
 
+print(questions_1[27])
+
 def merge_colors (color1, color2):
     return([i+j for i,j in zip(color1, color2)])
 
@@ -615,34 +617,37 @@ def Answer4_right (countryNR, questionNR):
     Answer4Text_text = ("Antwort 4: " + questions_1[countryNR][questionNR])
 
 def NewQuestion ():
-    countryNR = randrange(0, int(len(countries_DE))) - 1
-    print(countryNR)
-    questionNR = randrange(1, (int(len(questions_1[countryNR])) - 1))
-    print(questionNR)
+    try:
+        countryNR = randrange(0, int(len(countries_DE))) - 1
+        print(countryNR)
+        questionNR = randrange(1, (int(len(questions_1[countryNR])) - 1))
+        print(questionNR)
 
-    global QuestionCount
-    QuestionCount += 1
+        global QuestionCount
+        QuestionCount += 1
 
-    randomizeAnswers()
+        randomizeAnswers()
 
-    random.choice([Answer1_right, Answer2_right, Answer3_right, Answer4_right])(countryNR, questionNR)
+        random.choice([Answer1_right, Answer2_right, Answer3_right, Answer4_right])(countryNR, questionNR)
 
-    global TitleText
-    global questionNRText
-    global QuestionText
-    global Answer1Text
-    global Answer2Text
-    global Answer3Text
-    global Answer4Text
-    TitleText=Font.render("Länder Quiz!!!!!!!", False, BLACK, WHITE)
-    questionNRText_text = str(QuestionCount) + ". Frage!!!!!!!!!!"
-    questionNRText=Font.render(questionNRText_text, False, BLACK, WHITE)
-    QuestionText_text = questions_1[countryNR][questionNR]
-    QuestionText=Font.render(QuestionText_text, False, BLACK, WHITE)
-    Answer1Text=Font.render(Answer1Text_text, False, BLACK, WHITE)
-    Answer2Text=Font.render(Answer2Text_text, False, BLACK, WHITE)
-    Answer3Text=Font.render(Answer3Text_text, False, BLACK, WHITE)
-    Answer4Text=Font.render(Answer4Text_text, False, BLACK, WHITE)
+        global TitleText
+        global questionNRText
+        global QuestionText
+        global Answer1Text
+        global Answer2Text
+        global Answer3Text
+        global Answer4Text
+        TitleText=Font.render("Länder Quiz!!!!!!!", False, BLACK, WHITE)
+        questionNRText_text = str(QuestionCount) + ". Frage!!!!!!!!!!"
+        questionNRText=Font.render(questionNRText_text, False, BLACK, WHITE)
+        QuestionText_text = questions_1[countryNR][questionNR]
+        QuestionText=Font.render(QuestionText_text, False, BLACK, WHITE)
+        Answer1Text=Font.render(Answer1Text_text, False, BLACK, WHITE)
+        Answer2Text=Font.render(Answer2Text_text, False, BLACK, WHITE)
+        Answer3Text=Font.render(Answer3Text_text, False, BLACK, WHITE)
+        Answer4Text=Font.render(Answer4Text_text, False, BLACK, WHITE)
+    except:
+        NewQuestion()
 
 NewQuestion()
 
