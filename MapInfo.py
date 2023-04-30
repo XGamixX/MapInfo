@@ -1,3 +1,5 @@
+reloadQuestions = False
+
 """
 pip install countryinfo
 pip install pycountry
@@ -508,17 +510,26 @@ def saveStuff ():
 # label_question3.grid(row=8)
 # win.update() ##updated das fenster
 
-try:
-    importStuff()
-    createNumpy()
-except:
-    getCountries()
-    createNumpy()
-    loadManualQuestions()
-    loadMissingQuestions()
-    findInfo()
-    addInfo()
-    saveStuff()
+if reloadQuestions:
+        getCountries()
+        createNumpy()
+        loadManualQuestions()
+        loadMissingQuestions()
+        findInfo()
+        addInfo()
+        saveStuff()
+else:
+    try:
+        importStuff()
+        createNumpy()
+    except:
+        getCountries()
+        createNumpy()
+        loadManualQuestions()
+        loadMissingQuestions()
+        findInfo()
+        addInfo()
+        saveStuff()
 
 # label_1.configure(text=("Erfindet Länder... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
 # label_2.configure(text=("Läd Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(countryCount) + " (Done)"))
@@ -549,8 +560,6 @@ printErrors()
 #    except:
 #        print("[***] Keine Drei-Stern-Frage zu diesem Land gefunden")
 #    print()
-
-print(questions_1[27])
 
 def merge_colors (color1, color2):
     return([i+j for i,j in zip(color1, color2)])
@@ -619,9 +628,7 @@ def Answer4_right (countryNR, questionNR):
 def NewQuestion ():
     try:
         countryNR = randrange(0, int(len(countries_DE))) - 1
-        print(countryNR)
         questionNR = randrange(1, (int(len(questions_1[countryNR])) - 1))
-        print(questionNR)
 
         global QuestionCount
         QuestionCount += 1
