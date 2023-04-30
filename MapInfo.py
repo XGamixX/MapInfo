@@ -588,10 +588,10 @@ def randomizeAnswers ():
     global Answer2Text_text
     global Answer3Text_text
     global Answer4Text_text
-    Answer1Text_text = ("Antwort 3: " + "1")
-    Answer2Text_text = ("Antwort 3: " + "2")
+    Answer1Text_text = ("Antwort 1: " + "1")
+    Answer2Text_text = ("Antwort 2: " + "2")
     Answer3Text_text = ("Antwort 3: " + "3")
-    Answer4Text_text = ("Antwort 3: " + "4")
+    Answer4Text_text = ("Antwort 4: " + "4")
 
 def Answer1_right (countryNR, QuestionNR):
     global Answer1Text_text
@@ -615,14 +615,7 @@ def NewQuestion (countryNR, QuestionNR):
 
     randomizeAnswers()
 
-    switch={
-        1 : Answer1_right(countryNR, QuestionNR),
-        2 : Answer2_right(countryNR, QuestionNR),
-        3 : Answer3_right(countryNR, QuestionNR),
-        4 : Answer4_right(countryNR, QuestionNR)
-    }
-    
-    switch.get(random.randrange(1,4))
+    random.choice([Answer1_right, Answer2_right, Answer3_right, Answer4_right])(countryNR, QuestionNR)
 
     global TitleText
     global QuestionNRText
@@ -642,7 +635,7 @@ def NewQuestion (countryNR, QuestionNR):
     Answer4Text=Font.render(Answer4Text_text, False, BLACK, WHITE)
 
 countryNR = random.randrange(1, int(len(countries_DE))) - 1
-NewQuestion(countryNR, random.randrange(1,len(questions_1[countryNR])))
+NewQuestion(countryNR, (random.randrange(1,len(questions_1[countryNR])) - 1))
 
 running = True
 
@@ -666,6 +659,6 @@ while running:
 
     #### end of renderer
 
-    pygame.time.wait(500)
+    pygame.time.wait(10)
 
 pygame.quit()
