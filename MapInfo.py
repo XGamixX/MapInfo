@@ -583,48 +583,59 @@ pygame.display.set_caption("MapInfo")
 global QuestionCount
 QuestionCount = 0
 
-def Answer_1_right (countryNR, QuestionNR):
-    global Answer_1
-    Answer_1 = (questions_1[countryNR][QuestionNR])
+def randomizeAnswers ():
+    global Answer1Text_text
+    global Answer2Text_text
+    global Answer3Text_text
+    global Answer4Text_text
 
-def Answer_2_right (countryNR, QuestionNR):
-    global Answer_2
-    Answer_2 = (questions_1[countryNR][QuestionNR])
+def Answer1_right (countryNR, QuestionNR):
+    global Answer1Text_text
+    Answer1Text_text = (questions_1[countryNR][QuestionNR])
 
-def Answer_3_right (countryNR, QuestionNR):
-    global Answer_3
-    Answer_3 = (questions_1[countryNR][QuestionNR])
+def Answer2_right (countryNR, QuestionNR):
+    global Answer2Text_text
+    Answer2Text_text = (questions_1[countryNR][QuestionNR])
 
-def Answer_4_right (countryNR, QuestionNR):
-    global Answer_4
-    Answer_4 = (questions_1[countryNR][QuestionNR])
+def Answer3_right (countryNR, QuestionNR):
+    global Answer3Text_text
+    Answer3Text_text = (questions_1[countryNR][QuestionNR])
+
+def Answer4_right (countryNR, QuestionNR):
+    global Answer4Text_text
+    Answer4Text_text = (questions_1[countryNR][QuestionNR])
 
 def NewQuestion (countryNR, QuestionNR):
     global QuestionCount
     QuestionCount += 1
 
+    randomizeAnswers()
+
     switch={
-        1 : Answer_1_right(countryNR, QuestionNR),
-        2 : Answer_2_right(countryNR, QuestionNR),
-        3 : Answer_3_right(countryNR, QuestionNR),
-        4 : Answer_4_right(countryNR, QuestionNR)
+        1 : Answer1_right(countryNR, QuestionNR),
+        2 : Answer2_right(countryNR, QuestionNR),
+        3 : Answer3_right(countryNR, QuestionNR),
+        4 : Answer4_right(countryNR, QuestionNR)
     }
     
     switch.get(random.randrange(1,4))
 
     global TitleText
+    global QuestionNRText
     global QuestionText
     global Answer1Text
     global Answer2Text
     global Answer3Text
     global Answer4Text
     TitleText=Font.render("Länder Quiz!!!!!!!", False, BLACK, WHITE)
-    QuestionText_text = str(QuestionCount) + ". Frage!!!!!!!!!!"
+    QuestionNRText_text = str(QuestionCount) + ". Frage!!!!!!!!!!"
+    QuestionNRText=Font.render(QuestionNRText_text, False, BLACK, WHITE)
+    QuestionText_text = questions_1[countryNR][QuestionNR]
     QuestionText=Font.render(QuestionText_text, False, BLACK, WHITE)
-    Answer1Text=Font.render(Answer_1, False, BLACK, WHITE)
-    Answer2Text=Font.render(Answer_2, False, BLACK, WHITE)
-    Answer3Text=Font.render(Answer_3, False, BLACK, WHITE)
-    Answer4Text=Font.render(Answer_4, False, BLACK, WHITE)
+    Answer1Text=Font.render(Answer1Text_text, False, BLACK, WHITE)
+    Answer2Text=Font.render(Answer2Text_text, False, BLACK, WHITE)
+    Answer3Text=Font.render(Answer3Text_text, False, BLACK, WHITE)
+    Answer4Text=Font.render(Answer4Text_text, False, BLACK, WHITE)
 
 countryNR = random.randrange(1, int(len(countries_DE))) - 1
 NewQuestion(countryNR, random.randrange(1,len(questions_1[countryNR])))
@@ -640,7 +651,8 @@ while running:
     screen.fill("Lime") # fill the screen with a color to wipe away anything from last frame
 
     screen.blit(TitleText, (0, 0))
-    screen.blit(QuestionText, (0, 50))
+    screen.blit(QuestionNRText, (0, 50))
+    screen.blit(QuestionText, (0, 100))
 
     pygame.display.update()
 
