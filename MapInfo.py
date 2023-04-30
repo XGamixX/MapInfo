@@ -574,9 +574,9 @@ ROSE = merge_colors(RED, LIGHT_BLUE)
 # pygame setup
 pygame.init()
 
-screen = pygame.display.set_mode((500, 500))
+screen = pygame.display.set_mode((2000, 1000))
 
-Font = pygame.font.SysFont('timesnewroman',  30)
+Font = pygame.font.SysFont('timesnewroman',  20)
 
 pygame.display.set_caption("MapInfo")
 
@@ -588,22 +588,26 @@ def randomizeAnswers ():
     global Answer2Text_text
     global Answer3Text_text
     global Answer4Text_text
+    Answer1Text_text = ("Antwort 3: " + "1")
+    Answer2Text_text = ("Antwort 3: " + "2")
+    Answer3Text_text = ("Antwort 3: " + "3")
+    Answer4Text_text = ("Antwort 3: " + "4")
 
 def Answer1_right (countryNR, QuestionNR):
     global Answer1Text_text
-    Answer1Text_text = (questions_1[countryNR][QuestionNR])
+    Answer1Text_text = ("Antwort 1: " + questions_1[countryNR][QuestionNR])
 
 def Answer2_right (countryNR, QuestionNR):
     global Answer2Text_text
-    Answer2Text_text = (questions_1[countryNR][QuestionNR])
+    Answer2Text_text = ("Antwort 2: " + questions_1[countryNR][QuestionNR])
 
 def Answer3_right (countryNR, QuestionNR):
     global Answer3Text_text
-    Answer3Text_text = (questions_1[countryNR][QuestionNR])
+    Answer3Text_text = ("Antwort 3: " + questions_1[countryNR][QuestionNR])
 
 def Answer4_right (countryNR, QuestionNR):
     global Answer4Text_text
-    Answer4Text_text = (questions_1[countryNR][QuestionNR])
+    Answer4Text_text = ("Antwort 4: " + questions_1[countryNR][QuestionNR])
 
 def NewQuestion (countryNR, QuestionNR):
     global QuestionCount
@@ -653,6 +657,10 @@ while running:
     screen.blit(TitleText, (0, 0))
     screen.blit(QuestionNRText, (0, 50))
     screen.blit(QuestionText, (0, 100))
+    screen.blit(Answer1Text, (0, 150))
+    screen.blit(Answer2Text, (1000, 150))
+    screen.blit(Answer3Text, (0, 200))
+    screen.blit(Answer4Text, (1000, 200))
 
     pygame.display.update()
 
