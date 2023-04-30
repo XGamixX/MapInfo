@@ -590,7 +590,9 @@ ROSE = merge_colors(RED, LIGHT_BLUE)
 # pygame setup
 pygame.init()
 
-screen = pygame.display.set_mode((2000, 1000))
+SCREEN_WIDTH = 1500
+SCREEN_HEIGHT = 500
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
 Font = pygame.font.SysFont('timesnewroman',  20)
 
@@ -679,9 +681,9 @@ while running:
     screen.blit(questionNRText, (0, 50))
     screen.blit(QuestionText, (0, 100))
     screen.blit(Answer1Text, (0, 150))
-    screen.blit(Answer2Text, (1000, 150))
+    screen.blit(Answer2Text, (SCREEN_WIDTH/2, 150))
     screen.blit(Answer3Text, (0, 200))
-    screen.blit(Answer4Text, (1000, 200))
+    screen.blit(Answer4Text, (SCREEN_WIDTH/2, 200))
 
     pygame.display.update()
 
