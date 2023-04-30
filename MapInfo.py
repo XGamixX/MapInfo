@@ -36,6 +36,11 @@ questions_1 = []
 questions_2 = []
 questions_3 = [] ##initialisieren der variablen
 
+def randrange(start, end):
+    if start == end:
+        return(start)
+    return(random.randrange(start, end))
+
 def importStuff ():
     with open("questions_1_save.json", "r") as questions_1_save_file:
         global questions_1
@@ -440,15 +445,15 @@ def submitCountry ():
     except:
         countryNames = "Konnte die alternativen Namen von diesem Land nicht laden"
     try:
-        question_1 = "[*]   " + questions_1[countryNR][random.randrange(1,len(questions_1[countryNR]))]
+        question_1 = "[*]   " + questions_1[countryNR][randrange(1,len(questions_1[countryNR]))]
     except:
         question_1 = "[*]   Keine Ein-Stern-Frage zu diesem Land gefunden"
     try:
-        question_2 = "[**]  " + questions_2[countryNR][random.randrange(1,len(questions_2[countryNR]))]
+        question_2 = "[**]  " + questions_2[countryNR][randrange(1,len(questions_2[countryNR]))]
     except:
         question_2 = "[**]  Keine Zwei-Stern-Frage zu diesem Land gefunden"
     try:
-        question_3 = "[***] " + questions_3[countryNR][random.randrange(1,len(questions_3[countryNR]))]
+        question_3 = "[***] " + questions_3[countryNR][randrange(1,len(questions_3[countryNR]))]
     except:
         question_3 = "[***] Keine Drei-Stern-Frage zu diesem Land gefunden"
     # label_names.configure(text=countryNames)
@@ -532,15 +537,15 @@ printErrors()
 #    except:
 #        pass
 #    try:
-#        print("[*]   " + questions_1[countryNR][random.randrange(1,len(questions_1[countryNR]))])
+#        print("[*]   " + questions_1[countryNR][randrange(1,len(questions_1[countryNR]))])
 #    except:
 #        print("[*]   Keine Ein-Stern-Frage zu diesem Land gefunden")
 #    try:
-#        print("[**]  " + questions_2[countryNR][random.randrange(1,len(questions_2[countryNR]))])
+#        print("[**]  " + questions_2[countryNR][randrange(1,len(questions_2[countryNR]))])
 #    except:
 #        print("[**]  Keine Zwei-Stern-Frage zu diesem Land gefunden")
 #    try:
-#        print("[***] " + questions_3[countryNR][random.randrange(1,len(questions_3[countryNR]))])
+#        print("[***] " + questions_3[countryNR][randrange(1,len(questions_3[countryNR]))])
 #    except:
 #        print("[***] Keine Drei-Stern-Frage zu diesem Land gefunden")
 #    print()
@@ -610,8 +615,10 @@ def Answer4_right (countryNR, questionNR):
     Answer4Text_text = ("Antwort 4: " + questions_1[countryNR][questionNR])
 
 def NewQuestion ():
-    countryNR = random.randrange(1, int(len(countries_DE))) - 1
-    questionNR = random.randrange(1, int(len(questions_1[countryNR]))) - 1
+    countryNR = randrange(1, int(len(countries_DE))) - 1
+    print(countryNR)
+    questionNR = randrange(1, (int(len(questions_1[countryNR])) - 1))
+    print(questionNR)
 
     global QuestionCount
     QuestionCount += 1
