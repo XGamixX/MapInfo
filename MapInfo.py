@@ -42,6 +42,7 @@ questions_2 = []
 questions_3 = [] ##initialisieren der variablen
 
 def randrange(start, end):
+    end += 1
     if start == end:
         return(start)
     return(random.randrange(start, end))
@@ -181,6 +182,19 @@ def createNumpy ():
     countries_SHORT_np = numpy.array(countries_SHORT)
     return()
 
+def append_1 (countryNR, question, correctAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3, wrongAnswer4):
+    global questions_1
+    questions_1[countryNR].append([question, correctAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3, wrongAnswer4])
+
+def append_2 (countryNR, question, correctAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3, wrongAnswer4):
+    global questions_2
+    questions_2[countryNR].append([question, correctAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3, wrongAnswer4])
+
+def append_3 (countryNR, question, correctAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3, wrongAnswer4):
+    global questions_3
+    questions_3[countryNR].append([question, correctAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3, wrongAnswer4])
+
+
 def findInfo ():
     global errors
     countries_EN
@@ -198,27 +212,32 @@ def findInfo ():
         countryName_DE = countries_DE[countryNR]
         e=0
         try:
-            captial = countryID.capital()
+            capital = countryID.capital()
             try:
-                captial = GoogleTranslator(source = "en", target = "de").translate(captial)
+                capital = GoogleTranslator(source = "en", target = "de").translate(capital)
             except:
                 pass
-            question_capital = ("Wie heißt die Hauptstadt von " + countryName_DE + "? [Antwort: " + captial + "]")
-            questions_2[countryNR].append(question_capital)
+            question_capital = ("Wie heißt die Hauptstadt von " + countryName_DE + "?")
+            # questions_2[countryNR].append(question_capital + " [Antwort: " + capital + "]")
+            append_2(countryNR, question_capital, capital, "WrongCapital1", "WrongCapital2", "WrongCapital3", "WrongCapital4")
         except:
             e = e + 1
             errors.append("Konnte keine Informationen zur Hauptstadt von [" + countryName_DE + "] / [" + countryName_EN + "] finden")
         try:
             area = countryID.area()
-            question_area = ("Wie groß ist die Fläche von " + countryName_DE + "? [Antwort: " + str(area) + "km² (" + str(int(area*0.9)) + " - " + str(int(area*1.1)) + ")]")
-            questions_3[countryNR].append(question_area)
+            question_area = ("Wie groß ist die Fläche von " + countryName_DE + "?")
+            correctAnswer_area = (str(area) + "km² (" + str(int(area*0.9)) + " - " + str(int(area*1.1)) + ")]")
+            # questions_3[countryNR].append(question_area + " [Antwort: " + correctAnswer_area + "]")
+            append_3(countryNR, question_area, correctAnswer_area, "WrongArea1", "WrongArea2", "WrongArea3", "WrongArea4")
         except:
             e = e + 1
             errors.append("Konnte keine Informationen zur Fläche von [" + countryName_DE + "] / [" + countryName_EN + "] finden")
         try:
             population = countryID.population()
-            question_population = ("Wie hoch ist die Einwohnerzahl von " + countryName_DE + "? [Antwort: " + str(population) + " (" + str(int(population*0.9)) + " - " + str(int(population*1.1)) + ")]")
-            questions_3[countryNR].append(question_population)
+            question_population = ("Wie hoch ist die Einwohnerzahl von " + countryName_DE + "?")
+            correctAnswer_population = (str(population) + " (" + str(int(population*0.9)) + " - " + str(int(population*1.1)) + ")")
+            # questions_3[countryNR].append(question_population + " [Antwort: " + correctAnswer_population + "]")
+            append_3(countryNR, question_population, correctAnswer_population, "WrongPopulation1", "WrongPopulation2", "WrongPopulation3", "WrongPopulation4")
         except:
             e = e + 1
             errors.append("Konnte keine Informationen zur Einwohnerzahl von [" + countryName_DE + "] / [" + countryName_EN + "] finden")
@@ -230,8 +249,10 @@ def findInfo ():
                 subregion = GoogleTranslator(source = "en", target = "de").translate(subregion)
             except:
                 pass
-            question_continent = ("Auf welchem Kontinent liegt " + countryName_DE + "? [Antwort: " + region + " (" + subregion + ")]")
-            questions_1[countryNR].append(question_continent)
+            question_continent = ("Auf welchem Kontinent liegt " + countryName_DE + "?")
+            correctAnswer_continent = (region + "(" + subregion + ")")
+            # questions_1[countryNR].append(question_continent + " [Antwort: " + correctAnswer_continent + "]")
+            append_1(countryNR, question_continent, correctAnswer_continent, "WrongContinent1", "WrongContinent2", "WrongContinent3", "WrongContinent4")
         except:
             e = e + 1
             errors.append("Konnte keine Informationen zum Kontinent von [" + countryName_DE + "] / [" + countryName_EN + "] finden")
@@ -450,15 +471,15 @@ def submitCountry ():
     except:
         countryNames = "Konnte die alternativen Namen von diesem Land nicht laden"
     try:
-        question_1 = "[*]   " + questions_1[countryNR][randrange(1,len(questions_1[countryNR]))]
+        question_1 = "[*]   " + questions_1[countryNR][randrange(1,len(questions_1[countryNR]) - 1)]
     except:
         question_1 = "[*]   Keine Ein-Stern-Frage zu diesem Land gefunden"
     try:
-        question_2 = "[**]  " + questions_2[countryNR][randrange(1,len(questions_2[countryNR]))]
+        question_2 = "[**]  " + questions_2[countryNR][randrange(1,len(questions_2[countryNR]) - 1)]
     except:
         question_2 = "[**]  Keine Zwei-Stern-Frage zu diesem Land gefunden"
     try:
-        question_3 = "[***] " + questions_3[countryNR][randrange(1,len(questions_3[countryNR]))]
+        question_3 = "[***] " + questions_3[countryNR][randrange(1,len(questions_3[countryNR]) - 1)]
     except:
         question_3 = "[***] Keine Drei-Stern-Frage zu diesem Land gefunden"
     # label_names.configure(text=countryNames)
@@ -551,15 +572,15 @@ printErrors()
 #    except:
 #        pass
 #    try:
-#        print("[*]   " + questions_1[countryNR][randrange(1,len(questions_1[countryNR]))])
+#        print("[*]   " + questions_1[countryNR][randrange(1,len(questions_1[countryNR]) - 1)])
 #    except:
 #        print("[*]   Keine Ein-Stern-Frage zu diesem Land gefunden")
 #    try:
-#        print("[**]  " + questions_2[countryNR][randrange(1,len(questions_2[countryNR]))])
+#        print("[**]  " + questions_2[countryNR][randrange(1,len(questions_2[countryNR]) - 1)])
 #    except:
 #        print("[**]  Keine Zwei-Stern-Frage zu diesem Land gefunden")
 #    try:
-#        print("[***] " + questions_3[countryNR][randrange(1,len(questions_3[countryNR]))])
+#        print("[***] " + questions_3[countryNR][randrange(1,len(questions_3[countryNR]) - 1)])
 #    except:
 #        print("[***] Keine Drei-Stern-Frage zu diesem Land gefunden")
 #    print()
@@ -612,43 +633,80 @@ button = Button(
 global QuestionCount
 QuestionCount = 0
 
-def randomizeAnswers ():
+def wrongAnswers (countryNR, questionNR, questionDifficulty):
     global Answer1Text_text
     global Answer2Text_text
     global Answer3Text_text
     global Answer4Text_text
-    Answer1Text_text = ("Antwort 1: " + "1")
-    Answer2Text_text = ("Antwort 2: " + "2")
-    Answer3Text_text = ("Antwort 3: " + "3")
-    Answer4Text_text = ("Antwort 4: " + "4")
+    if questionDifficulty == 1:
+        Answer1Text_text = ("Antwort 1:" + questions_1[countryNR][questionNR][2])
+        Answer2Text_text = ("Antwort 2:" + questions_1[countryNR][questionNR][3])
+        Answer3Text_text = ("Antwort 3:" + questions_1[countryNR][questionNR][4])
+        Answer4Text_text = ("Antwort 4:" + questions_1[countryNR][questionNR][5])
+    if questionDifficulty == 2:
+        Answer1Text_text = ("Antwort 1:" + questions_2[countryNR][questionNR][2])
+        Answer2Text_text = ("Antwort 2:" + questions_2[countryNR][questionNR][3])
+        Answer3Text_text = ("Antwort 3:" + questions_2[countryNR][questionNR][4])
+        Answer4Text_text = ("Antwort 4:" + questions_2[countryNR][questionNR][5])
+    if questionDifficulty == 3:
+        Answer1Text_text = ("Antwort 1:" + questions_3[countryNR][questionNR][2])
+        Answer2Text_text = ("Antwort 2:" + questions_3[countryNR][questionNR][3])
+        Answer3Text_text = ("Antwort 3:" + questions_3[countryNR][questionNR][4])
+        Answer4Text_text = ("Antwort 4:" + questions_3[countryNR][questionNR][5])
 
-def Answer1_right (countryNR, questionNR):
+def Answer1_right (countryNR, questionNR, questionDifficulty):
     global Answer1Text_text
-    Answer1Text_text = ("Antwort 1: " + questions_1[countryNR][questionNR])
+    if questionDifficulty == 1:
+        Answer1Text_text = ("Antwort 1: " + questions_1[countryNR][questionNR][1])
+    if questionDifficulty == 2:
+        Answer1Text_text = ("Antwort 1: " + questions_2[countryNR][questionNR][1])
+    if questionDifficulty == 3:
+        Answer1Text_text = ("Antwort 1: " + questions_3[countryNR][questionNR][1])
 
-def Answer2_right (countryNR, questionNR):
+def Answer2_right (countryNR, questionNR, questionDifficulty):
     global Answer2Text_text
-    Answer2Text_text = ("Antwort 2: " + questions_1[countryNR][questionNR])
+    if questionDifficulty == 1:
+        Answer2Text_text = ("Antwort 2: " + questions_1[countryNR][questionNR][1])
+    if questionDifficulty == 2:
+        Answer2Text_text = ("Antwort 2: " + questions_2[countryNR][questionNR][1])
+    if questionDifficulty == 3:
+        Answer2Text_text = ("Antwort 2: " + questions_3[countryNR][questionNR][1])
 
-def Answer3_right (countryNR, questionNR):
+def Answer3_right (countryNR, questionNR, questionDifficulty):
     global Answer3Text_text
-    Answer3Text_text = ("Antwort 3: " + questions_1[countryNR][questionNR])
+    if questionDifficulty == 1:
+        Answer3Text_text = ("Antwort 3: " + questions_1[countryNR][questionNR][1])
+    if questionDifficulty == 2:
+        Answer3Text_text = ("Antwort 3: " + questions_2[countryNR][questionNR][1])
+    if questionDifficulty == 3:
+        Answer3Text_text = ("Antwort 3: " + questions_3[countryNR][questionNR][1])
 
-def Answer4_right (countryNR, questionNR):
+def Answer4_right (countryNR, questionNR, questionDifficulty):
     global Answer4Text_text
-    Answer4Text_text = ("Antwort 4: " + questions_1[countryNR][questionNR])
+    if questionDifficulty == 1:
+        Answer4Text_text = ("Antwort 4: " + questions_1[countryNR][questionNR][1])
+    if questionDifficulty == 2:
+        Answer4Text_text = ("Antwort 4: " + questions_2[countryNR][questionNR][1])
+    if questionDifficulty == 3:
+        Answer4Text_text = ("Antwort 4: " + questions_3[countryNR][questionNR][1])
 
 def NewQuestion ():
     try:
         countryNR = randrange(0, int(len(countries_DE))) - 1
-        questionNR = randrange(1, (int(len(questions_1[countryNR])) - 1))
+        questionDifficulty = randrange(0, 3)
+        if questionDifficulty == 1:
+            questionNR = randrange(1, (int(len(questions_1[countryNR])) - 1))
+        if questionDifficulty == 2:
+            questionNR = randrange(1, (int(len(questions_2[countryNR])) - 1)) 
+        if questionDifficulty == 3:
+            questionNR = randrange(1, (int(len(questions_3[countryNR])) - 1))
 
         global QuestionCount
         QuestionCount += 1
 
-        randomizeAnswers()
+        wrongAnswers(countryNR, questionNR, questionDifficulty)
 
-        random.choice([Answer1_right, Answer2_right, Answer3_right, Answer4_right])(countryNR, questionNR)
+        random.choice([Answer1_right, Answer2_right, Answer3_right, Answer4_right])(countryNR, questionNR, questionDifficulty)
 
         global TitleText
         global questionNRText
@@ -660,13 +718,19 @@ def NewQuestion ():
         TitleText=Font.render("Länder Quiz!!!!!!!", False, BLACK, WHITE)
         questionNRText_text = str(QuestionCount) + ". Frage!!!!!!!!!!"
         questionNRText=Font.render(questionNRText_text, False, BLACK, WHITE)
-        QuestionText_text = questions_1[countryNR][questionNR]
+        if questionDifficulty == 1:
+            QuestionText_text = questions_1[countryNR][questionNR][0]
+        if questionDifficulty == 2:
+            QuestionText_text = questions_2[countryNR][questionNR][0]
+        if questionDifficulty == 3:
+            QuestionText_text = questions_3[countryNR][questionNR][0]
         QuestionText=Font.render(QuestionText_text, False, BLACK, WHITE)
         Answer1Text=Font.render(Answer1Text_text, False, BLACK, WHITE)
         Answer2Text=Font.render(Answer2Text_text, False, BLACK, WHITE)
         Answer3Text=Font.render(Answer3Text_text, False, BLACK, WHITE)
         Answer4Text=Font.render(Answer4Text_text, False, BLACK, WHITE)
     except:
+        QuestionCount -=1
         NewQuestion()
 
 NewQuestion()
