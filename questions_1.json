@@ -1,6 +1,6 @@
 [
-    ["United kingdom", "Wo wohnte die Queen [Antwort: Buckingham Palace]", "Wie heißt die berühmte Glocke in London [Antwort: Big Ben]"],
-    ["United states", "Welcher Ort in den USA ist für seine Casinos bekannt [Antwort: Las Vegas]", "Wie heißt der Präsident der USA [Antwort: Joe Biden]"],
-    ["Japan", "Wie nennt man animierte Serien aus Japan [Antwort Anime]"],
-    ["Germany", "Wie heißt der Bundeskanzler [Antwort: Olaf Scholz]"]
+    ["United kingdom", ["Wo wohnte die Queen?", "Buckingham Palace", "WrongAnswer1", "WrongAnswer2", "WrongAnswer3", "WrongAnswer4"], ["Wie heißt die berühmte Glocke in London?", "Big Ben", "London Eye", "WrongAnswer2", "WrongAnswer3", "WrongAnswer4"]],
+    ["United states", ["Welcher Ort in den USA ist für seine Casinos bekannt?", "Las Vegas", "New York", "WrongAnswer3", "WrongAnswer4"], ["Wie heißt der Präsident der USA?", "Joe Biden", "Donald Trump", "Barrack Obama", "WrongAnswer3", "WrongAnswer4"]],
+    ["Japan", ["Wie nennt man animierte Serien aus Japan?", "Anime", "WrongAnswer1", "WrongAnswer2", "WrongAnswer3", "WrongAnswer4"]],
+    ["Germany", ["Wie heißt der Bundeskanzler?", "Olaf Scholz", "Angela Merkel", "WrongAnswer2", "WrongAnswer3", "WrongAnswer4"]]
 ]
