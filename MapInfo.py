@@ -211,7 +211,7 @@ def findInfo ():
         try:
             area = countryID.area()
             question_area = ("Wie groß ist die Fläche von " + countryName_DE + "? [Antwort: " + str(area) + "km² (" + str(int(area*0.9)) + " - " + str(int(area*1.1)) + ")]")
-            questions_3[countryNR].append(question_area)        
+            questions_3[countryNR].append(question_area)
         except:
             e = e + 1
             errors.append("Konnte keine Informationen zur Fläche von [" + countryName_DE + "] / [" + countryName_EN + "] finden")
