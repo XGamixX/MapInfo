@@ -709,15 +709,18 @@ def NewQuestion ():
         random.choice([Answer1_right, Answer2_right, Answer3_right, Answer4_right])(countryNR, questionNR, questionDifficulty)
 
         global TitleText
-        global questionNRText
+        global QuestionNRText
+        global CountryText
         global QuestionText
         global Answer1Text
         global Answer2Text
         global Answer3Text
         global Answer4Text
         TitleText=Font.render("Länder Quiz!!!!!!!", False, BLACK, WHITE)
-        questionNRText_text = str(QuestionCount) + ". Frage!!!!!!!!!!"
-        questionNRText=Font.render(questionNRText_text, False, BLACK, WHITE)
+        QuestionNRText_text = str(QuestionCount) + ". Frage!!!!!!!!!!"
+        QuestionNRText=Font.render(QuestionNRText_text, False, BLACK, WHITE)
+        CountryText_text = ("DE: " + countries_DE[countryNR] + ", EN: " + countries_EN[countryNR] + ", Native: " + countries_NATIVE[countryNR] + ", Short: " + countries_SHORT[countryNR])
+        CountryText=Font.render(CountryText_text, False, BLACK, WHITE)
         if questionDifficulty == 1:
             QuestionText_text = questions_1[countryNR][questionNR][0]
         if questionDifficulty == 2:
@@ -758,12 +761,13 @@ while running:
     #### start of renderer
 
     screen.blit(TitleText, (0, 0))
-    screen.blit(questionNRText, (0, 50))
-    screen.blit(QuestionText, (0, 100))
-    screen.blit(Answer1Text, (0, 150))
-    screen.blit(Answer2Text, (SCREEN_WIDTH/2, 150))
-    screen.blit(Answer3Text, (0, 200))
-    screen.blit(Answer4Text, (SCREEN_WIDTH/2, 200))
+    screen.blit(QuestionNRText, (0, 50))
+    screen.blit(CountryText, (0, 100))
+    screen.blit(QuestionText, (0, 150))
+    screen.blit(Answer1Text, (0, 200))
+    screen.blit(Answer2Text, (SCREEN_WIDTH/2, 200))
+    screen.blit(Answer3Text, (0, 250))
+    screen.blit(Answer4Text, (SCREEN_WIDTH/2, 250))
 
     pygame.display.update()
 
