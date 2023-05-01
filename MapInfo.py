@@ -226,7 +226,7 @@ def findInfo ():
         try:
             area = countryID.area()
             question_area = ("Wie groß ist die Fläche von " + countryName_DE + "?")
-            correctAnswer_area = (str(area) + "km² (" + str(int(area*0.9)) + " - " + str(int(area*1.1)) + ")]")
+            correctAnswer_area = str(area) + "km²"
             # questions_3[countryNR].append(question_area + " [Antwort: " + correctAnswer_area + "]")
             append_3(countryNR, question_area, correctAnswer_area, "WrongArea1", "WrongArea2", "WrongArea3", "WrongArea4")
         except:
@@ -235,7 +235,7 @@ def findInfo ():
         try:
             population = countryID.population()
             question_population = ("Wie hoch ist die Einwohnerzahl von " + countryName_DE + "?")
-            correctAnswer_population = (str(population) + " (" + str(int(population*0.9)) + " - " + str(int(population*1.1)) + ")")
+            correctAnswer_population = str(population)
             # questions_3[countryNR].append(question_population + " [Antwort: " + correctAnswer_population + "]")
             append_3(countryNR, question_population, correctAnswer_population, "WrongPopulation1", "WrongPopulation2", "WrongPopulation3", "WrongPopulation4")
         except:
