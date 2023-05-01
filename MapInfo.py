@@ -63,7 +63,7 @@ def importStuff ():
         countries_DE = json.load(countries_DE_save_file)
     with open("countries_EN_save.json", "r") as countries_EN_save_file:
         global countries_EN
-        countries_DE = json.load(countries_EN_save_file)
+        countries_EN = json.load(countries_EN_save_file)
     with open("countries_NATIVE_save.json", "r") as countries_NATIVE_save_file:
         global countries_NATIVE
         countries_NATIVE = json.load(countries_NATIVE_save_file)
@@ -691,6 +691,10 @@ def Answer4_right (countryNR, questionNR, questionDifficulty):
         Answer4Text_text = ("Antwort 4: " + questions_3[countryNR][questionNR][1])
 
 def NewQuestion ():
+    global countries_DE
+    global countries_EN
+    global countries_NATIVE
+    global countries_SHORT
     try:
         countryNR = randrange(0, int(len(countries_DE))) - 1
         questionDifficulty = randrange(0, 3)
