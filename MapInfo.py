@@ -627,7 +627,7 @@ button = Button(
     fontSize=50, margin=20,
     inactiveColour=(255, 0, 0),
     pressedColour=(0, 0, 255), radius=20,
-    onClick=lambda: print('Click')
+    onClick=lambda: NewQuestion()
 )
 
 global QuestionCount
@@ -639,20 +639,20 @@ def wrongAnswers (countryNR, questionNR, questionDifficulty):
     global Answer3Text_text
     global Answer4Text_text
     if questionDifficulty == 1:
-        Answer1Text_text = ("Antwort 1:" + questions_1[countryNR][questionNR][2])
-        Answer2Text_text = ("Antwort 2:" + questions_1[countryNR][questionNR][3])
-        Answer3Text_text = ("Antwort 3:" + questions_1[countryNR][questionNR][4])
-        Answer4Text_text = ("Antwort 4:" + questions_1[countryNR][questionNR][5])
+        Answer1Text_text = ("Antwort 1: " + questions_1[countryNR][questionNR][2])
+        Answer2Text_text = ("Antwort 2: " + questions_1[countryNR][questionNR][3])
+        Answer3Text_text = ("Antwort 3: " + questions_1[countryNR][questionNR][4])
+        Answer4Text_text = ("Antwort 4: " + questions_1[countryNR][questionNR][5])
     if questionDifficulty == 2:
-        Answer1Text_text = ("Antwort 1:" + questions_2[countryNR][questionNR][2])
-        Answer2Text_text = ("Antwort 2:" + questions_2[countryNR][questionNR][3])
-        Answer3Text_text = ("Antwort 3:" + questions_2[countryNR][questionNR][4])
-        Answer4Text_text = ("Antwort 4:" + questions_2[countryNR][questionNR][5])
+        Answer1Text_text = ("Antwort 1: " + questions_2[countryNR][questionNR][2])
+        Answer2Text_text = ("Antwort 2: " + questions_2[countryNR][questionNR][3])
+        Answer3Text_text = ("Antwort 3: " + questions_2[countryNR][questionNR][4])
+        Answer4Text_text = ("Antwort 4: " + questions_2[countryNR][questionNR][5])
     if questionDifficulty == 3:
-        Answer1Text_text = ("Antwort 1:" + questions_3[countryNR][questionNR][2])
-        Answer2Text_text = ("Antwort 2:" + questions_3[countryNR][questionNR][3])
-        Answer3Text_text = ("Antwort 3:" + questions_3[countryNR][questionNR][4])
-        Answer4Text_text = ("Antwort 4:" + questions_3[countryNR][questionNR][5])
+        Answer1Text_text = ("Antwort 1: " + questions_3[countryNR][questionNR][2])
+        Answer2Text_text = ("Antwort 2: " + questions_3[countryNR][questionNR][3])
+        Answer3Text_text = ("Antwort 3: " + questions_3[countryNR][questionNR][4])
+        Answer4Text_text = ("Antwort 4: " + questions_3[countryNR][questionNR][5])
 
 def Answer1_right (countryNR, questionNR, questionDifficulty):
     global Answer1Text_text
@@ -759,8 +759,8 @@ while running:
 
     pygame_widgets.update(events)
 
-    if i%100 == 0:
-        NewQuestion()
+    #if i%100 == 0:
+    #    NewQuestion()
 
     #### start of renderer
 
