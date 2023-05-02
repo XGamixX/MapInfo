@@ -250,7 +250,7 @@ def findInfo ():
             except:
                 pass
             question_continent = ("Auf welchem Kontinent liegt " + countryName_DE + "?")
-            correctAnswer_continent = (region + "(" + subregion + ")")
+            correctAnswer_continent = (region + " (" + subregion + ")")
             # questions_1[countryNR].append(question_continent + " [Antwort: " + correctAnswer_continent + "]")
             append_1(countryNR, question_continent, correctAnswer_continent, "WrongContinent1", "WrongContinent2", "WrongContinent3", "WrongContinent4")
         except:
