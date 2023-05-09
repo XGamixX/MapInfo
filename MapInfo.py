@@ -1,4 +1,4 @@
-reloadQuestions = True
+reloadQuestions = False
 
 """
 pip install countryinfo
@@ -194,40 +194,56 @@ def append_3 (countryNR, question, correctAnswer, wrongAnswer1, wrongAnswer2, wr
     global questions_3
     questions_3[countryNR].append([question, correctAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3, wrongAnswer4])
 
-def findWrongCapital ():
+def findWrongCapital (correctCapital):
     try:
-        wrongCapital = CountryInfo(countries_EN[randrange(1, int(len(countries_EN))) - 1]).capital()
+        WrongCapital = CountryInfo(countries_EN[randrange(1, int(len(countries_EN))) - 1]).capital()
     except:
-        wrongCapital = findWrongCapital()
-    return(wrongCapital)
+        WrongCapital = findWrongCapital()
 
-def findWrongArea ():
+    if WrongCapital == correctCapital:
+        WrongCapital = findWrongCapital()
+
+    return(WrongCapital)
+
+def findWrongArea (correctArea):
     try:
         WrongArea = (str(CountryInfo(countries_EN[randrange(1, int(len(countries_EN))) - 1]).area()) + "km²")
     except:
         WrongArea = findWrongArea()
+
+    if WrongArea == correctArea:
+        WrongArea = findWrongArea()
+
     return(WrongArea)
 
-def findWrongPopulation ():
+def findWrongPopulation (correctPopulation):
     try:
         WrongPopulation = str(CountryInfo(countries_EN[randrange(1, int(len(countries_EN))) - 1]).population())
     except:
         WrongPopulation = findWrongPopulation()
+
+    if WrongPopulation == correctPopulation:
+        WrongPopulation = findWrongPopulation()
+
     return(WrongPopulation)
 
-def findWrongContinent ():
+def findWrongContinent (correctContinent):
     try:
         wrongID = CountryInfo(countries_EN[randrange(1, int(len(countries_EN))) - 1])
-        wrongRegion1 = wrongID.region()
-        wrongSubregion1 = wrongID.subregion()
+        wrongRegion = wrongID.region()
+        wrongSubregion = wrongID.subregion()
         try:
-            region = GoogleTranslator(source = "en", target = "de").translate(region)
-            subregion = GoogleTranslator(source = "en", target = "de").translate(subregion)
+            wrongRegion = GoogleTranslator(source = "en", target = "de").translate(wrongRegion)
+            wrongSubregion = GoogleTranslator(source = "en", target = "de").translate(wrongSubregion)
         except:
             pass
-        WrongContinent = (wrongRegion1 + " (" + wrongSubregion1 + ")")
+        WrongContinent = (wrongRegion + " (" + wrongSubregion + ")")
     except:
         WrongContinent = findWrongContinent()
+
+    if WrongContinent == correctContinent:
+        WrongContinent = findWrongContinent()
+
     return(WrongContinent)
 
 def findInfo ():
@@ -282,10 +298,10 @@ def findInfo ():
             area = countryID.area()
             question_area = ("Wie groß ist die Fläche von " + countryName_DE + "?")
             correctAnswer_area = str(area) + "km²"
-            WrongArea1 = findWrongArea()
-            WrongArea2 = findWrongArea()
-            WrongArea3 = findWrongArea()
-            WrongArea4 = findWrongArea()
+            WrongArea1 = findWrongArea(correctAnswer_area)
+            WrongArea2 = findWrongArea(correctAnswer_area)
+            WrongArea3 = findWrongArea(correctAnswer_area)
+            WrongArea4 = findWrongArea(correctAnswer_area)
             # questions_3[countryNR].append(question_area + " [Antwort: " + correctAnswer_area + "]")
             append_3(countryNR, question_area, correctAnswer_area, WrongArea1, WrongArea2, WrongArea3, WrongArea4)
         except:
@@ -295,10 +311,10 @@ def findInfo ():
             population = countryID.population()
             question_population = ("Wie hoch ist die Einwohnerzahl von " + countryName_DE + "?")
             correctAnswer_population = str(population)
-            WrongPopulation1 = findWrongPopulation()
-            WrongPopulation2 = findWrongPopulation()
-            WrongPopulation3 = findWrongPopulation()
-            WrongPopulation4 = findWrongPopulation()
+            WrongPopulation1 = findWrongPopulation(correctAnswer_population)
+            WrongPopulation2 = findWrongPopulation(correctAnswer_population)
+            WrongPopulation3 = findWrongPopulation(correctAnswer_population)
+            WrongPopulation4 = findWrongPopulation(correctAnswer_population)
             # questions_3[countryNR].append(question_population + " [Antwort: " + correctAnswer_population + "]")
             append_3(countryNR, question_population, correctAnswer_population, WrongPopulation1, WrongPopulation2, WrongPopulation3, WrongPopulation4)
         except:
@@ -307,10 +323,6 @@ def findInfo ():
         try:
             region = countryID.region()
             subregion = countryID.subregion()
-            wrongID1 = CountryInfo(countries_EN[randrange(1, int(len(countries_EN))) - 1])
-            wrongID2 = CountryInfo(countries_EN[randrange(1, int(len(countries_EN))) - 1])
-            wrongID3 = CountryInfo(countries_EN[randrange(1, int(len(countries_EN))) - 1])
-            wrongID4 = CountryInfo(countries_EN[randrange(1, int(len(countries_EN))) - 1])
             try:
                 region = GoogleTranslator(source = "en", target = "de").translate(region)
                 subregion = GoogleTranslator(source = "en", target = "de").translate(subregion)
@@ -318,10 +330,10 @@ def findInfo ():
                 pass
             question_continent = ("Auf welchem Kontinent liegt " + countryName_DE + "?")
             correctAnswer_continent = (region + " (" + subregion + ")")
-            WrongContinent1 = findWrongContinent()
-            WrongContinent2 = findWrongContinent()
-            WrongContinent3 = findWrongContinent()
-            WrongContinent4 = findWrongContinent()
+            WrongContinent1 = findWrongContinent(correctAnswer_continent)
+            WrongContinent2 = findWrongContinent(correctAnswer_continent)
+            WrongContinent3 = findWrongContinent(correctAnswer_continent)
+            WrongContinent4 = findWrongContinent(correctAnswer_continent)
             # questions_1[countryNR].append(question_continent + " [Antwort: " + correctAnswer_continent + "]")
             append_1(countryNR, question_continent, correctAnswer_continent, WrongContinent1, WrongContinent2, WrongContinent3, WrongContinent4)
         except:
