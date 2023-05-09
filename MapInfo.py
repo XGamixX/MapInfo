@@ -1,4 +1,4 @@
-reloadQuestions = False
+reloadQuestions = True
 
 """
 pip install countryinfo
@@ -194,6 +194,41 @@ def append_3 (countryNR, question, correctAnswer, wrongAnswer1, wrongAnswer2, wr
     global questions_3
     questions_3[countryNR].append([question, correctAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3, wrongAnswer4])
 
+def findWrongCapital ():
+    try:
+        wrongCapital = CountryInfo(countries_EN[randrange(1, int(len(countries_EN))) - 1]).capital()
+    except:
+        wrongCapital = findWrongCapital()
+    return(wrongCapital)
+
+def findWrongArea ():
+    try:
+        WrongArea = (str(CountryInfo(countries_EN[randrange(1, int(len(countries_EN))) - 1]).area()) + "km²")
+    except:
+        WrongArea = findWrongArea()
+    return(WrongArea)
+
+def findWrongPopulation ():
+    try:
+        WrongPopulation = str(CountryInfo(countries_EN[randrange(1, int(len(countries_EN))) - 1]).population())
+    except:
+        WrongPopulation = findWrongPopulation()
+    return(WrongPopulation)
+
+def findWrongContinent ():
+    try:
+        wrongID = CountryInfo(countries_EN[randrange(1, int(len(countries_EN))) - 1])
+        wrongRegion1 = wrongID.region()
+        wrongSubregion1 = wrongID.subregion()
+        try:
+            region = GoogleTranslator(source = "en", target = "de").translate(region)
+            subregion = GoogleTranslator(source = "en", target = "de").translate(subregion)
+        except:
+            pass
+        WrongContinent = (wrongRegion1 + " (" + wrongSubregion1 + ")")
+    except:
+        WrongContinent = findWrongContinent()
+    return(WrongContinent)
 
 def findInfo ():
     global errors
@@ -213,13 +248,33 @@ def findInfo ():
         e=0
         try:
             capital = countryID.capital()
+            WrongCapital1 = findWrongCapital()
+            WrongCapital2 = findWrongCapital()
+            WrongCapital3 = findWrongCapital()
+            WrongCapital4 = findWrongCapital()
             try:
                 capital = GoogleTranslator(source = "en", target = "de").translate(capital)
             except:
                 pass
+            try:
+                WrongCapital1 = GoogleTranslator(source = "en", target = "de").translate(WrongCapital1)
+            except:
+                pass
+            try:
+                WrongCapital2 = GoogleTranslator(source = "en", target = "de").translate(WrongCapital2)
+            except:
+                pass
+            try:
+                WrongCapital3 = GoogleTranslator(source = "en", target = "de").translate(WrongCapital3)
+            except:
+                pass
+            try:
+                WrongCapital4 = GoogleTranslator(source = "en", target = "de").translate(WrongCapital4)
+            except:
+                pass
             question_capital = ("Wie heißt die Hauptstadt von " + countryName_DE + "?")
             # questions_2[countryNR].append(question_capital + " [Antwort: " + capital + "]")
-            append_2(countryNR, question_capital, capital, "WrongCapital1", "WrongCapital2", "WrongCapital3", "WrongCapital4")
+            append_2(countryNR, question_capital, capital, WrongCapital1, WrongCapital2, WrongCapital3, WrongCapital4)
         except:
             e = e + 1
             errors.append("Konnte keine Informationen zur Hauptstadt von [" + countryName_DE + "] / [" + countryName_EN + "] finden")
@@ -227,8 +282,12 @@ def findInfo ():
             area = countryID.area()
             question_area = ("Wie groß ist die Fläche von " + countryName_DE + "?")
             correctAnswer_area = str(area) + "km²"
+            WrongArea1 = findWrongArea()
+            WrongArea2 = findWrongArea()
+            WrongArea3 = findWrongArea()
+            WrongArea4 = findWrongArea()
             # questions_3[countryNR].append(question_area + " [Antwort: " + correctAnswer_area + "]")
-            append_3(countryNR, question_area, correctAnswer_area, "WrongArea1", "WrongArea2", "WrongArea3", "WrongArea4")
+            append_3(countryNR, question_area, correctAnswer_area, WrongArea1, WrongArea2, WrongArea3, WrongArea4)
         except:
             e = e + 1
             errors.append("Konnte keine Informationen zur Fläche von [" + countryName_DE + "] / [" + countryName_EN + "] finden")
@@ -236,14 +295,22 @@ def findInfo ():
             population = countryID.population()
             question_population = ("Wie hoch ist die Einwohnerzahl von " + countryName_DE + "?")
             correctAnswer_population = str(population)
+            WrongPopulation1 = findWrongPopulation()
+            WrongPopulation2 = findWrongPopulation()
+            WrongPopulation3 = findWrongPopulation()
+            WrongPopulation4 = findWrongPopulation()
             # questions_3[countryNR].append(question_population + " [Antwort: " + correctAnswer_population + "]")
-            append_3(countryNR, question_population, correctAnswer_population, "WrongPopulation1", "WrongPopulation2", "WrongPopulation3", "WrongPopulation4")
+            append_3(countryNR, question_population, correctAnswer_population, WrongPopulation1, WrongPopulation2, WrongPopulation3, WrongPopulation4)
         except:
             e = e + 1
             errors.append("Konnte keine Informationen zur Einwohnerzahl von [" + countryName_DE + "] / [" + countryName_EN + "] finden")
         try:
             region = countryID.region()
             subregion = countryID.subregion()
+            wrongID1 = CountryInfo(countries_EN[randrange(1, int(len(countries_EN))) - 1])
+            wrongID2 = CountryInfo(countries_EN[randrange(1, int(len(countries_EN))) - 1])
+            wrongID3 = CountryInfo(countries_EN[randrange(1, int(len(countries_EN))) - 1])
+            wrongID4 = CountryInfo(countries_EN[randrange(1, int(len(countries_EN))) - 1])
             try:
                 region = GoogleTranslator(source = "en", target = "de").translate(region)
                 subregion = GoogleTranslator(source = "en", target = "de").translate(subregion)
@@ -251,8 +318,12 @@ def findInfo ():
                 pass
             question_continent = ("Auf welchem Kontinent liegt " + countryName_DE + "?")
             correctAnswer_continent = (region + " (" + subregion + ")")
+            WrongContinent1 = findWrongContinent()
+            WrongContinent2 = findWrongContinent()
+            WrongContinent3 = findWrongContinent()
+            WrongContinent4 = findWrongContinent()
             # questions_1[countryNR].append(question_continent + " [Antwort: " + correctAnswer_continent + "]")
-            append_1(countryNR, question_continent, correctAnswer_continent, "WrongContinent1", "WrongContinent2", "WrongContinent3", "WrongContinent4")
+            append_1(countryNR, question_continent, correctAnswer_continent, WrongContinent1, WrongContinent2, WrongContinent3, WrongContinent4)
         except:
             e = e + 1
             errors.append("Konnte keine Informationen zum Kontinent von [" + countryName_DE + "] / [" + countryName_EN + "] finden")
@@ -758,9 +829,6 @@ while running:
     screen.fill("Lime") # fill the screen with a color to wipe away anything from last frame
 
     pygame_widgets.update(events)
-
-    #if i%100 == 0:
-    #    NewQuestion()
 
     #### start of renderer
 
