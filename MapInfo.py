@@ -638,7 +638,7 @@ Font = pygame.font.SysFont('timesnewroman',  20)
 pygame.display.set_caption("MapInfo")
 
 buttonAnswer1 = Button(
-    screen, 0, 100, 500, 120, text='Hello',
+    screen, 0, 500, 100, 120, text='Hello',
     fontSize=50, margin=20,
     inactiveColour=(255, 0, 0),
     pressedColour=(0, 0, 255), radius=20,
@@ -646,7 +646,7 @@ buttonAnswer1 = Button(
 )
 
 buttonAnswer2 = Button(
-    screen, 0, 150, 500, 170, text='Hello',
+    screen, 0, 500, 150, 170, text='Hello',
     fontSize=50, margin=20,
     inactiveColour=(255, 0, 0),
     pressedColour=(0, 0, 255), radius=20,
@@ -654,7 +654,7 @@ buttonAnswer2 = Button(
 )
 
 buttonAnswer3 = Button(
-    screen, 0, 200, 500, 220, text='Hello',
+    screen, 0, 500, 200, 220, text='Hello',
     fontSize=50, margin=20,
     inactiveColour=(255, 0, 0),
     pressedColour=(0, 0, 255), radius=20,
@@ -662,7 +662,7 @@ buttonAnswer3 = Button(
 )
 
 buttonAnswer4 = Button(
-    screen, 0, 250, 500, 270, text='Hello',
+    screen, 0, 500, 250, 270, text='Hello',
     fontSize=50, margin=20,
     inactiveColour=(255, 0, 0),
     pressedColour=(0, 0, 255
