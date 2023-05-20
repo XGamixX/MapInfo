@@ -287,7 +287,6 @@ def findInfo ():
             except:
                 pass
             question_capital = ("Wie heißt die Hauptstadt von " + countryName_DE + "?")
-            # questions_2[countryNR].append(question_capital + " [Antwort: " + capital + "]")
             append_2(countryNR, question_capital, capital, WrongCapital1, WrongCapital2, WrongCapital3, WrongCapital4)
         except:
             e = e + 1
@@ -300,7 +299,6 @@ def findInfo ():
             WrongArea2 = findWrongArea(correctAnswer_area)
             WrongArea3 = findWrongArea(correctAnswer_area)
             WrongArea4 = findWrongArea(correctAnswer_area)
-            # questions_3[countryNR].append(question_area + " [Antwort: " + correctAnswer_area + "]")
             append_3(countryNR, question_area, correctAnswer_area, WrongArea1, WrongArea2, WrongArea3, WrongArea4)
         except:
             e = e + 1
@@ -313,7 +311,6 @@ def findInfo ():
             WrongPopulation2 = findWrongPopulation(correctAnswer_population)
             WrongPopulation3 = findWrongPopulation(correctAnswer_population)
             WrongPopulation4 = findWrongPopulation(correctAnswer_population)
-            # questions_3[countryNR].append(question_population + " [Antwort: " + correctAnswer_population + "]")
             append_3(countryNR, question_population, correctAnswer_population, WrongPopulation1, WrongPopulation2, WrongPopulation3, WrongPopulation4)
         except:
             e = e + 1
@@ -332,7 +329,6 @@ def findInfo ():
             WrongContinent2 = findWrongContinent(correctAnswer_continent)
             WrongContinent3 = findWrongContinent(correctAnswer_continent)
             WrongContinent4 = findWrongContinent(correctAnswer_continent)
-            # questions_1[countryNR].append(question_continent + " [Antwort: " + correctAnswer_continent + "]")
             append_1(countryNR, question_continent, correctAnswer_continent, WrongContinent1, WrongContinent2, WrongContinent3, WrongContinent4)
         except:
             e = e + 1
