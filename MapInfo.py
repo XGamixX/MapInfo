@@ -580,25 +580,6 @@ print("Läd Infos aus dem Darknet runter... " + str(countryCount) + "/" + str(co
 print("Fügt manuelle Informationen unseres Sklaven hinzu... " + str(countryCount*3) + "/" + str(countryCount*3) + " (Done)")
 print("Fügt fehlende Informationen hinzu... " + str(countryCount*3) + "/" + str(countryCount*3) + " (Done)")
 printErrors()
-#while true:
-#    countryNR = ChooseCountry(input("Schreibe den Namen des Landes: "))
-#    try:
-#        print(flag.flagize("DE: " + countries_DE[countryNR] + ", EN: " + countries_EN[countryNR] + ", Native: " + countries_NATIVE[countryNR] + ", Short: " + countries_SHORT[countryNR] + ", Flag: :" + countries_SHORT[countryNR] + ":"))
-#    except:
-#        pass
-#    try:
-#        print("[*]   " + questions_1[countryNR][randrange(1,len(questions_1[countryNR]) - 1)])
-#    except:
-#        print("[*]   Keine Ein-Stern-Frage zu diesem Land gefunden")
-#    try:
-#        print("[**]  " + questions_2[countryNR][randrange(1,len(questions_2[countryNR]) - 1)])
-#    except:
-#        print("[**]  Keine Zwei-Stern-Frage zu diesem Land gefunden")
-#    try:
-#        print("[***] " + questions_3[countryNR][randrange(1,len(questions_3[countryNR]) - 1)])
-#    except:
-#        print("[***] Keine Drei-Stern-Frage zu diesem Land gefunden")
-#    print()
 
 def merge_colors (color1, color2):
     return([i+j for i,j in zip(color1, color2)])
@@ -794,14 +775,14 @@ while running:
 
     events = pygame.event.get()
     for event in events: # poll for events
-        if event.type == pygame.QUIT: # pygame.QUIT event means the user clicked X to close your window
+        if event.type == pygame.QUIT: # pygame.QUIT event means the user clicked X to close the window
             running = False
 
     screen.fill("Lime") # fill the screen with a color to wipe away anything from last frame
 
-    pygame_widgets.update(events)
-
     #### start of renderer
+
+    pygame_widgets.update(events)
 
     screen.blit(TitleText, (0, 0))
     screen.blit(QuestionNRText, (0, 50))
