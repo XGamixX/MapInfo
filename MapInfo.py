@@ -17,7 +17,6 @@ import pycountry
 import numpy
 import random
 import json
-import flag
 import pygame
 import pygame_widgets
 from pygame_widgets.button import Button ##import der libraries
