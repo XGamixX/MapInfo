@@ -583,8 +583,7 @@ buttonAnswer4 = Button(
     screen, SCREEN_WIDTH/2+VSPACING/2, 250-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
     fontSize=50, margin=20,
     inactiveColour=(255, 0, 0),
-    pressedColour=(0, 0, 255
-    ), radius=20,
+    pressedColour=(0, 0, 255), radius=20,
     onClick=lambda: NewQuestion()
 )
 
