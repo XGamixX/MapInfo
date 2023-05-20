@@ -468,69 +468,6 @@ def printErrors ():
     print()
     return()
 
-def ChooseCountry (countryName):
-    global countries_DE
-    global countries_EN
-    global countries_NATIVE
-    global countries_SHORT
-    global countries_DE_np
-    global countries_EN_np
-    global countries_NATIVE_np
-    global countries_SHORT_np
-
-    countryName = str(countryName).capitalize()
-
-    try:
-        countries_DE.index(countryName)
-        countryNR = numpy.where(countries_DE_np == countryName)
-    except:
-        try:
-            countries_EN.index(countryName)
-            countryNR = numpy.where(countries_EN_np == countryName)
-        except:
-            try:
-                countries_NATIVE.index(countryName)
-                countryNR = numpy.where(countries_NATIVE_np == countryName)
-            except:
-                try:
-                    countries_SHORT.index(countryName.upper())
-                    countryNR = numpy.where(countries_SHORT_np == countryName.upper())
-                except:
-                    print(countryName+" ist ein nicht verfügbares Land")
-                    print()
-                    return("")
-    countryNR = countryNR[0][0]
-    return(countryNR)
-
-def submitCountry ():
-    global countries_DE
-    global countries_EN
-    global countries_NATIVE
-    global countries_SHORT
-    global questions_1
-    global questions_2
-    global questions_3
-    global countryNR
-    global countryInput
-    input_text = countryInput.get()
-    countryNR = ChooseCountry(input_text)
-    try:
-        countryNames = flag.flagize("DE: " + countries_DE[countryNR] + ", EN: " + countries_EN[countryNR] + ", Native: " + countries_NATIVE[countryNR] + ", Short: " + countries_SHORT[countryNR] + ", Flag: :" + countries_SHORT[countryNR] + ":")
-    except:
-        countryNames = "Konnte die alternativen Namen von diesem Land nicht laden"
-    try:
-        question_1 = "[*]   " + questions_1[countryNR][randrange(1,len(questions_1[countryNR]) - 1)]
-    except:
-        question_1 = "[*]   Keine Ein-Stern-Frage zu diesem Land gefunden"
-    try:
-        question_2 = "[**]  " + questions_2[countryNR][randrange(1,len(questions_2[countryNR]) - 1)]
-    except:
-        question_2 = "[**]  Keine Zwei-Stern-Frage zu diesem Land gefunden"
-    try:
-        question_3 = "[***] " + questions_3[countryNR][randrange(1,len(questions_3[countryNR]) - 1)]
-    except:
-        question_3 = "[***] Keine Drei-Stern-Frage zu diesem Land gefunden"
-
 def saveStuff ():
     global countries_DE
     global countries_EN
