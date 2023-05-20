@@ -1,0 +1,5 @@
+from deep_translator import GoogleTranslator
+import numpy
+import random
+import json
+import google_books_api_wrapper
