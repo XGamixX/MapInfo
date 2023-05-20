@@ -633,12 +633,14 @@ SCREEN_WIDTH = 1500
 SCREEN_HEIGHT = 500
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
-Font = pygame.font.SysFont('timesnewroman',  20)
+FONTSIZE = 20
+
+Font = pygame.font.SysFont('timesnewroman',  FONTSIZE)
 
 pygame.display.set_caption("MapInfo")
 
 buttonAnswer1 = Button(
-    screen, 0, 200-15, SCREEN_WIDTH/2, 50,
+    screen, 0+6/2, 200-15+6/2, SCREEN_WIDTH/2-6, FONTSIZE+15*2-6,
     fontSize=50, margin=20,
     inactiveColour=(255, 0, 0),
     pressedColour=(0, 0, 255), radius=20,
@@ -646,7 +648,7 @@ buttonAnswer1 = Button(
 )
 
 buttonAnswer2 = Button(
-    screen, SCREEN_WIDTH/2, 200-15, SCREEN_WIDTH/2, 50,
+    screen, SCREEN_WIDTH/2+6/2, 200-15+6/2, SCREEN_WIDTH/2-6, FONTSIZE+15*2-6,
     fontSize=50, margin=20,
     inactiveColour=(255, 0, 0),
     pressedColour=(0, 0, 255), radius=20,
@@ -654,7 +656,7 @@ buttonAnswer2 = Button(
 )
 
 buttonAnswer3 = Button(
-    screen, 0, 250-15, SCREEN_WIDTH/2, 50,
+    screen, 0+6/2, 250-15+6/2, SCREEN_WIDTH/2-6, FONTSIZE+15*2-6,
     fontSize=50, margin=20,
     inactiveColour=(255, 0, 0),
     pressedColour=(0, 0, 255), radius=20,
@@ -662,7 +664,7 @@ buttonAnswer3 = Button(
 )
 
 buttonAnswer4 = Button(
-    screen, SCREEN_WIDTH/2, 250-15, SCREEN_WIDTH/2, 50,
+    screen, SCREEN_WIDTH/2+6/2, 250-15+6/2, SCREEN_WIDTH/2-6, FONTSIZE+15*2-6,
     fontSize=50, margin=20,
     inactiveColour=(255, 0, 0),
     pressedColour=(0, 0, 255
@@ -805,10 +807,10 @@ while running:
     screen.blit(QuestionNRText, (0, 50))
     screen.blit(CountryText, (0, 100))
     screen.blit(QuestionText, (0, 150))
-    screen.blit(Answer1Text, (0, 200))
-    screen.blit(Answer2Text, (SCREEN_WIDTH/2, 200))
-    screen.blit(Answer3Text, (0, 250))
-    screen.blit(Answer4Text, (SCREEN_WIDTH/2, 250))
+    screen.blit(Answer1Text, (0+15, 200))
+    screen.blit(Answer2Text, (SCREEN_WIDTH/2+15, 200))
+    screen.blit(Answer3Text, (00+15, 250))
+    screen.blit(Answer4Text, (SCREEN_WIDTH/2+15, 250))
 
     pygame.display.update()
 
