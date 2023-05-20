@@ -468,7 +468,7 @@ def printErrors ():
     print()
     return()
 
-def saveStuff ():
+def saveStuff ():         
     global countries_DE
     global countries_EN
     global countries_NATIVE
@@ -552,13 +552,16 @@ SCREEN_HEIGHT = 500
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
 FONTSIZE = 20
+TEXTSIZE = FONTSIZE + 3
+HSPACING = 8
+VSPACING = 6
 
 Font = pygame.font.SysFont('timesnewroman',  FONTSIZE)
 
 pygame.display.set_caption("MapInfo")
 
 buttonAnswer1 = Button(
-    screen, 0+6/2, 200-15+6/2, SCREEN_WIDTH/2-6, FONTSIZE+15*2-6,
+    screen, 0+VSPACING/2, 200-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
     fontSize=50, margin=20,
     inactiveColour=(255, 0, 0),
     pressedColour=(0, 0, 255), radius=20,
@@ -566,7 +569,7 @@ buttonAnswer1 = Button(
 )
 
 buttonAnswer2 = Button(
-    screen, SCREEN_WIDTH/2+6/2, 200-15+6/2, SCREEN_WIDTH/2-6, FONTSIZE+15*2-6,
+    screen, SCREEN_WIDTH/2+VSPACING/2, 200-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
     fontSize=50, margin=20,
     inactiveColour=(255, 0, 0),
     pressedColour=(0, 0, 255), radius=20,
@@ -574,7 +577,7 @@ buttonAnswer2 = Button(
 )
 
 buttonAnswer3 = Button(
-    screen, 0+6/2, 250-15+6/2, SCREEN_WIDTH/2-6, FONTSIZE+15*2-6,
+    screen, 0+VSPACING/2, 250-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
     fontSize=50, margin=20,
     inactiveColour=(255, 0, 0),
     pressedColour=(0, 0, 255), radius=20,
@@ -582,7 +585,7 @@ buttonAnswer3 = Button(
 )
 
 buttonAnswer4 = Button(
-    screen, SCREEN_WIDTH/2+6/2, 250-15+6/2, SCREEN_WIDTH/2-6, FONTSIZE+15*2-6,
+    screen, SCREEN_WIDTH/2+VSPACING/2, 250-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
     fontSize=50, margin=20,
     inactiveColour=(255, 0, 0),
     pressedColour=(0, 0, 255
