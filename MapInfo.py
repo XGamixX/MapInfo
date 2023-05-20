@@ -540,8 +540,7 @@ OCEAN = merge_colors(BLUE, LIGHT_GREEN)
 VIOLET = merge_colors(BLUE, LIGHT_RED)
 ROSE = merge_colors(RED, LIGHT_BLUE)
 
-# pygame setup
-pygame.init()
+pygame.init() # pygame setup
 
 SCREEN_WIDTH = 1500
 SCREEN_HEIGHT = 500
