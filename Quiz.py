@@ -241,7 +241,7 @@ def NewQuestion (answerNR):
         Answer4Text=Font.render(Answer4Text_text, False, BLACK, WHITE)
     except:
         QuestionCount -=1
-        NewQuestion(answerNR)
+        NewQuestion(0)
 
 running = True
 
