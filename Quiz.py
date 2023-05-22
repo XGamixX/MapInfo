@@ -94,7 +94,7 @@ buttonAnswer1 = Button(
     fontSize=50, margin=20,
     inactiveColour=(255, 0, 0),
     pressedColour=(0, 0, 255), radius=20,
-    onClick=lambda: NewQuestion()
+    onClick=lambda: NewQuestion(1)
 )
 
 buttonAnswer2 = Button(
@@ -102,7 +102,7 @@ buttonAnswer2 = Button(
     fontSize=50, margin=20,
     inactiveColour=(255, 0, 0),
     pressedColour=(0, 0, 255), radius=20,
-    onClick=lambda: NewQuestion()
+    onClick=lambda: NewQuestion(2)
 )
 
 buttonAnswer3 = Button(
@@ -110,7 +110,7 @@ buttonAnswer3 = Button(
     fontSize=50, margin=20,
     inactiveColour=(255, 0, 0),
     pressedColour=(0, 0, 255), radius=20,
-    onClick=lambda: NewQuestion()
+    onClick=lambda: NewQuestion(3)
 )
 
 buttonAnswer4 = Button(
@@ -118,7 +118,7 @@ buttonAnswer4 = Button(
     fontSize=50, margin=20,
     inactiveColour=(255, 0, 0),
     pressedColour=(0, 0, 255), radius=20,
-    onClick=lambda: NewQuestion()
+    onClick=lambda: NewQuestion(4)
 )
 
 global QuestionCount
@@ -146,6 +146,8 @@ def wrongAnswers (countryNR, questionNR, questionDifficulty):
         Answer4Text_text = ("Antwort 4: " + questions_3[countryNR][questionNR][5])
 
 def Answer1_right (countryNR, questionNR, questionDifficulty):
+    global correctAnswer
+    correctAnswer = 1
     global Answer1Text_text
     if questionDifficulty == 1:
         Answer1Text_text = ("Antwort 1: " + questions_1[countryNR][questionNR][1])
@@ -155,6 +157,8 @@ def Answer1_right (countryNR, questionNR, questionDifficulty):
         Answer1Text_text = ("Antwort 1: " + questions_3[countryNR][questionNR][1])
 
 def Answer2_right (countryNR, questionNR, questionDifficulty):
+    global correctAnswer
+    correctAnswer = 2
     global Answer2Text_text
     if questionDifficulty == 1:
         Answer2Text_text = ("Antwort 2: " + questions_1[countryNR][questionNR][1])
@@ -164,6 +168,8 @@ def Answer2_right (countryNR, questionNR, questionDifficulty):
         Answer2Text_text = ("Antwort 2: " + questions_3[countryNR][questionNR][1])
 
 def Answer3_right (countryNR, questionNR, questionDifficulty):
+    global correctAnswer
+    correctAnswer = 3
     global Answer3Text_text
     if questionDifficulty == 1:
         Answer3Text_text = ("Antwort 3: " + questions_1[countryNR][questionNR][1])
@@ -173,6 +179,8 @@ def Answer3_right (countryNR, questionNR, questionDifficulty):
         Answer3Text_text = ("Antwort 3: " + questions_3[countryNR][questionNR][1])
 
 def Answer4_right (countryNR, questionNR, questionDifficulty):
+    global correctAnswer
+    correctAnswer = 4
     global Answer4Text_text
     if questionDifficulty == 1:
         Answer4Text_text = ("Antwort 4: " + questions_1[countryNR][questionNR][1])
@@ -181,11 +189,15 @@ def Answer4_right (countryNR, questionNR, questionDifficulty):
     if questionDifficulty == 3:
         Answer4Text_text = ("Antwort 4: " + questions_3[countryNR][questionNR][1])
 
-def NewQuestion ():
+def NewQuestion (answerNR):
     global countries_DE
     global countries_EN
     global countries_NATIVE
     global countries_SHORT
+    global points
+    if correctAnswer == answerNR and answerNR!=0:
+        points += 1
+        print(points)
     try:
         countryNR = randrange(0, int(len(countries_DE))) - 1
         questionDifficulty = randrange(0, 3)
@@ -231,11 +243,14 @@ def NewQuestion ():
         QuestionCount -=1
         NewQuestion()
 
-NewQuestion()
-
 running = True
 
 i = 0
+
+points = 0
+
+correctAnswer = 0
+NewQuestion(0)
 
 while running:
 
