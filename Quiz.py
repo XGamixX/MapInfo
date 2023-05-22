@@ -195,9 +195,11 @@ def NewQuestion (answerNR):
     global countries_NATIVE
     global countries_SHORT
     global points
+    global PointsText
     if correctAnswer == answerNR and answerNR!=0:
         points += 1
-        print(points)
+        PointsText_text = str(points) + " Punkte"
+        PointsText=Font.render(PointsText_text, False, BLACK, WHITE)
     try:
         countryNR = randrange(0, int(len(countries_DE))) - 1
         questionDifficulty = randrange(0, 3)
@@ -248,6 +250,8 @@ running = True
 i = 0
 
 points = 0
+PointsText_text = str(points) + " Punkte"
+PointsText=Font.render(PointsText_text, False, BLACK, WHITE)
 
 correctAnswer = 0
 NewQuestion(0)
@@ -275,6 +279,7 @@ while running:
     screen.blit(Answer2Text, (SCREEN_WIDTH/2+15, 200))
     screen.blit(Answer3Text, (00+15, 250))
     screen.blit(Answer4Text, (SCREEN_WIDTH/2+15, 250))
+    screen.blit(PointsText, (SCREEN_WIDTH - 100, 0))
 
     pygame.display.update()
 
