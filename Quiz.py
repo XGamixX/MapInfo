@@ -2,6 +2,7 @@ import random
 import json
 import pygame
 import pygame_widgets
+import argparse
 from pygame_widgets.button import Button
 
 def randrange(start, end):
@@ -9,6 +10,8 @@ def randrange(start, end):
     if start == end:
         return(start)
     return(random.randrange(start, end))
+
+argparse.ArgumentParser().add_argument("--folder", type=string)
 
 Folder = "./MapJsonFiles/"
 
