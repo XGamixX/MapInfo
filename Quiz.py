@@ -25,23 +25,6 @@ def importStuff ():
     with open("countries_DE_save.json", "r") as countries_DE_save_file:
         global countries_DE
         countries_DE = json.load(countries_DE_save_file)
-    with open("countries_EN_save.json", "r") as countries_EN_save_file:
-        global countries_EN
-        countries_EN = json.load(countries_EN_save_file)
-    with open("countries_NATIVE_save.json", "r") as countries_NATIVE_save_file:
-        global countries_NATIVE
-        countries_NATIVE = json.load(countries_NATIVE_save_file)
-    with open("countries_SHORT_save.json", "r") as countries_SHORT_save_file:
-        global countries_SHORT
-        countries_SHORT = json.load(countries_SHORT_save_file)
-    global countries_DE_np
-    global countries_EN_np
-    global countries_NATIVE_np
-    global countries_SHORT_np
-    countries_DE_np = numpy.array(countries_DE)
-    countries_EN_np = numpy.array(countries_EN)
-    countries_NATIVE_np = numpy.array(countries_NATIVE)
-    countries_SHORT_np = numpy.array(countries_SHORT)
 
 importStuff()
 
@@ -87,7 +70,7 @@ Font = pygame.font.SysFont('timesnewroman',  FONTSIZE)
 pygame.display.set_caption("MapInfo")
 
 buttonAnswer1 = Button(
-    screen, 0+VSPACING/2, 200-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
+    screen, 0+VSPACING/2, 150-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
     fontSize=50, margin=20,
     inactiveColour=(255, 0, 0),
     pressedColour=(0, 0, 255), radius=20,
@@ -95,7 +78,7 @@ buttonAnswer1 = Button(
 )
 
 buttonAnswer2 = Button(
-    screen, SCREEN_WIDTH/2+VSPACING/2, 200-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
+    screen, SCREEN_WIDTH/2+VSPACING/2, 150-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
     fontSize=50, margin=20,
     inactiveColour=(255, 0, 0),
     pressedColour=(0, 0, 255), radius=20,
@@ -103,7 +86,7 @@ buttonAnswer2 = Button(
 )
 
 buttonAnswer3 = Button(
-    screen, 0+VSPACING/2, 250-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
+    screen, 0+VSPACING/2, 200-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
     fontSize=50, margin=20,
     inactiveColour=(255, 0, 0),
     pressedColour=(0, 0, 255), radius=20,
@@ -111,7 +94,7 @@ buttonAnswer3 = Button(
 )
 
 buttonAnswer4 = Button(
-    screen, SCREEN_WIDTH/2+VSPACING/2, 250-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
+    screen, SCREEN_WIDTH/2+VSPACING/2, 200-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
     fontSize=50, margin=20,
     inactiveColour=(255, 0, 0),
     pressedColour=(0, 0, 255), radius=20,
@@ -187,10 +170,6 @@ def Answer4_right (countryNR, questionNR, questionDifficulty):
         Answer4Text_text = ("Antwort 4: " + questions_3[countryNR][questionNR][1])
 
 def NewQuestion (answerNR):
-    global countries_DE
-    global countries_EN
-    global countries_NATIVE
-    global countries_SHORT
     global points
     global PointsText
     if correctAnswer == answerNR and answerNR!=0:
@@ -225,8 +204,6 @@ def NewQuestion (answerNR):
         TitleText=Font.render("Länder Quiz!!!!!!!", False, BLACK, WHITE)
         QuestionNRText_text = str(QuestionCount) + ". Frage!!!!!!!!!!"
         QuestionNRText=Font.render(QuestionNRText_text, False, BLACK, WHITE)
-        CountryText_text = ("DE: " + countries_DE[countryNR] + ", EN: " + countries_EN[countryNR] + ", Native: " + countries_NATIVE[countryNR] + ", Short: " + countries_SHORT[countryNR])
-        CountryText=Font.render(CountryText_text, False, BLACK, WHITE)
         if questionDifficulty == 1:
             QuestionText_text = questions_1[countryNR][questionNR][0]
         if questionDifficulty == 2:
@@ -270,12 +247,11 @@ while running:
 
     screen.blit(TitleText, (0, 0))
     screen.blit(QuestionNRText, (0, 50))
-    screen.blit(CountryText, (0, 100))
-    screen.blit(QuestionText, (0, 150))
-    screen.blit(Answer1Text, (0+15, 200))
-    screen.blit(Answer2Text, (SCREEN_WIDTH/2+15, 200))
-    screen.blit(Answer3Text, (00+15, 250))
-    screen.blit(Answer4Text, (SCREEN_WIDTH/2+15, 250))
+    screen.blit(QuestionText, (0, 100))
+    screen.blit(Answer1Text, (0+15, 150))
+    screen.blit(Answer2Text, (SCREEN_WIDTH/2+15, 150))
+    screen.blit(Answer3Text, (00+15, 200))
+    screen.blit(Answer4Text, (SCREEN_WIDTH/2+15, 200))
     screen.blit(PointsText, (SCREEN_WIDTH - 100, 0))
 
     pygame.display.update()
