@@ -11,7 +11,7 @@ def randrange(start, end):
         return(start)
     return(random.randrange(start, end))
 
-argparse.ArgumentParser().add_argument("--folder", type=string)
+argparse.ArgumentParser().add_argument("-f", "--folder", required=True, type=string)
 
 Folder = "./MapJsonFiles/"
 
