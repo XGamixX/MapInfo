@@ -1,8 +1,8 @@
 [
-    ["Czechia", ["Auf welchem Kontinent liegt Tschechien?", "Europa (Ost-Europa)", "Asien (Ost-Asien)", "Afrika (Zentral-Afrika)", "Amerika (Süd-Amerika)", "Südamerika (Süd-West-SüdAmerika"]],
-    ["Korea, republic of", ["Auf welchem Kontinent liegt Korea?", "Asien (Ost-Asien)", "Europa (West-Europa)", "Afrika (Nord-Afrika)", "Amerika (Nord-Amerika)", "Südamerika (West-Südamerika)"]],
-    ["Vietnam", ["Auf welchem Kontinent liegt Vietnam?", "Asien (Süd-Ost-Asien)", "Australien", "Europa (West-Europa)", "Afrika (Süd-Ost-Afrika)", "Amerika (Süd-Amerika)"]],
-    ["Bahamas", ["Auf welchem Kontinent liegt Bahamas?", "Amerika (Nord-Amerika)", "Asien (Süd-Asien)", "Europa (Ost-Europa)", "Afrika (Süd-Afrika)", "Südamerika (Ost-Südamerika)"]],
-    ["Congo", ["Auf welchem Kontinent liegt Kongo?", "Afrika (Zentral-Afrika)", "Asien (Ost-Asien)", "Europa (Ost-Europa)", "Amerika (Süd-Amerika)", "Südamerika (West-Südamerika)"]],
-    ["Iran, islamic republic of", ["Auf welchem Kontinent liegt Iran?", "Asien (Süd-West-Asien)", "Afrika (Nord-Afrika)", "Südamerika (Nord-West-Südamerika)", "Europa (Süd-Europa)", "Amerika (Süd-Amerika)"]]
+    ["Czechia", ["Auf welchem Kontinent liegt Tschechien?", "Europa (Ost-Europa)", "Asien (Ost-Asien)", "Afrika (Zentral-Afrika)", "Amerika (Süd-Amerika)", "Amerika (Mittel-Amerika"]],
+    ["Korea, republic of", ["Auf welchem Kontinent liegt Korea?", "Asien (Ost-Asien)", "Europa (West-Europa)", "Afrika (Nord-Afrika)", "Amerika (Nord-Amerika)", "Amerika (Süd-amerika)"]],
+    ["Vietnam", ["Auf welchem Kontinent liegt Vietnam?", "Asien (Süd-Ost-Asien)", "Ozeanien (Australien und Neuseeland)", "Europa (West-Europa)", "Afrika (Ost-Afrika)", "Amerika (Süd-Amerika)"]],
+    ["Bahamas", ["Auf welchem Kontinent liegt Bahamas?", "Amerika (Nord-Amerika)", "Asien (Süd-Asien)", "Europa (Ost-Europa)", "Afrika (Süd-Afrika)", "Amerika (Süd-Amerika)"]],
+    ["Congo", ["Auf welchem Kontinent liegt Kongo?", "Afrika (Zentral-Afrika)", "Asien (Ost-Asien)", "Europa (Ost-Europa)", "Amerika (Süd-Amerika)", "Amerika (Mittel-Amerika)"]],
+    ["Iran, islamic republic of", ["Auf welchem Kontinent liegt Iran?", "Asien (Süd-West-Asien)", "Afrika (Nord-Afrika)", "Amerika (Mittel-Amerika)", "Europa (Süd-Europa)", "Amerika (Süd-Amerika)"]]
 ]
