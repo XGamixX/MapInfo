@@ -1,4 +1,3 @@
-import numpy
 import random
 import json
 import pygame
@@ -11,18 +10,19 @@ def randrange(start, end):
         return(start)
     return(random.randrange(start, end))
 
+Folder = "./MapJsonFiles/"
+
 def importStuff ():
-    with open("questions_1_save.json", "r") as questions_1_save_file:
+    with open(Folder + "questions_1_save.json", "r") as questions_1_save_file:
         global questions_1
         questions_1 = json.load(questions_1_save_file)
-    with open("questions_2_save.json", "r") as questions_2_save_file:
+    with open(Folder + "questions_2_save.json", "r") as questions_2_save_file:
         global questions_2
         questions_2 = json.load(questions_2_save_file)
-    with open("questions_3_save.json", "r") as questions_3_save_file:
+    with open(Folder + "questions_3_save.json", "r") as questions_3_save_file:
         global questions_3
         questions_3 = json.load(questions_3_save_file)
-
-    with open("countries_DE_save.json", "r") as countries_DE_save_file:
+    with open(Folder + "countries_DE_save.json", "r") as countries_DE_save_file:
         global countries_DE
         countries_DE = json.load(countries_DE_save_file)
 
