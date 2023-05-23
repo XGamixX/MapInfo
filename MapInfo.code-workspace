@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"codetogether.virtualCursorJoin": "ownVirtualCursor"
+	}
+}
