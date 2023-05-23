@@ -34,8 +34,6 @@ def importStuff ():
     with open("countries_SHORT_save.json", "r") as countries_SHORT_save_file:
         global countries_SHORT
         countries_SHORT = json.load(countries_SHORT_save_file)
-
-def createNumpy ():
     global countries_DE_np
     global countries_EN_np
     global countries_NATIVE_np
@@ -46,7 +44,6 @@ def createNumpy ():
     countries_SHORT_np = numpy.array(countries_SHORT)
 
 importStuff()
-createNumpy()
 
 def merge_colors (color1, color2):
     return([i+j for i,j in zip(color1, color2)])
