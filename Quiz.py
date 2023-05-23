@@ -11,9 +11,9 @@ def randrange(start, end):
         return(start)
     return(random.randrange(start, end))
 
-argparse.ArgumentParser().add_argument("-f", "--folder", required=True, type=string)
-
-Folder = "./MapJsonFiles/"
+Parser = argparse.ArgumentParser()
+Parser.add_argument("-f", "--folder", required=True)
+Folder = Parser.parse_args().folder
 
 def importStuff ():
     with open(Folder + "questions_1_save.json", "r") as questions_1_save_file:

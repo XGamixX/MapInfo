@@ -30,31 +30,6 @@ def randrange(start, end):
         return(start)
     return(random.randrange(start, end))
 
-def importStuff ():
-    with open("questions_1_save.json", "r") as questions_1_save_file:
-        global questions_1
-        questions_1 = json.load(questions_1_save_file)
-    with open("questions_2_save.json", "r") as questions_2_save_file:
-        global questions_2
-        questions_2 = json.load(questions_2_save_file)
-    with open("questions_3_save.json", "r") as questions_3_save_file:
-        global questions_3
-        questions_3 = json.load(questions_3_save_file)
-
-    with open("countries_DE_save.json", "r") as countries_DE_save_file:
-        global countries_DE
-        countries_DE = json.load(countries_DE_save_file)
-    with open("countries_EN_save.json", "r") as countries_EN_save_file:
-        global countries_EN
-        countries_EN = json.load(countries_EN_save_file)
-    with open("countries_NATIVE_save.json", "r") as countries_NATIVE_save_file:
-        global countries_NATIVE
-        countries_NATIVE = json.load(countries_NATIVE_save_file)
-    with open("countries_SHORT_save.json", "r") as countries_SHORT_save_file:
-        global countries_SHORT
-        countries_SHORT = json.load(countries_SHORT_save_file)
-
-
 def loadManualQuestions ():
     global manualQuestions_1
     manualQuestions_1 = []
@@ -447,7 +422,10 @@ def printErrors ():
     print()
     return()
 
-def saveStuff ():         
+def saveStuff ():
+    Parser = argparse.ArgumentParser()
+    Parser.add_argument("-f", "--folder", required=True)
+    Folder = Parser.parse_args().folder
     global countries_DE
     global countries_EN
     global countries_NATIVE
@@ -455,19 +433,19 @@ def saveStuff ():
     global questions_1
     global questions_2
     global questions_3
-    with open("countries_DE_save.json", "w") as countries_DE_save_file:
+    with open(Folder + "countries_DE_save.json", "w") as countries_DE_save_file:
         json.dump(countries_DE, countries_DE_save_file)
-    with open("countries_EN_save.json", "w") as countries_EN_save_file:
+    with open(Folder + "countries_EN_save.json", "w") as countries_EN_save_file:
         json.dump(countries_EN, countries_EN_save_file)
-    with open("countries_SHORT_save.json", "w") as countries_SHORT_save_file:
+    with open(Folder + "countries_SHORT_save.json", "w") as countries_SHORT_save_file:
         json.dump(countries_SHORT, countries_SHORT_save_file)
-    with open("countries_NATIVE_save.json", "w") as countries_DE_NATIVE_file:
+    with open(Folder + "countries_NATIVE_save.json", "w") as countries_DE_NATIVE_file:
         json.dump(countries_NATIVE, countries_DE_NATIVE_file)
-    with open("questions_1_save.json", "w") as questions_1_save_file:
+    with open(Folder + "questions_1_save.json", "w") as questions_1_save_file:
         json.dump(questions_1, questions_1_save_file)
-    with open("questions_2_save.json", "w") as questions_2_save_file:
+    with open(Folder + "questions_2_save.json", "w") as questions_2_save_file:
         json.dump(questions_2, questions_2_save_file)
-    with open("questions_3_save.json", "w") as questions_3_save_file:
+    with open(Folder + "questions_3_save.json", "w") as questions_3_save_file:
         json.dump(questions_3, questions_3_save_file)
 
 getCountries()
