@@ -425,7 +425,7 @@ def printErrors ():
 
 def saveStuff ():
     Parser = argparse.ArgumentParser()
-    Parser.add_argument("-f", "--folder", required=True)
+    Parser.add_argument("-f", "--folder", required=False)
     Folder = Parser.parse_args().folder
     global countries_DE
     global countries_EN
