@@ -36,10 +36,10 @@ def findWrongItem (correctItem, ID):
     try:
         WrongItem = (books[randrange(1, int(len(books))) - 1][ID])
     except:
-        WrongItem = findWrongItem(correctItem)
+        WrongItem = findWrongItem(correctItem, ID)
 
     if WrongItem == correctItem:
-        WrongItem = findWrongItem(correctItem)
+        WrongItem = findWrongItem(correctItem, ID)
 
     return(WrongItem)
 
