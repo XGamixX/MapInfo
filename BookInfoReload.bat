@@ -1,0 +1,1 @@
+python BookInfo.py --folder "./BookJsonFiles/"
