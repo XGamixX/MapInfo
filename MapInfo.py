@@ -31,6 +31,10 @@ def randrange(start, end):
         return(start)
     return(random.randrange(start, end))
 
+Parser = argparse.ArgumentParser()
+Parser.add_argument("-f", "--folder", required=False)
+Folder = Parser.parse_args().folder
+
 def loadManualQuestions ():
     global manualQuestions_1
     manualQuestions_1 = []
@@ -39,17 +43,17 @@ def loadManualQuestions ():
     global manualQuestions_3
     manualQuestions_3 = [] ##initialisieren der variablen
     try:
-        with open("questions_1.json", "r") as questions_1_file:
+        with open(Folder + "questions_1.json", "r") as questions_1_file:
             manualQuestions_1 = json.load(questions_1_file)
     except:
         pass
     try:
-        with open("questions_2.json", "r") as questions_2_file:
+        with open(Folder + "questions_2.json", "r") as questions_2_file:
             manualQuestions_2 = json.load(questions_2_file)
     except:
         pass
     try:
-        with open("questions_3.json", "r") as questions_3_file:
+        with open(Folder + "questions_3.json", "r") as questions_3_file:
             manualQuestions_3 = json.load(questions_3_file) ##öffnen der dateien
     except:
         pass
@@ -63,17 +67,17 @@ def loadMissingQuestions ():
     global missingQuestions_3
     missingQuestions_3 = [] ##initialisieren der variablen
     try:
-        with open("missing_questions_1.json", "r") as missing_questions_1_file:
+        with open(Folder + "missing_questions_1.json", "r") as missing_questions_1_file:
             missingQuestions_1 = json.load(missing_questions_1_file)
     except:
         pass
     try:
-        with open("missing_questions_2.json", "r") as missing_questions_2_file:
+        with open(Folder + "missing_questions_2.json", "r") as missing_questions_2_file:
             missingQuestions_2 = json.load(missing_questions_2_file)
     except:
         pass
     try:
-        with open("missing_questions_3.json", "r") as missing_questions_3_file:
+        with open(Folder + "missing_questions_3.json", "r") as missing_questions_3_file:
             missingQuestions_3 = json.load(missing_questions_3_file) ##öffnen der dateien
     except:
         pass
@@ -424,9 +428,6 @@ def printErrors ():
     return()
 
 def saveStuff ():
-    Parser = argparse.ArgumentParser()
-    Parser.add_argument("-f", "--folder", required=False)
-    Folder = Parser.parse_args().folder
     global countries_DE
     global countries_EN
     global countries_NATIVE
