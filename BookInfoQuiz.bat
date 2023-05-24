@@ -1,1 +1,1 @@
-python Quiz.py --folder "./BookJsonFiles/" --name "Book"
+python Quiz.py --folder './BookJsonFiles/' --name 'Book'
