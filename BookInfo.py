@@ -31,16 +31,31 @@ def append_3 (bookNR, question, correctAnswer, wrongAnswer1, wrongAnswer2, wrong
     global questions_3
     questions_3[bookNR].append([question, correctAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3, wrongAnswer4])
 
+def findWrongAuthor (correctAuthor):
+    try:
+        WrongAuthor = (books[randrange(1, int(len(books))) - 1][2])
+    except:
+        WrongAuthor = findWrongAuthor()
+
+    if WrongAuthor == correctAuthor:
+        WrongAuthor = findWrongAuthor()
+
+    return(WrongAuthor)
+
 for bookNR, book in enumerate(books):
     BookName = book[1]
-    global questions_1
-    global questions_2
-    global questions_3
-    questions_1.append(BookName)
-    questions_2.append(BookName)
-    questions_3.append(BookName)
+    questions_1.append([BookName])
+    questions_2.append([BookName])
+    questions_3.append([BookName])
     #1: author [2]
     #2: publisher [11]
     #3: page count [7], publish date [10]
     correctAnswer_author = book[2]
-    append_1(bookNR, question, correctAnswer_author, wrongAnswer1, wrongAnswer2, wrongAnswer3, wrongAnswer4)
+    WrongAuthor1 = findWrongAuthor(correctAnswer_author)
+    WrongAuthor2 = findWrongAuthor(correctAnswer_author)
+    WrongAuthor3 = findWrongAuthor(correctAnswer_author)
+    WrongAuthor4 = findWrongAuthor(correctAnswer_author)
+    question = 'Wer hat "' + BookName + '" geschrieben?'
+    append_1(bookNR, question, correctAnswer_author, WrongAuthor1, WrongAuthor2, WrongAuthor3, WrongAuthor4)
+
+print(questions_1)
