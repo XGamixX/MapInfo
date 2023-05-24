@@ -84,7 +84,7 @@ for bookNR, book in enumerate(books):
     append_3(bookNR, question_publishDate, correctAnswer_publishDate, WrongPublishDate1, WrongPublishDate2, WrongPublishDate3, WrongPublishDate4)
 
 Parser = argparse.ArgumentParser()
-Parser.add_argument("-f", "--folder", required=True)
+Parser.add_argument("-f", "--folder", required=False)
 Folder = Parser.parse_args().folder
 
 with open(Folder + "questions_1_save.json", "w") as questions_1_save_file:
