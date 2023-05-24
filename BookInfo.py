@@ -1,6 +1,7 @@
 from deep_translator import GoogleTranslator
 import random
 import json
+import argparse
 
 global questions_1
 global questions_2
@@ -35,10 +36,10 @@ def findWrongAuthor (correctAuthor):
     try:
         WrongAuthor = (books[randrange(1, int(len(books))) - 1][2])
     except:
-        WrongAuthor = findWrongAuthor()
+        WrongAuthor = findWrongAuthor(correctAuthor)
 
     if WrongAuthor == correctAuthor:
-        WrongAuthor = findWrongAuthor()
+        WrongAuthor = findWrongAuthor(correctAuthor)
 
     return(WrongAuthor)
 
@@ -58,4 +59,13 @@ for bookNR, book in enumerate(books):
     question = 'Wer hat "' + BookName + '" geschrieben?'
     append_1(bookNR, question, correctAnswer_author, WrongAuthor1, WrongAuthor2, WrongAuthor3, WrongAuthor4)
 
-print(questions_1)
+Parser = argparse.ArgumentParser()
+Parser.add_argument("-f", "--folder", required=True)
+Folder = Parser.parse_args().folder
+
+with open(Folder + "questions_1_save.json", "w") as questions_1_save_file:
+    json.dump(questions_1, questions_1_save_file)
+with open(Folder + "questions_2_save.json", "w") as questions_2_save_file:
+    json.dump(questions_2, questions_2_save_file)
+with open(Folder + "questions_3_save.json", "w") as questions_3_save_file:
+    json.dump(questions_3, questions_3_save_file)
