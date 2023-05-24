@@ -1,1 +1,1 @@
-./BookReload.exe --folder ./BookJsonFiles/
+BookReload.exe --folder ./BookJsonFiles/

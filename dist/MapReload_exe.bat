@@ -1,1 +1,1 @@
-./MapReload.exe --folder ./MapJsonFiles/
+MapReload.exe --folder ./MapJsonFiles/
