@@ -2,6 +2,13 @@ from deep_translator import GoogleTranslator
 import random
 import json
 
+global questions_1
+global questions_2
+global questions_3
+questions_1 = []
+questions_2 = []
+questions_3 = []
+
 def randrange(start, end):
     end += 1
     if start == end:
@@ -25,7 +32,15 @@ def append_3 (bookNR, question, correctAnswer, wrongAnswer1, wrongAnswer2, wrong
     questions_3[bookNR].append([question, correctAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3, wrongAnswer4])
 
 for bookNR, book in enumerate(books):
-    BookName = book[0]
+    BookName = book[1]
     global questions_1
     global questions_2
     global questions_3
+    questions_1.append(BookName)
+    questions_2.append(BookName)
+    questions_3.append(BookName)
+    #1: author [2]
+    #2: publisher [11]
+    #3: page count [7], publish date [10]
+    correctAnswer_author = book[2]
+    append_1(bookNR, question, correctAnswer_author, wrongAnswer1, wrongAnswer2, wrongAnswer3, wrongAnswer4)
