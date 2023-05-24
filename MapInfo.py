@@ -435,14 +435,6 @@ def saveStuff ():
     global questions_1
     global questions_2
     global questions_3
-    with open(Folder + "countries_DE_save.json", "w") as countries_DE_save_file:
-        json.dump(countries_DE, countries_DE_save_file)
-    with open(Folder + "countries_EN_save.json", "w") as countries_EN_save_file:
-        json.dump(countries_EN, countries_EN_save_file)
-    with open(Folder + "countries_SHORT_save.json", "w") as countries_SHORT_save_file:
-        json.dump(countries_SHORT, countries_SHORT_save_file)
-    with open(Folder + "countries_NATIVE_save.json", "w") as countries_DE_NATIVE_file:
-        json.dump(countries_NATIVE, countries_DE_NATIVE_file)
     with open(Folder + "questions_1_save.json", "w") as questions_1_save_file:
         json.dump(questions_1, questions_1_save_file)
     with open(Folder + "questions_2_save.json", "w") as questions_2_save_file:
