@@ -67,11 +67,11 @@ for bookNR, book in enumerate(books):
     question_publisher = 'Welcher Verlag hat "' + BookName + '" veröffentlich?'
     append_2(bookNR, question_publisher, correctAnswer_publisher, WrongPublisher1, WrongPublisher2, WrongPublisher3, WrongPublisher4)
 
-    correctAnswer_PageCount = book[7]
-    WrongPageCount1 = findWrongItem(correctAnswer_PageCount, 7)
-    WrongPageCount2 = findWrongItem(correctAnswer_PageCount, 7)
-    WrongPageCount3 = findWrongItem(correctAnswer_PageCount, 7)
-    WrongPageCount4 = findWrongItem(correctAnswer_PageCount, 7)
+    correctAnswer_PageCount = str(book[7])
+    WrongPageCount1 = str(findWrongItem(correctAnswer_PageCount, 7))
+    WrongPageCount2 = str(findWrongItem(correctAnswer_PageCount, 7))
+    WrongPageCount3 = str(findWrongItem(correctAnswer_PageCount, 7))
+    WrongPageCount4 = str(findWrongItem(correctAnswer_PageCount, 7))
     question_pageCount = 'Wie viele Seiten hat "' + BookName + '"?'
     append_3(bookNR, question_pageCount, correctAnswer_PageCount, WrongPageCount1, WrongPageCount2, WrongPageCount3, WrongPageCount4)
 
