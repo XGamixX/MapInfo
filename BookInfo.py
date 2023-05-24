@@ -11,3 +11,6 @@ def randrange(start, end):
 with open("books.json", "r", encoding="utf-8") as books_file:
     global books
     books = json.load(books_file)
+
+for book in books:
+    BookName = book[0]
