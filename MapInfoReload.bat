@@ -1,1 +1,1 @@
-python MapInfo.py --folder './MapJsonFiles/'
+python MapInfo.py --folder "./MapJsonFiles/"
