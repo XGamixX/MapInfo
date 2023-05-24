@@ -64,7 +64,7 @@ for bookNR, book in enumerate(books):
     WrongPublisher2 = findWrongItem(correctAnswer_publisher, 11)
     WrongPublisher3 = findWrongItem(correctAnswer_publisher, 11)
     WrongPublisher4 = findWrongItem(correctAnswer_publisher, 11)
-    question_publisher = 'Wer hat "' + BookName + '" geschrieben?'
+    question_publisher = 'Welcher Verlag hat "' + BookName + '" veröffentlich?'
     append_2(bookNR, question_publisher, correctAnswer_publisher, WrongPublisher1, WrongPublisher2, WrongPublisher3, WrongPublisher4)
 
     correctAnswer_PageCount = book[7]
@@ -72,7 +72,7 @@ for bookNR, book in enumerate(books):
     WrongPageCount2 = findWrongItem(correctAnswer_PageCount, 7)
     WrongPageCount3 = findWrongItem(correctAnswer_PageCount, 7)
     WrongPageCount4 = findWrongItem(correctAnswer_PageCount, 7)
-    question_pageCount = 'Wer hat "' + BookName + '" geschrieben?'
+    question_pageCount = 'Wie viele Seiten hat "' + BookName + '"?'
     append_3(bookNR, question_pageCount, correctAnswer_PageCount, WrongPageCount1, WrongPageCount2, WrongPageCount3, WrongPageCount4)
 
     correctAnswer_publishDate = book[10]
@@ -80,7 +80,7 @@ for bookNR, book in enumerate(books):
     WrongPublishDate2 = findWrongItem(correctAnswer_publishDate, 10)
     WrongPublishDate3 = findWrongItem(correctAnswer_publishDate, 10)
     WrongPublishDate4 = findWrongItem(correctAnswer_publishDate, 10)
-    question_publishDate = 'Wer hat "' + BookName + '" geschrieben?'
+    question_publishDate = 'Wann wurde "' + BookName + '" veröffentlicht?'
     append_3(bookNR, question_publishDate, correctAnswer_publishDate, WrongPublishDate1, WrongPublishDate2, WrongPublishDate3, WrongPublishDate4)
 
 Parser = argparse.ArgumentParser()
