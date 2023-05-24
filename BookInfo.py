@@ -41,7 +41,7 @@ def findWrongItem (correctItem, ID):
     if WrongItem == correctItem:
         WrongItem = findWrongItem(correctItem)
 
-    return(WrongAItem)
+    return(WrongItem)
 
 for bookNR, book in enumerate(books):
     BookName = book[1]
