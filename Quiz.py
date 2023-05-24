@@ -106,70 +106,70 @@ buttonAnswer4 = Button(
 global QuestionCount
 QuestionCount = 0
 
-def wrongAnswers (countryNR, questionNR, questionDifficulty):
+def wrongAnswers (itemNR, questionNR, questionDifficulty):
     global Answer1Text_text
     global Answer2Text_text
     global Answer3Text_text
     global Answer4Text_text
     if questionDifficulty == 1:
-        Answer1Text_text = ("Antwort 1: " + questions_1[countryNR][questionNR][2])
-        Answer2Text_text = ("Antwort 2: " + questions_1[countryNR][questionNR][3])
-        Answer3Text_text = ("Antwort 3: " + questions_1[countryNR][questionNR][4])
-        Answer4Text_text = ("Antwort 4: " + questions_1[countryNR][questionNR][5])
+        Answer1Text_text = ("Antwort 1: " + questions_1[itemNR][questionNR][2])
+        Answer2Text_text = ("Antwort 2: " + questions_1[itemNR][questionNR][3])
+        Answer3Text_text = ("Antwort 3: " + questions_1[itemNR][questionNR][4])
+        Answer4Text_text = ("Antwort 4: " + questions_1[itemNR][questionNR][5])
     if questionDifficulty == 2:
-        Answer1Text_text = ("Antwort 1: " + questions_2[countryNR][questionNR][2])
-        Answer2Text_text = ("Antwort 2: " + questions_2[countryNR][questionNR][3])
-        Answer3Text_text = ("Antwort 3: " + questions_2[countryNR][questionNR][4])
-        Answer4Text_text = ("Antwort 4: " + questions_2[countryNR][questionNR][5])
+        Answer1Text_text = ("Antwort 1: " + questions_2[itemNR][questionNR][2])
+        Answer2Text_text = ("Antwort 2: " + questions_2[itemNR][questionNR][3])
+        Answer3Text_text = ("Antwort 3: " + questions_2[itemNR][questionNR][4])
+        Answer4Text_text = ("Antwort 4: " + questions_2[itemNR][questionNR][5])
     if questionDifficulty == 3:
-        Answer1Text_text = ("Antwort 1: " + questions_3[countryNR][questionNR][2])
-        Answer2Text_text = ("Antwort 2: " + questions_3[countryNR][questionNR][3])
-        Answer3Text_text = ("Antwort 3: " + questions_3[countryNR][questionNR][4])
-        Answer4Text_text = ("Antwort 4: " + questions_3[countryNR][questionNR][5])
+        Answer1Text_text = ("Antwort 1: " + questions_3[itemNR][questionNR][2])
+        Answer2Text_text = ("Antwort 2: " + questions_3[itemNR][questionNR][3])
+        Answer3Text_text = ("Antwort 3: " + questions_3[itemNR][questionNR][4])
+        Answer4Text_text = ("Antwort 4: " + questions_3[itemNR][questionNR][5])
 
-def Answer1_right (countryNR, questionNR, questionDifficulty):
+def Answer1_right (itemNR, questionNR, questionDifficulty):
     global correctAnswer
     correctAnswer = 1
     global Answer1Text_text
     if questionDifficulty == 1:
-        Answer1Text_text = ("Antwort 1: " + questions_1[countryNR][questionNR][1])
+        Answer1Text_text = ("Antwort 1: " + questions_1[itemNR][questionNR][1])
     if questionDifficulty == 2:
-        Answer1Text_text = ("Antwort 1: " + questions_2[countryNR][questionNR][1])
+        Answer1Text_text = ("Antwort 1: " + questions_2[itemNR][questionNR][1])
     if questionDifficulty == 3:
-        Answer1Text_text = ("Antwort 1: " + questions_3[countryNR][questionNR][1])
+        Answer1Text_text = ("Antwort 1: " + questions_3[itemNR][questionNR][1])
 
-def Answer2_right (countryNR, questionNR, questionDifficulty):
+def Answer2_right (itemNR, questionNR, questionDifficulty):
     global correctAnswer
     correctAnswer = 2
     global Answer2Text_text
     if questionDifficulty == 1:
-        Answer2Text_text = ("Antwort 2: " + questions_1[countryNR][questionNR][1])
+        Answer2Text_text = ("Antwort 2: " + questions_1[itemNR][questionNR][1])
     if questionDifficulty == 2:
-        Answer2Text_text = ("Antwort 2: " + questions_2[countryNR][questionNR][1])
+        Answer2Text_text = ("Antwort 2: " + questions_2[itemNR][questionNR][1])
     if questionDifficulty == 3:
-        Answer2Text_text = ("Antwort 2: " + questions_3[countryNR][questionNR][1])
+        Answer2Text_text = ("Antwort 2: " + questions_3[itemNR][questionNR][1])
 
-def Answer3_right (countryNR, questionNR, questionDifficulty):
+def Answer3_right (itemNR, questionNR, questionDifficulty):
     global correctAnswer
     correctAnswer = 3
     global Answer3Text_text
     if questionDifficulty == 1:
-        Answer3Text_text = ("Antwort 3: " + questions_1[countryNR][questionNR][1])
+        Answer3Text_text = ("Antwort 3: " + questions_1[itemNR][questionNR][1])
     if questionDifficulty == 2:
-        Answer3Text_text = ("Antwort 3: " + questions_2[countryNR][questionNR][1])
+        Answer3Text_text = ("Antwort 3: " + questions_2[itemNR][questionNR][1])
     if questionDifficulty == 3:
-        Answer3Text_text = ("Antwort 3: " + questions_3[countryNR][questionNR][1])
+        Answer3Text_text = ("Antwort 3: " + questions_3[itemNR][questionNR][1])
 
-def Answer4_right (countryNR, questionNR, questionDifficulty):
+def Answer4_right (itemNR, questionNR, questionDifficulty):
     global correctAnswer
     correctAnswer = 4
     global Answer4Text_text
     if questionDifficulty == 1:
-        Answer4Text_text = ("Antwort 4: " + questions_1[countryNR][questionNR][1])
+        Answer4Text_text = ("Antwort 4: " + questions_1[itemNR][questionNR][1])
     if questionDifficulty == 2:
-        Answer4Text_text = ("Antwort 4: " + questions_2[countryNR][questionNR][1])
+        Answer4Text_text = ("Antwort 4: " + questions_2[itemNR][questionNR][1])
     if questionDifficulty == 3:
-        Answer4Text_text = ("Antwort 4: " + questions_3[countryNR][questionNR][1])
+        Answer4Text_text = ("Antwort 4: " + questions_3[itemNR][questionNR][1])
 
 def NewQuestion (answerNR):
     global points
@@ -179,21 +179,21 @@ def NewQuestion (answerNR):
         PointsText_text = str(points) + " Punkte"
         PointsText=Font.render(PointsText_text, False, BLACK, WHITE)
     try:
-        countryNR = randrange(0, int(len(questions_1))) - 1
+        itemNR = randrange(0, int(len(questions_1))) - 1
         questionDifficulty = randrange(0, 3)
         if questionDifficulty == 1:
-            questionNR = randrange(1, (int(len(questions_1[countryNR])) - 1))
+            questionNR = randrange(1, (int(len(questions_1[itemNR])) - 1))
         if questionDifficulty == 2:
-            questionNR = randrange(1, (int(len(questions_2[countryNR])) - 1)) 
+            questionNR = randrange(1, (int(len(questions_2[itemNR])) - 1)) 
         if questionDifficulty == 3:
-            questionNR = randrange(1, (int(len(questions_3[countryNR])) - 1))
+            questionNR = randrange(1, (int(len(questions_3[itemNR])) - 1))
 
         global QuestionCount
         QuestionCount += 1
 
-        wrongAnswers(countryNR, questionNR, questionDifficulty)
+        wrongAnswers(itemNR, questionNR, questionDifficulty)
 
-        random.choice([Answer1_right, Answer2_right, Answer3_right, Answer4_right])(countryNR, questionNR, questionDifficulty)
+        random.choice([Answer1_right, Answer2_right, Answer3_right, Answer4_right])(itemNR, questionNR, questionDifficulty)
 
         global TitleText
         global QuestionNRText
@@ -207,11 +207,11 @@ def NewQuestion (answerNR):
         QuestionNRText_text = str(QuestionCount) + ". Frage!!!!!!!!!!"
         QuestionNRText=Font.render(QuestionNRText_text, False, BLACK, WHITE)
         if questionDifficulty == 1:
-            QuestionText_text = questions_1[countryNR][questionNR][0]
+            QuestionText_text = questions_1[itemNR][questionNR][0]
         if questionDifficulty == 2:
-            QuestionText_text = questions_2[countryNR][questionNR][0]
+            QuestionText_text = questions_2[itemNR][questionNR][0]
         if questionDifficulty == 3:
-            QuestionText_text = questions_3[countryNR][questionNR][0]
+            QuestionText_text = questions_3[itemNR][questionNR][0]
         QuestionText=Font.render(QuestionText_text, False, BLACK, WHITE)
         Answer1Text=Font.render(Answer1Text_text, False, BLACK, WHITE)
         Answer2Text=Font.render(Answer2Text_text, False, BLACK, WHITE)
