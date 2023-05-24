@@ -13,7 +13,9 @@ def randrange(start, end):
 
 Parser = argparse.ArgumentParser()
 Parser.add_argument("-f", "--folder", required=True)
+Parser.add_argument("-n", "--name", required=True)
 Folder = Parser.parse_args().folder
+QuizName = Parser.parse_args().name
 
 def importStuff ():
     with open(Folder + "questions_1_save.json", "r") as questions_1_save_file:
@@ -25,9 +27,6 @@ def importStuff ():
     with open(Folder + "questions_3_save.json", "r") as questions_3_save_file:
         global questions_3
         questions_3 = json.load(questions_3_save_file)
-    with open(Folder + "countries_DE_save.json", "r") as countries_DE_save_file:
-        global countries_DE
-        countries_DE = json.load(countries_DE_save_file)
 
 importStuff()
 
@@ -70,7 +69,7 @@ VSPACING = 6
 
 Font = pygame.font.SysFont('timesnewroman',  FONTSIZE)
 
-pygame.display.set_caption("MapInfo")
+pygame.display.set_caption(QuizName + " Quiz")
 
 buttonAnswer1 = Button(
     screen, 0+VSPACING/2, 150-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
@@ -180,7 +179,7 @@ def NewQuestion (answerNR):
         PointsText_text = str(points) + " Punkte"
         PointsText=Font.render(PointsText_text, False, BLACK, WHITE)
     try:
-        countryNR = randrange(0, int(len(countries_DE))) - 1
+        countryNR = randrange(0, int(len(questions_1))) - 1
         questionDifficulty = randrange(0, 3)
         if questionDifficulty == 1:
             questionNR = randrange(1, (int(len(questions_1[countryNR])) - 1))

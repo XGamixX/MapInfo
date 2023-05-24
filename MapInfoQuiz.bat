@@ -1,1 +1,1 @@
-python Quiz.py --folder "./MapJsonFiles/"
+python Quiz.py --folder "./MapJsonFiles/" --name "Map"
