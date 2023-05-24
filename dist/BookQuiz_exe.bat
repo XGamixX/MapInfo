@@ -1,0 +1,1 @@
+BookQuiz.exe --folder ./BookJsonFiles/ --name Bücher
