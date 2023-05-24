@@ -203,7 +203,7 @@ def NewQuestion (answerNR):
         global Answer2Text
         global Answer3Text
         global Answer4Text
-        TitleText=Font.render("Länder Quiz!!!!!!!", False, BLACK, WHITE)
+        TitleText=Font.render(QuizName + " Quiz!!!!!!!", False, BLACK, WHITE)
         QuestionNRText_text = str(QuestionCount) + ". Frage!!!!!!!!!!"
         QuestionNRText=Font.render(QuestionNRText_text, False, BLACK, WHITE)
         if questionDifficulty == 1:
