@@ -12,8 +12,8 @@ def randrange(start, end):
     return(random.randrange(start, end))
 
 Parser = argparse.ArgumentParser()
-Parser.add_argument("-f", "--folder", required=True)
-Parser.add_argument("-n", "--name", required=True)
+Parser.add_argument("-f", "--folder", required=False)
+Parser.add_argument("-n", "--name", required=False)
 Folder = Parser.parse_args().folder
 QuizName = Parser.parse_args().name
 
