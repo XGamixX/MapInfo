@@ -35,15 +35,16 @@ def merge_colors (color1, color2):
 
 BLACK = (0, 0, 0)
 LIGHTGREY = (63, 63, 63)
-DARKGREY = (127, 127, 127)
+GREY = (127, 127, 127)
+DARKGREY = (191, 191, 191)
 WHITE = (255, 255, 255)
 
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
-BLUE = (0, 255, 0)
+BLUE = (0, 0, 255)
 LIGHT_RED = (127, 0, 0)
 LIGHT_GREEN = (0, 127, 0)
-LIGHT_BLUE = (0, 127, 0)
+LIGHT_BLUE = (0, 0, 127)
 
 YELLOW = merge_colors(RED,GREEN)
 MAGENTA = merge_colors(RED, BLUE)
@@ -256,7 +257,7 @@ while running:
         if event.type == pygame.QUIT: # pygame.QUIT event means the user clicked X to close the window
             running = False
 
-    screen.fill("Lime") # fill the screen with a color to wipe away anything from last frame
+    screen.fill(MAGENTA) # fill the screen with a color to wipe away anything from last frame
 
     #### start of renderer
     updateButtons()
