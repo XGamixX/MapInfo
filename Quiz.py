@@ -113,6 +113,9 @@ def updateButtons ():
     buttons = [buttonAnswer1, buttonAnswer2, buttonAnswer3, buttonAnswer4]
     for button in buttons:
         button.setWidth(SCREEN_WIDTH/2-VSPACING)
+    buttons = [buttonAnswer2, buttonAnswer4]
+    for button in buttons:
+        button.setX(SCREEN_WIDTH/2+VSPACING/2)
     
 
 global QuestionCount
@@ -263,9 +266,9 @@ while running:
     screen.blit(QuestionNRText, (0, 50))
     screen.blit(QuestionText, (0, 100))
     screen.blit(Answer1Text, (0+15, 150))
-    screen.blit(Answer2Text, (SCREEN_WIDTH/2+15, 150))
+    screen.blit(Answer2Text, (SCREEN_WIDTH/2+VSPACING/2+15, 150))
     screen.blit(Answer3Text, (00+15, 200))
-    screen.blit(Answer4Text, (SCREEN_WIDTH/2+15, 200))
+    screen.blit(Answer4Text, (SCREEN_WIDTH/2+VSPACING/2+15, 200))
     screen.blit(PointsText, (SCREEN_WIDTH - 100, 0))
 
     pygame.display.update()
