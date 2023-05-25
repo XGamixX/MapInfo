@@ -44,7 +44,7 @@ def findWrongItem (correctItem, ID):
     return(WrongItem)
 
 for bookNR, book in enumerate(books):
-    BookName = book[1]
+    BookName = book[0]
     questions_1.append([BookName])
     questions_2.append([BookName])
     questions_3.append([BookName])
