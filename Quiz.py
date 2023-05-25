@@ -71,34 +71,37 @@ Font = pygame.font.SysFont('timesnewroman',  FONTSIZE)
 
 pygame.display.set_caption(QuizName + " Quiz")
 
+INACTIVE_COLOR=VIOLET
+PRESSED_COLOR=ROSE
+
 buttonAnswer1 = Button(
     screen, 0+VSPACING/2, 150-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
     fontSize=50, margin=20,
-    inactiveColour=(255, 0, 0),
-    pressedColour=(0, 0, 255), radius=20,
+    inactiveColour=INACTIVE_COLOR,
+    pressedColour=PRESSED_COLOR, radius=20,
     onClick=lambda: NewQuestion(1)
 )
 buttonAnswer2 = Button(
     screen, SCREEN_WIDTH/2+VSPACING/2, 150-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
     fontSize=50, margin=20,
-    inactiveColour=(255, 0, 0),
-    pressedColour=(0, 0, 255), radius=20,
+    inactiveColour=INACTIVE_COLOR,
+    pressedColour=PRESSED_COLOR, radius=20,
     onClick=lambda: NewQuestion(2)
 )
 
 buttonAnswer3 = Button(
     screen, 0+VSPACING/2, 200-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
     fontSize=50, margin=20,
-    inactiveColour=(255, 0, 0),
-    pressedColour=(0, 0, 255), radius=20,
+    inactiveColour=INACTIVE_COLOR,
+    pressedColour=PRESSED_COLOR, radius=20,
     onClick=lambda: NewQuestion(3)
 )
 
 buttonAnswer4 = Button(
     screen, SCREEN_WIDTH/2+VSPACING/2, 200-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
     fontSize=50, margin=20,
-    inactiveColour=(255, 0, 0),
-    pressedColour=(0, 0, 255), radius=20,
+    inactiveColour=INACTIVE_COLOR,
+    pressedColour=PRESSED_COLOR, radius=20,
     onClick=lambda: NewQuestion(4)
 )
 
