@@ -48,38 +48,38 @@ for bookNR, book in enumerate(books):
     questions_1.append([BookName])
     questions_2.append([BookName])
     questions_3.append([BookName])
-    #1: author [2]
-    #2: publisher [11]
-    #3: page count [7], publish date [10]
-    correctAnswer_author = book[2]
-    WrongAuthor1 = findWrongItem(correctAnswer_author, 2)
-    WrongAuthor2 = findWrongItem(correctAnswer_author, 2)
-    WrongAuthor3 = findWrongItem(correctAnswer_author, 2)
-    WrongAuthor4 = findWrongItem(correctAnswer_author, 2)
+    #1: author [0]
+    #2: publisher [3]
+    #3: page count [1], publish date [2]
+    correctAnswer_author = book[0]
+    WrongAuthor1 = findWrongItem(correctAnswer_author, 0)
+    WrongAuthor2 = findWrongItem(correctAnswer_author, 0)
+    WrongAuthor3 = findWrongItem(correctAnswer_author, 0)
+    WrongAuthor4 = findWrongItem(correctAnswer_author, 0)
     question_author = 'Wer hat "' + BookName + '" geschrieben?'
     append_1(bookNR, question_author, correctAnswer_author, WrongAuthor1, WrongAuthor2, WrongAuthor3, WrongAuthor4)
 
-    correctAnswer_publisher = book[11]
-    WrongPublisher1 = findWrongItem(correctAnswer_publisher, 11)
-    WrongPublisher2 = findWrongItem(correctAnswer_publisher, 11)
-    WrongPublisher3 = findWrongItem(correctAnswer_publisher, 11)
-    WrongPublisher4 = findWrongItem(correctAnswer_publisher, 11)
+    correctAnswer_publisher = book[3]
+    WrongPublisher1 = findWrongItem(correctAnswer_publisher, 3)
+    WrongPublisher2 = findWrongItem(correctAnswer_publisher, 3)
+    WrongPublisher3 = findWrongItem(correctAnswer_publisher, 3)
+    WrongPublisher4 = findWrongItem(correctAnswer_publisher, 3)
     question_publisher = 'Welcher Verlag hat "' + BookName + '" veröffentlich?'
     append_2(bookNR, question_publisher, correctAnswer_publisher, WrongPublisher1, WrongPublisher2, WrongPublisher3, WrongPublisher4)
 
-    correctAnswer_PageCount = str(book[7])
-    WrongPageCount1 = str(findWrongItem(correctAnswer_PageCount, 7))
-    WrongPageCount2 = str(findWrongItem(correctAnswer_PageCount, 7))
-    WrongPageCount3 = str(findWrongItem(correctAnswer_PageCount, 7))
-    WrongPageCount4 = str(findWrongItem(correctAnswer_PageCount, 7))
+    correctAnswer_PageCount = str(book[1])
+    WrongPageCount1 = str(findWrongItem(correctAnswer_PageCount, 1))
+    WrongPageCount2 = str(findWrongItem(correctAnswer_PageCount, 1))
+    WrongPageCount3 = str(findWrongItem(correctAnswer_PageCount, 1))
+    WrongPageCount4 = str(findWrongItem(correctAnswer_PageCount, 1))
     question_pageCount = 'Wie viele Seiten hat "' + BookName + '"?'
     append_3(bookNR, question_pageCount, correctAnswer_PageCount, WrongPageCount1, WrongPageCount2, WrongPageCount3, WrongPageCount4)
 
-    correctAnswer_publishDate = book[10]
-    WrongPublishDate1 = findWrongItem(correctAnswer_publishDate, 10)
-    WrongPublishDate2 = findWrongItem(correctAnswer_publishDate, 10)
-    WrongPublishDate3 = findWrongItem(correctAnswer_publishDate, 10)
-    WrongPublishDate4 = findWrongItem(correctAnswer_publishDate, 10)
+    correctAnswer_publishDate = book[2]
+    WrongPublishDate1 = findWrongItem(correctAnswer_publishDate, 2)
+    WrongPublishDate2 = findWrongItem(correctAnswer_publishDate, 2)
+    WrongPublishDate3 = findWrongItem(correctAnswer_publishDate, 2)
+    WrongPublishDate4 = findWrongItem(correctAnswer_publishDate, 2)
     question_publishDate = 'Wann wurde "' + BookName + '" veröffentlicht?'
     append_3(bookNR, question_publishDate, correctAnswer_publishDate, WrongPublishDate1, WrongPublishDate2, WrongPublishDate3, WrongPublishDate4)
 
