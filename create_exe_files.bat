@@ -1,0 +1,4 @@
+pyinstaller --onefile --console --name="MapReload" --distpath="C:\Users\Straßburg\Documents\python\MapInfo\dist" --python-option="--folder ./MapJsonFiles/" C:\Users\Straßburg\Documents\python\MapInfo\MapInfo.py
+pyinstaller --onefile --console --name="MapQuiz" --distpath="C:\Users\Straßburg\Documents\python\MapInfo\dist" --python-option="--folder ./MapJsonFiles/ --name Länder" C:\Users\Straßburg\Documents\python\MapInfo\Quiz.py
+pyinstaller --onefile --console --name="BookReload" --distpath="C:\Users\Straßburg\Documents\python\MapInfo\dist" --python-option="--folder ./BookJsonFiles/" C:\Users\Straßburg\Documents\python\MapInfo\BookInfo.py
+pyinstaller --onefile --console --name="BookQuiz" --distpath="C:\Users\Straßburg\Documents\python\MapInfo\dist" --python-option="--folder ./BookJsonFiles/ --name Bücher" C:\Users\Straßburg\Documents\python\MapInfo\Quiz.py
