@@ -70,44 +70,50 @@ Font = pygame.font.SysFont('timesnewroman',  FONTSIZE)
 
 pygame.display.set_caption(QuizName + " Quiz")
 
-def createButtons ():
+buttonAnswer1 = Button(
+    screen, 0+VSPACING/2, 150-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
+    fontSize=50, margin=20,
+    inactiveColour=(255, 0, 0),
+    pressedColour=(0, 0, 255), radius=20,
+    onClick=lambda: NewQuestion(1)
+)
+buttonAnswer2 = Button(
+    screen, SCREEN_WIDTH/2+VSPACING/2, 150-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
+    fontSize=50, margin=20,
+    inactiveColour=(255, 0, 0),
+    pressedColour=(0, 0, 255), radius=20,
+    onClick=lambda: NewQuestion(2)
+)
+
+buttonAnswer3 = Button(
+    screen, 0+VSPACING/2, 200-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
+    fontSize=50, margin=20,
+    inactiveColour=(255, 0, 0),
+    pressedColour=(0, 0, 255), radius=20,
+    onClick=lambda: NewQuestion(3)
+)
+
+buttonAnswer4 = Button(
+    screen, SCREEN_WIDTH/2+VSPACING/2, 200-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
+    fontSize=50, margin=20,
+    inactiveColour=(255, 0, 0),
+    pressedColour=(0, 0, 255), radius=20,
+    onClick=lambda: NewQuestion(4)
+)
+
+def updateButtons ():
     global buttonAnswer1
     global buttonAnswer2
     global buttonAnswer3
     global buttonAnswer4
+    global SCREEN_WIDTH
+    global SCREEN_HEIGHT
     SCREEN_WIDTH = screen.get_rect()[2]
     SCREEN_HEIGHT = screen.get_rect()[3]
-    buttonAnswer1 = Button(
-        screen, 0+VSPACING/2, 150-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
-        fontSize=50, margin=20,
-        inactiveColour=(255, 0, 0),
-        pressedColour=(0, 0, 255), radius=20,
-        onClick=lambda: NewQuestion(1)
-    )
-
-    buttonAnswer2 = Button(
-        screen, SCREEN_WIDTH/2+VSPACING/2, 150-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
-        fontSize=50, margin=20,
-        inactiveColour=(255, 0, 0),
-        pressedColour=(0, 0, 255), radius=20,
-        onClick=lambda: NewQuestion(2)
-    )
-
-    buttonAnswer3 = Button(
-        screen, 0+VSPACING/2, 200-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
-        fontSize=50, margin=20,
-        inactiveColour=(255, 0, 0),
-        pressedColour=(0, 0, 255), radius=20,
-        onClick=lambda: NewQuestion(3)
-    )
-
-    buttonAnswer4 = Button(
-        screen, SCREEN_WIDTH/2+VSPACING/2, 200-15+HSPACING/2, SCREEN_WIDTH/2-VSPACING, TEXTSIZE+15*2-HSPACING,
-        fontSize=50, margin=20,
-        inactiveColour=(255, 0, 0),
-        pressedColour=(0, 0, 255), radius=20,
-        onClick=lambda: NewQuestion(4)
-    )
+    buttons = [buttonAnswer1, buttonAnswer2, buttonAnswer3, buttonAnswer4]
+    for button in buttons:
+        button.setWidth(SCREEN_WIDTH/2-VSPACING)
+    
 
 global QuestionCount
 QuestionCount = 0
@@ -250,7 +256,7 @@ while running:
     screen.fill("Lime") # fill the screen with a color to wipe away anything from last frame
 
     #### start of renderer
-    createButtons()
+    updateButtons()
     pygame_widgets.update(events)
 
     screen.blit(TitleText, (0, 0))
