@@ -43,17 +43,17 @@ def loadManualQuestions ():
     global manualQuestions_3
     manualQuestions_3 = [] ##initialisieren der variablen
     try:
-        with open(Folder + "questions_1.json", "r") as questions_1_file:
+        with open(Folder + "questions_1.json", "r", encoding="utf-8") as questions_1_file:
             manualQuestions_1 = json.load(questions_1_file)
     except:
         pass
     try:
-        with open(Folder + "questions_2.json", "r") as questions_2_file:
+        with open(Folder + "questions_2.json", "r", encoding="utf-8") as questions_2_file:
             manualQuestions_2 = json.load(questions_2_file)
     except:
         pass
     try:
-        with open(Folder + "questions_3.json", "r") as questions_3_file:
+        with open(Folder + "questions_3.json", "r", encoding="utf-8") as questions_3_file:
             manualQuestions_3 = json.load(questions_3_file) ##öffnen der dateien
     except:
         pass
@@ -67,17 +67,17 @@ def loadMissingQuestions ():
     global missingQuestions_3
     missingQuestions_3 = [] ##initialisieren der variablen
     try:
-        with open(Folder + "missing_questions_1.json", "r") as missing_questions_1_file:
+        with open(Folder + "missing_questions_1.json", "r", encoding="utf-8") as missing_questions_1_file:
             missingQuestions_1 = json.load(missing_questions_1_file)
     except:
         pass
     try:
-        with open(Folder + "missing_questions_2.json", "r") as missing_questions_2_file:
+        with open(Folder + "missing_questions_2.json", "r", encoding="utf-8") as missing_questions_2_file:
             missingQuestions_2 = json.load(missing_questions_2_file)
     except:
         pass
     try:
-        with open(Folder + "missing_questions_3.json", "r") as missing_questions_3_file:
+        with open(Folder + "missing_questions_3.json", "r", encoding="utf-8") as missing_questions_3_file:
             missingQuestions_3 = json.load(missing_questions_3_file) ##öffnen der dateien
     except:
         pass
@@ -435,11 +435,11 @@ def saveStuff ():
     global questions_1
     global questions_2
     global questions_3
-    with open(Folder + "questions_1_save.json", "w") as questions_1_save_file:
+    with open(Folder + "questions_1_save.json", "w", encoding="utf-8") as questions_1_save_file:
         json.dump(questions_1, questions_1_save_file)
-    with open(Folder + "questions_2_save.json", "w") as questions_2_save_file:
+    with open(Folder + "questions_2_save.json", "w", encoding="utf-8") as questions_2_save_file:
         json.dump(questions_2, questions_2_save_file)
-    with open(Folder + "questions_3_save.json", "w") as questions_3_save_file:
+    with open(Folder + "questions_3_save.json", "w", encoding="utf-8") as questions_3_save_file:
         json.dump(questions_3, questions_3_save_file)
 
 getCountries()

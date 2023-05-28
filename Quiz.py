@@ -18,13 +18,13 @@ Folder = Parser.parse_args().folder
 QuizName = Parser.parse_args().name
 
 def importStuff ():
-    with open(Folder + "questions_1_save.json", "r") as questions_1_save_file:
+    with open(Folder + "questions_1_save.json", "r", encoding="utf-8") as questions_1_save_file:
         global questions_1
         questions_1 = json.load(questions_1_save_file)
-    with open(Folder + "questions_2_save.json", "r") as questions_2_save_file:
+    with open(Folder + "questions_2_save.json", "r", encoding="utf-8") as questions_2_save_file:
         global questions_2
         questions_2 = json.load(questions_2_save_file)
-    with open(Folder + "questions_3_save.json", "r") as questions_3_save_file:
+    with open(Folder + "questions_3_save.json", "r", encoding="utf-8") as questions_3_save_file:
         global questions_3
         questions_3 = json.load(questions_3_save_file)
 
