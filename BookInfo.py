@@ -87,9 +87,16 @@ Parser = argparse.ArgumentParser()
 Parser.add_argument("-f", "--folder", required=False)
 Folder = Parser.parse_args().folder
 
-with open(Folder + "questions_1_save.json", "w") as questions_1_save_file:
+with open(Folder + "ManualQuestions.json", "r", encoding="utf-8") as ManualQuestions_file:
+    global books
+    books = json.load(ManualQuestions_file)
+
+for Question in ManualQuestions:
+    questions_1.append(["", Question])
+
+with open(Folder + "questions_1_save.json", "w", encoding="utf-8") as questions_1_save_file:
     json.dump(questions_1, questions_1_save_file)
-with open(Folder + "questions_2_save.json", "w") as questions_2_save_file:
+with open(Folder + "questions_2_save.json", "w", encoding="utf-8") as questions_2_save_file:
     json.dump(questions_2, questions_2_save_file)
-with open(Folder + "questions_3_save.json", "w") as questions_3_save_file:
+with open(Folder + "questions_3_save.json", "w", encoding="utf-8") as questions_3_save_file:
     json.dump(questions_3, questions_3_save_file)
