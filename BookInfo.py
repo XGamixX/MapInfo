@@ -88,8 +88,8 @@ Parser.add_argument("-f", "--folder", required=False)
 Folder = Parser.parse_args().folder
 
 with open(Folder + "ManualQuestions.json", "r", encoding="utf-8") as ManualQuestions_file:
-    global books
-    books = json.load(ManualQuestions_file)
+    global ManualQuestions
+    ManualQuestions = json.load(ManualQuestions_file)
 
 for Question in ManualQuestions:
     questions_1.append(["", Question])
