@@ -16,7 +16,11 @@ def randrange(start, end):
         return(start)
     return(random.randrange(start, end))
 
-with open("books.json", "r", encoding="utf-8") as books_file:
+Parser = argparse.ArgumentParser()
+Parser.add_argument("-f", "--folder", required=False)
+Folder = Parser.parse_args().folder
+
+with open(Folder + "books.json", "r", encoding="utf-8") as books_file:
     global books
     books = json.load(books_file)
 
@@ -82,10 +86,6 @@ for bookNR, book in enumerate(books):
     WrongPublishDate4 = findWrongItem(correctAnswer_publishDate, 3)
     question_publishDate = 'Wann wurde "' + BookName + '" veröffentlicht?'
     append_3(bookNR, question_publishDate, correctAnswer_publishDate, WrongPublishDate1, WrongPublishDate2, WrongPublishDate3, WrongPublishDate4)
-
-Parser = argparse.ArgumentParser()
-Parser.add_argument("-f", "--folder", required=False)
-Folder = Parser.parse_args().folder
 
 with open(Folder + "ManualQuestions.json", "r", encoding="utf-8") as ManualQuestions_file:
     global ManualQuestions
