@@ -31,7 +31,7 @@ if not os.path.exists(os.path.abspath(Folder + "ManualQuestions.json")):
     if os.path.exists(os.path.abspath("ManualQuestions.json")):
         os.system("copy " + os.path.abspath("ManualQuestions.json") + " " + os.path.abspath(Folder + "ManualQuestions.json"))
     else:
-        with open('ManualQuestions.json', 'w') as ManualQuestions_file:
+        with open(Folder + "ManualQuestions.json", "w") as ManualQuestions_file:
             ManualQuestions_file.write("[]")
 
 with open(Folder + "books.json", "r", encoding="utf-8") as books_file:
