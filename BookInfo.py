@@ -2,6 +2,7 @@ from deep_translator import GoogleTranslator
 import random
 import json
 import argparse
+import os
 
 global questions_1
 global questions_2
@@ -22,7 +23,8 @@ Folder = Parser.parse_args().folder
 if not os.path.exists(Folder):
     os.makedirs(Folder)
 if not os.path.exists(Folder + "books.json"):
-    os.system("copy ./books.json " + Folder + "books.json")
+    print(os.path.abspath("books.json"))
+    os.system("copy" + os.path.abspath("books.json") + " " + os.path.abspath (Folder + "books.json"))
 
 with open(Folder + "books.json", "r", encoding="utf-8") as books_file:
     global books
