@@ -23,8 +23,7 @@ Folder = Parser.parse_args().folder
 if not os.path.exists(Folder):
     os.makedirs(Folder)
 if not os.path.exists(Folder + "books.json"):
-    print(os.path.abspath("books.json"))
-    os.system("copy" + os.path.abspath("books.json") + " " + os.path.abspath (Folder + "books.json"))
+    os.system("copy " + os.path.abspath("books.json") + " " + os.path.abspath(Folder + "books.json"))
 
 with open(Folder + "books.json", "r", encoding="utf-8") as books_file:
     global books
