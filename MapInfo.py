@@ -37,7 +37,7 @@ Parser.add_argument("-f", "--folder", required=False)
 Folder = Parser.parse_args().folder
 if not os.path.exists(Folder):
     os.makedirs(Folder)
-Files = ["missingQuestions_1.json", "missingQuestions_2.json", "missingQuestions_3.json", "questions_1.json", "questions_2.json", "questions_3.json", "rename_countries.json"]
+Files = ["MapQuiz_missingQuestions_1.json", "MapQuiz_missingQuestions_2.json", "MapQuiz_missingQuestions_3.json", "MapQuiz_questions_1.json", "MapQuiz_questions_2.json", "MapQuiz_questions_3.json", "MapQuiz_rename_countries.json"]
 for File in Files:
     if not os.path.exists(os.path.abspath(Folder + File)):
         if os.path.exists(os.path.abspath(File)):
@@ -51,17 +51,17 @@ def loadManualQuestions ():
     global manualQuestions_3
     manualQuestions_3 = [] ##initialisieren der variablen
     try:
-        with open(Folder + "questions_1.json", "r", encoding="utf-8") as questions_1_file:
+        with open(Folder + "MapQuiz_questions_1.json", "r", encoding="utf-8") as questions_1_file:
             manualQuestions_1 = json.load(questions_1_file)
     except:
         pass
     try:
-        with open(Folder + "questions_2.json", "r", encoding="utf-8") as questions_2_file:
+        with open(Folder + "MapQuiz_questions_2.json", "r", encoding="utf-8") as questions_2_file:
             manualQuestions_2 = json.load(questions_2_file)
     except:
         pass
     try:
-        with open(Folder + "questions_3.json", "r", encoding="utf-8") as questions_3_file:
+        with open(Folder + "MapQuiz_questions_3.json", "r", encoding="utf-8") as questions_3_file:
             manualQuestions_3 = json.load(questions_3_file) ##öffnen der dateien
     except:
         pass
@@ -75,17 +75,17 @@ def loadMissingQuestions ():
     global missingQuestions_3
     missingQuestions_3 = [] ##initialisieren der variablen
     try:
-        with open(Folder + "missing_questions_1.json", "r", encoding="utf-8") as missing_questions_1_file:
+        with open(Folder + "MapQuiz_missing_questions_1.json", "r", encoding="utf-8") as missing_questions_1_file:
             missingQuestions_1 = json.load(missing_questions_1_file)
     except:
         pass
     try:
-        with open(Folder + "missing_questions_2.json", "r", encoding="utf-8") as missing_questions_2_file:
+        with open(Folder + "MapQuiz_missing_questions_2.json", "r", encoding="utf-8") as missing_questions_2_file:
             missingQuestions_2 = json.load(missing_questions_2_file)
     except:
         pass
     try:
-        with open(Folder + "missing_questions_3.json", "r", encoding="utf-8") as missing_questions_3_file:
+        with open(Folder + "MapQuiz_missing_questions_3.json", "r", encoding="utf-8") as missing_questions_3_file:
             missingQuestions_3 = json.load(missing_questions_3_file) ##öffnen der dateien
     except:
         pass

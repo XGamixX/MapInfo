@@ -27,11 +27,11 @@ if not os.path.exists(os.path.abspath(Folder + "books.json")):
         os.system("copy " + os.path.abspath("books.json") + " " + os.path.abspath(Folder + "books.json"))
     else:
         print("Missing books.json")
-if not os.path.exists(os.path.abspath(Folder + "ManualQuestions.json")):
-    if os.path.exists(os.path.abspath("ManualQuestions.json")):
-        os.system("copy " + os.path.abspath("ManualQuestions.json") + " " + os.path.abspath(Folder + "ManualQuestions.json"))
+if not os.path.exists(os.path.abspath(Folder + "BookQuiz_ManualQuestions.json")):
+    if os.path.exists(os.path.abspath("BookQuiz_ManualQuestions.json")):
+        os.system("copy " + os.path.abspath("BookQuiz_ManualQuestions.json") + " " + os.path.abspath(Folder + "BookQuiz_ManualQuestions.json"))
     else:
-        with open(Folder + "ManualQuestions.json", "w") as ManualQuestions_file:
+        with open(Folder + "BookQuiz_ManualQuestions.json", "w") as ManualQuestions_file:
             ManualQuestions_file.write("[]")
 
 with open(Folder + "books.json", "r", encoding="utf-8") as books_file:
@@ -101,7 +101,7 @@ for bookNR, book in enumerate(books):
     question_publishDate = 'Wann wurde "' + BookName + '" veröffentlicht?'
     append_3(bookNR, question_publishDate, correctAnswer_publishDate, WrongPublishDate1, WrongPublishDate2, WrongPublishDate3, WrongPublishDate4)
 
-with open(Folder + "ManualQuestions.json", "r", encoding="utf-8") as ManualQuestions_file:
+with open(Folder + "BookQuiz_ManualQuestions.json", "r", encoding="utf-8") as ManualQuestions_file:
     global ManualQuestions
     ManualQuestions = json.load(ManualQuestions_file)
 
