@@ -37,6 +37,11 @@ Parser.add_argument("-f", "--folder", required=False)
 Folder = Parser.parse_args().folder
 if not os.path.exists(Folder):
     os.makedirs(Folder)
+Files = ["missingQuestions_1.json", "missingQuestions_2.json", "missingQuestions_3.json", "questions_1.json", "questions_2.json", "questions_3.json", "rename_countries.json"]
+for File in Files:
+    if not os.path.exists(os.path.abspath(Folder + File)):
+        if os.path.exists(os.path.abspath(File)):
+            os.system("copy " + os.path.abspath(File) + " " + os.path.abspath(Folder + File))
 
 def loadManualQuestions ():
     global manualQuestions_1
