@@ -22,8 +22,17 @@ Parser.add_argument("-f", "--folder", required=False)
 Folder = Parser.parse_args().folder
 if not os.path.exists(Folder):
     os.makedirs(Folder)
-if not os.path.exists(Folder + "books.json"):
-    os.system("copy " + os.path.abspath("books.json") + " " + os.path.abspath(Folder + "books.json"))
+if not os.path.exists(os.path.abspath(Folder + "books.json")):
+    if os.path.exists(os.path.abspath("books.json")):
+        os.system("copy " + os.path.abspath("books.json") + " " + os.path.abspath(Folder + "books.json"))
+    else:
+        print("Missing books.json")
+if not os.path.exists(os.path.abspath(Folder + "ManualQuestions.json")):
+    if os.path.exists(os.path.abspath("ManualQuestions.json")):
+        os.system("copy " + os.path.abspath("ManualQuestions.json") + " " + os.path.abspath(Folder + "ManualQuestions.json"))
+    else:
+        with open('ManualQuestions.json', 'w') as ManualQuestions_file:
+            ManualQuestions_file.write("[]")
 
 with open(Folder + "books.json", "r", encoding="utf-8") as books_file:
     global books
