@@ -3,6 +3,7 @@ import json
 import pygame
 import pygame_widgets
 import argparse
+import os
 from pygame_widgets.button import Button
 
 def randrange(start, end):
