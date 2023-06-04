@@ -34,6 +34,8 @@ def randrange(start, end):
 Parser = argparse.ArgumentParser()
 Parser.add_argument("-f", "--folder", required=False)
 Folder = Parser.parse_args().folder
+if not os.path.exists(Folder):
+    os.makedirs(Folder)
 
 def loadManualQuestions ():
     global manualQuestions_1

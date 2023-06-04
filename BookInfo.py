@@ -19,6 +19,8 @@ def randrange(start, end):
 Parser = argparse.ArgumentParser()
 Parser.add_argument("-f", "--folder", required=False)
 Folder = Parser.parse_args().folder
+if not os.path.exists(Folder):
+    os.makedirs(Folder)
 
 with open(Folder + "books.json", "r", encoding="utf-8") as books_file:
     global books

@@ -15,6 +15,8 @@ Parser = argparse.ArgumentParser()
 Parser.add_argument("-f", "--folder", required=False)
 Parser.add_argument("-n", "--name", required=False)
 Folder = Parser.parse_args().folder
+if not os.path.exists(Folder):
+    os.makedirs(Folder)
 QuizName = Parser.parse_args().name
 
 def importStuff ():
