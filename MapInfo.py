@@ -24,7 +24,7 @@ global questions_2
 global questions_3
 questions_1 = []
 questions_2 = []
-questions_3 = [] ##initialisieren der variablen
+questions_3 = []
 
 def randrange(start, end):
     end += 1
@@ -39,9 +39,11 @@ if not os.path.exists(Folder):
     os.makedirs(Folder)
 Files = ["MapQuiz_missingQuestions_1.json", "MapQuiz_missingQuestions_2.json", "MapQuiz_missingQuestions_3.json", "MapQuiz_questions_1.json", "MapQuiz_questions_2.json", "MapQuiz_questions_3.json", "MapQuiz_rename_countries.json"]
 for File in Files:
-    if not os.path.exists(os.path.abspath(Folder + File)):
-        if os.path.exists(os.path.abspath(File)):
-            os.system("copy " + os.path.abspath(File) + " " + os.path.abspath(Folder + File))
+    DestinationPath = os.path.abspath(Folder + File)
+    if not os.path.exists(DestinationPath):
+        DownloadPath = os.path.abspath(File)
+        if os.path.exists(DownloadPath):
+            os.system("copy " + DownloadPath + " " + DestinationPath)
 
 def loadManualQuestions ():
     global manualQuestions_1
@@ -49,7 +51,7 @@ def loadManualQuestions ():
     global manualQuestions_2
     manualQuestions_2 = []
     global manualQuestions_3
-    manualQuestions_3 = [] ##initialisieren der variablen
+    manualQuestions_3 = []
     try:
         with open(Folder + "MapQuiz_questions_1.json", "r", encoding="utf-8") as questions_1_file:
             manualQuestions_1 = json.load(questions_1_file)
