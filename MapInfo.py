@@ -179,6 +179,8 @@ def findWrongCapital (correctCapital):
 def findWrongArea (correctArea):
     try:
         WrongArea = (str(CountryInfo(countries_EN[randrange(1, int(len(countries_EN))) - 1]).area()) + "km²")
+        if WrongArea == "Nonekm²":
+            raise ValueError("area shouldn't be None")
     except:
         WrongArea = findWrongArea()
 
