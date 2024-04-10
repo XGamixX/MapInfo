@@ -1,0 +1,6 @@
+countryinfo
+pycountry
+deep_translator
+numpy
+pygame
+pygame_widgets
